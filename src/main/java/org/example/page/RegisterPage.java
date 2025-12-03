@@ -6,7 +6,7 @@ import org.example.drivers.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegisterPage extends BasePage{
+public class RegisterPage{
 
     public RegisterPage() {
         PageFactory.initElements(new AppiumFieldDecorator(DriverManager.getDriver()), this);
@@ -36,6 +36,9 @@ public class RegisterPage extends BasePage{
 
     @AndroidFindBy(accessibility = "Please enter valid email address")
     private WebElement emailInvalidMessage;
+
+    @AndroidFindBy(accessibility = "User already exists")
+    private WebElement emailExistedMessage;
 
     @AndroidFindBy(accessibility = "Please enter your password")
     private WebElement passwordEmptyMessage;
@@ -127,6 +130,22 @@ public class RegisterPage extends BasePage{
 
     public boolean isPasswordEmptyMessageDisplayed() {
         return isElementDisplayed(passwordEmptyMessage);
+    }
+
+    public boolean isEmailExistedMessageDisplayed() {
+        return isElementDisplayed(emailExistedMessage);
+    }
+
+    public HomePage registerExpectSuccess(String fullName, String email, String password) {
+        fillRegistrationForm(fullName, email, password);
+        clickCreateAccount();
+        return new HomePage();  // ← Expect success
+    }
+
+    public void registerExpectFailure(String fullName, String email, String password) {
+        fillRegistrationForm(fullName, email, password);
+        clickCreateAccount();
+        // Vẫn ở RegisterPage để verify error
     }
 
     private boolean isElementDisplayed(WebElement element) {

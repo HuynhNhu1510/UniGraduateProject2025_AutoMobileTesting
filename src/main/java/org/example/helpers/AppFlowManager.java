@@ -20,10 +20,6 @@ public class AppFlowManager {
      */
     public boolean handleAppLaunch() {
         System.out.println("\n[AppFlow] Handling app launch...");
-
-        // Wait for app to fully load
-        MobileUI.sleep(2);
-
         // Check if onboarding is present
         if (onboardingPage.isOnboardingDisplayed()) {
             System.out.println("[AppFlow] ✓ First launch detected - Onboarding shown");

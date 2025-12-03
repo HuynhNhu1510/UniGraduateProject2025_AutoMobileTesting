@@ -30,9 +30,10 @@ public class HomePage {
 
     // ===== Action Methods =====
 
-    public void clickRegisterButton() {
+    public RegisterPage clickRegisterButton() {
         registerButton.click();
         System.out.println("[HomePage] Clicked Register button");
+        return new RegisterPage();
     }
 
     public void clickSignInButton() {
