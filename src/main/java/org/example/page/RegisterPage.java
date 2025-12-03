@@ -1,0 +1,148 @@
+package org.example.page;
+
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.example.drivers.DriverManager;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+public class RegisterPage extends BasePage{
+
+    public RegisterPage() {
+        PageFactory.initElements(new AppiumFieldDecorator(DriverManager.getDriver()), this);
+    }
+
+
+    @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[1]")
+    private WebElement fullName;
+
+    @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[2]")
+    private WebElement email;
+
+    @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[3]")
+    private WebElement password;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Create account\"]")
+    private WebElement createAccountButton;
+
+    @AndroidFindBy(accessibility = "Sign in")
+    private WebElement signIn;
+
+    @AndroidFindBy(accessibility = "Please enter a full name")
+    private WebElement fullNameInvalidMessage;
+
+    @AndroidFindBy(accessibility = "Please enter your email address")
+    private WebElement emailEmptyMessage;
+
+    @AndroidFindBy(accessibility = "Please enter valid email address")
+    private WebElement emailInvalidMessage;
+
+    @AndroidFindBy(accessibility = "Please enter your password")
+    private WebElement passwordEmptyMessage;
+
+    @AndroidFindBy(accessibility = "Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase character, 1 number, and 1 special character in (!@#$%^&*)")
+    private WebElement passwordInvalidMessage;
+
+    public void enterFullName(String fullNameValue) {
+        fullName.click();
+        fullName.clear();
+        fullName.sendKeys(fullNameValue);
+    }
+
+    public void enterEmail(String emailValue) {
+        email.click();
+        email.clear();
+        email.sendKeys(emailValue);
+    }
+
+    public void enterPassword(String passwordValue) {
+        password.click();
+        password.clear();
+        password.sendKeys(passwordValue);
+    }
+
+    public void fillRegistrationForm(String fullNameValue, String emailValue, String passwordValue) {
+        enterFullName(fullNameValue);
+        enterEmail(emailValue);
+        enterPassword(passwordValue);
+    }
+
+    public void clickCreateAccount() {
+        createAccountButton.click();
+    }
+
+    public void clickSignIn() {
+        signIn.click();
+    }
+
+    public void clearAllFields() {
+        fullName.clear();
+        email.clear();
+        password.clear();
+    }
+
+    public boolean isCreateAccountButtonDisplayed() {
+        return isElementDisplayed(createAccountButton);
+    }
+
+    public boolean isRegistrationScreenLoaded() {
+        return isElementDisplayed(fullName)
+                && isElementDisplayed(email)
+                && isElementDisplayed(password)
+                && isElementDisplayed(createAccountButton);
+    }
+
+    public HomePage isHomePageDisplayed() {
+        return new HomePage();
+    }
+
+    // Error checking methods
+    public String getEmailEmptyMessage() {
+        return getElementTextSafely(emailEmptyMessage);
+    }
+
+    public boolean isEmailEmptyMessageDisplayed() {
+        return isElementDisplayed(emailEmptyMessage);
+    }
+
+    public String getEmailInvalidMessage() {
+        return getElementTextSafely(emailInvalidMessage);
+    }
+
+    public boolean isEmailInvalidMessageDisplayed() {
+        return isElementDisplayed(passwordInvalidMessage);
+    }
+
+    public String getPasswordEmptyMessage() {
+        return getElementTextSafely(passwordEmptyMessage);
+    }
+
+    public boolean isPasswordInvalidMessageDisplayed() {
+        return isElementDisplayed(passwordInvalidMessage);
+    }
+
+    public String getPasswordInvalidMessage() {
+        return getElementTextSafely(passwordInvalidMessage);
+    }
+
+    public boolean isPasswordEmptyMessageDisplayed() {
+        return isElementDisplayed(passwordEmptyMessage);
+    }
+
+    private boolean isElementDisplayed(WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private String getElementTextSafely(WebElement element) {
+        try {
+            return element.getAttribute("content-desc");
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+}
