@@ -32,13 +32,14 @@ public class HomePage {
     // ===== Action Methods =====
 
     public RegisterPage clickRegisterButton() {
-        registerButton.click();
+        MobileUI.clickElement(registerButton);
         System.out.println("[HomePage] Clicked Register button");
+        MobileUI.sleep(0.5); // Wait for page transition
         return new RegisterPage();
     }
 
     public void clickSignInButton() {
-        signInButton.click();
+        MobileUI.clickElement(signInButton);
         System.out.println("[HomePage] Clicked Sign In button");
     }
 
@@ -103,10 +104,6 @@ public class HomePage {
     }
 
     private boolean isElementDisplayed(WebElement element) {
-        try {
-            return element.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+        return MobileUI.isElementPresentAndDisplayed(element);
     }
 }

@@ -1,7 +1,10 @@
 package testcase;
 
 import common.BaseTest;
-import org.example.helpers.AppFlowManager;
+import common.AppFlowManager;
+import org.example.keywords.MobileUI;
+import page.AccountPage;
+import page.BasePage;
 import page.HomePage;
 
 import page.RegisterPage;
@@ -26,18 +29,17 @@ public class RegisterTest extends BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        // Logout nếu đã login
+        // CRITICAL: Logout after each test to ensure test isolation
         homePage = new HomePage();
         if (homePage.isLoggedIn()) {
-            System.out.println("[TearDown] User is logged in, logging out...");
-
-            // Navigate to Account page và logout
-           /* AccountPage accountPage = homePage.navigateToAccount();
-            accountPage.clickLogout();
-*/
-            System.out.println("[TearDown] ✓ Logged out successfully");
+            System.out.println("[RegisterTest] User is logged in, performing logout...");
+            BasePage basePage = new BasePage();
+            AccountPage accountPage = basePage.clickAccountMenuItem();
+            accountPage.scrollAndLogout(); // This now handles modal properly
+            MobileUI.sleep(1); // Wait for navigation to complete
+            System.out.println("[RegisterTest] ✓ Logged out successfully");
         } else {
-            System.out.println("[TearDown] User not logged in, skip logout");
+            System.out.println("[RegisterTest] User not logged in, skip logout");
         }
     }
 
@@ -46,10 +48,11 @@ public class RegisterTest extends BaseTest {
         registerPage = new HomePage().clickRegisterButton();
 
         // Register và nhận HomePage luôn (giống LoginPage)
-        homePage = registerPage.registerExpectSuccess("Huynh Alice", "uyentrang123@gmail.com", "Kikiga18@");
-
-        Assert.assertTrue(homePage.isLoggedIn());
-        Assert.assertFalse(homePage.isRegisterButtonDisplayed());
+        homePage = registerPage.registerExpectSuccess("Huynh Alice", "huynhphamdangkhoa@gmail.com", "Kikiga18@");
+        Assert.assertTrue(homePage.isLoggedIn(),
+                "User should be logged in after successful registration");
+        Assert.assertFalse(homePage.isRegisterButtonDisplayed(),
+                "Register button should not be displayed when logged in");
     }
 
     @Test(priority = 3)

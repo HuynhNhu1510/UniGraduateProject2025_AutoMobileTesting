@@ -72,11 +72,11 @@ public class RegisterPage{
     }
 
     public void clickCreateAccount() {
-        createAccountButton.click();
+        MobileUI.clickElement(createAccountButton);
     }
 
     public void clickSignIn() {
-        signIn.click();
+        MobileUI.clickElement(signIn);
     }
 
     public void clearAllFields() {
@@ -154,19 +154,10 @@ public class RegisterPage{
     }
 
     private boolean isElementDisplayed(WebElement element) {
-        try {
-            return element.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+        return MobileUI.isElementPresentAndDisplayed(element);
     }
 
     private String getElementTextSafely(WebElement element) {
-        try {
-            return element.getAttribute("content-desc");
-        } catch (Exception e) {
-            return "";
-        }
+        return MobileUI.getElementAttribute(element, "content-desc");
     }
-
 }

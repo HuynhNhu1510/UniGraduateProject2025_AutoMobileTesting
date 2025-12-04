@@ -6,7 +6,6 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.example.drivers.DriverManager;
-import org.example.helpers.AppFlowManager;
 import org.example.helpers.SystemHelpers;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;

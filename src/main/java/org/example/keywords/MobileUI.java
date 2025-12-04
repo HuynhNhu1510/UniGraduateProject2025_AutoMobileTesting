@@ -17,7 +17,7 @@ import static org.example.drivers.DriverManager.getDriver;
 
 public class MobileUI {
 
-    private static final int DEFAULT_TIMEOUT = 10;
+    private static final int DEFAULT_TIMEOUT = 2;
 
     public static void sleep(double second) {
         System.out.println("[MobileUI] Sleeping for " + second + " seconds.");

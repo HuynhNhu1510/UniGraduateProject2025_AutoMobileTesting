@@ -1,8 +1,9 @@
-package org.example.helpers;
+package common;
 
 import org.example.keywords.MobileUI;
-import org.example.page.HomePage;
-import org.example.page.OnBoardingPage;
+import page.HomePage;
+import page.OnBoardingPage;
+
 
 public class AppFlowManager {
     private OnBoardingPage onboardingPage;
