@@ -1,4 +1,4 @@
-package org.example.page;
+package page;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;

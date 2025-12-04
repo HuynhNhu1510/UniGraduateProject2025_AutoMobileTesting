@@ -5,12 +5,21 @@ import org.example.page.HomePage;
 import org.example.page.OnBoardingPage;
 
 public class AppFlowManager {
-    private final OnBoardingPage onboardingPage;
-    private final HomePage homePage;
+    private OnBoardingPage onboardingPage;
+    private HomePage homePage;
 
-    public AppFlowManager() {
-        this.onboardingPage = new OnBoardingPage();
-        this.homePage = new HomePage();
+    private OnBoardingPage getOnboardingPage() {
+        if (onboardingPage == null) {
+            onboardingPage = new OnBoardingPage();
+        }
+        return onboardingPage;
+    }
+
+    private HomePage getHomePage() {
+        if (homePage == null) {
+            homePage = new HomePage();
+        }
+        return homePage;
     }
 
     /**
@@ -20,23 +29,21 @@ public class AppFlowManager {
      */
     public boolean handleAppLaunch() {
         System.out.println("\n[AppFlow] Handling app launch...");
-        // Check if onboarding is present
-        if (onboardingPage.isOnboardingDisplayed()) {
-            System.out.println("[AppFlow] ✓ First launch detected - Onboarding shown");
-            onboardingPage.completeOnboarding();
+        MobileUI.sleep(2);
 
-            // Wait for home page
-            homePage.waitForHomePageToLoad();
-            System.out.println("[AppFlow] ✓ Onboarding completed → Home Page");
+        // Lazy init - chỉ tạo khi cần
+        if (getOnboardingPage().isOnboardingDisplayed()) {
+            System.out.println("[AppFlow] First launch detected - Onboarding shown");
+            getOnboardingPage().completeOnboarding();
+            getHomePage().waitForHomePageToLoad();
+            System.out.println("[AppFlow] Onboarding completed → Home Page");
             return true;
         } else {
             System.out.println("[AppFlow] ✓ Subsequent launch - No onboarding");
-
-            // Verify we're on home page
-            if (homePage.isHomePageDisplayed()) {
-                System.out.println("[AppFlow] ✓ Already on Home Page - State: " + homePage.getCurrentState());
+            if (getHomePage().isHomePageDisplayed()) {
+                System.out.println("[AppFlow] Already on Home Page - State: " + getHomePage().getCurrentState());
             } else {
-                System.out.println("[AppFlow] ⚠ Warning: Unknown screen state");
+                System.out.println("[AppFlow] Warning: Unknown screen state");
             }
             return false;
         }
@@ -51,7 +58,7 @@ public class AppFlowManager {
 
         // Ensure we're on home page
         if (!homePage.isHomePageDisplayed()) {
-            System.out.println("[AppFlow] ✗ Not on Home Page, cannot navigate");
+            System.out.println("[AppFlow] Not on Home Page, cannot navigate");
             return false;
         }
 
@@ -61,20 +68,20 @@ public class AppFlowManager {
 
         if (currentState.equals("NOT_LOGGED_IN")) {
             homePage.clickRegisterButton();
-            System.out.println("[AppFlow] ✓ Clicked Register → Create Account Page");
+            System.out.println("[AppFlow] Clicked Register → Create Account Page");
             MobileUI.sleep(1);
             return true;
         } else if (currentState.equals("LOGGED_IN")) {
-            System.out.println("[AppFlow] ✗ User already logged in");
+            System.out.println("[AppFlow] User already logged in");
             return false;
         } else {
-            System.out.println("[AppFlow] ⚠ Unknown state, attempting navigation...");
+            System.out.println("[AppFlow] Unknown state, attempting navigation...");
             try {
                 homePage.clickRegisterButton();
                 MobileUI.sleep(1);
                 return true;
             } catch (Exception e) {
-                System.out.println("[AppFlow] ✗ Navigation failed: " + e.getMessage());
+                System.out.println("[AppFlow] Navigation failed: " + e.getMessage());
                 return false;
             }
         }
@@ -106,5 +113,4 @@ public class AppFlowManager {
         System.out.println("Current State: " + getCurrentAppState());
         System.out.println("=====================================\n");
     }
-
 }

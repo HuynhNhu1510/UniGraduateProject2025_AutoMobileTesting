@@ -1,4 +1,4 @@
-package org.example.page;
+package page;
 
 public class WishListPage {
 }

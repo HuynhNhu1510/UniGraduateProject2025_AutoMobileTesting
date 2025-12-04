@@ -1,8 +1,9 @@
-package org.example.page;
+package page;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.example.drivers.DriverManager;
+import org.example.keywords.MobileUI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -138,7 +139,11 @@ public class RegisterPage{
 
     public HomePage registerExpectSuccess(String fullName, String email, String password) {
         fillRegistrationForm(fullName, email, password);
+        System.out.println("Đã điền đủ thông tin");
         clickCreateAccount();
+        System.out.println("Đã nhấn vào nút Create account");
+
+        MobileUI.sleep(1);
         return new HomePage();  // ← Expect success
     }
 

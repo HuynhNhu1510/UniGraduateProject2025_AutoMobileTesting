@@ -1,8 +1,9 @@
-package org.example.page;
+package page;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.example.drivers.DriverManager;
+import org.example.keywords.MobileUI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -82,7 +83,7 @@ public class HomePage {
     }
 
     public boolean waitForHomePageToLoad() {
-        return waitForHomePageToLoad(10);
+        return waitForHomePageToLoad(5);
     }
 
     public boolean waitForHomePageToLoad(int timeoutSeconds) {
@@ -94,12 +95,8 @@ public class HomePage {
                 System.out.println("[HomePage] Home page loaded after " + attempts + " seconds");
                 return true;
             }
-            try {
-                Thread.sleep(10);
-                attempts++;
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            MobileUI.sleep(1);  // ← DÙNG MobileUI.sleep(1) - 1 giây
+            attempts++;
         }
         System.out.println("[HomePage] Home page did not load within " + timeoutSeconds + " seconds");
         return false;
