@@ -30,7 +30,7 @@ public class AppFlowManager {
      */
     public boolean handleAppLaunch() {
         System.out.println("\n[AppFlow] Handling app launch...");
-        MobileUI.sleep(2);
+        MobileUI.sleep(0.5);
 
         // Lazy init - chỉ tạo khi cần
         if (getOnboardingPage().isOnboardingDisplayed()) {
@@ -40,7 +40,7 @@ public class AppFlowManager {
             System.out.println("[AppFlow] Onboarding completed → Home Page");
             return true;
         } else {
-            System.out.println("[AppFlow] ✓ Subsequent launch - No onboarding");
+            System.out.println("[AppFlow] Subsequent launch - No onboarding");
             if (getHomePage().isHomePageDisplayed()) {
                 System.out.println("[AppFlow] Already on Home Page - State: " + getHomePage().getCurrentState());
             } else {
@@ -70,7 +70,7 @@ public class AppFlowManager {
         if (currentState.equals("NOT_LOGGED_IN")) {
             homePage.clickRegisterButton();
             System.out.println("[AppFlow] Clicked Register → Create Account Page");
-            MobileUI.sleep(1);
+            MobileUI.sleep(0.05);
             return true;
         } else if (currentState.equals("LOGGED_IN")) {
             System.out.println("[AppFlow] User already logged in");
@@ -79,7 +79,7 @@ public class AppFlowManager {
             System.out.println("[AppFlow] Unknown state, attempting navigation...");
             try {
                 homePage.clickRegisterButton();
-                MobileUI.sleep(1);
+                MobileUI.sleep(0.05);
                 return true;
             } catch (Exception e) {
                 System.out.println("[AppFlow] Navigation failed: " + e.getMessage());
@@ -88,15 +88,11 @@ public class AppFlowManager {
         }
     }
 
-    /**
-     * Get current app state
-     * @return "ONBOARDING", "NOT_LOGGED_IN", "LOGGED_IN", or "UNKNOWN"
-     */
     public String getCurrentAppState() {
-        if (onboardingPage.isOnboardingDisplayed()) {
+        if (getOnboardingPage().isOnboardingDisplayed()) {
             return "ONBOARDING";
         }
-        return homePage.getCurrentState();
+        return getHomePage().getCurrentState();
     }
 
     // Reset app to fresh state

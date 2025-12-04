@@ -114,7 +114,7 @@ public class RegisterPage{
     }
 
     public boolean isEmailInvalidMessageDisplayed() {
-        return isElementDisplayed(passwordInvalidMessage);
+        return isElementDisplayed(emailInvalidMessage);
     }
 
     public String getPasswordEmptyMessage() {
@@ -123,6 +123,10 @@ public class RegisterPage{
 
     public boolean isPasswordInvalidMessageDisplayed() {
         return isElementDisplayed(passwordInvalidMessage);
+    }
+
+    public boolean isFullNameInvalidMessageDisplayed() {
+        return isElementDisplayed(fullNameInvalidMessage);
     }
 
     public String getPasswordInvalidMessage() {
@@ -150,7 +154,6 @@ public class RegisterPage{
     public void registerExpectFailure(String fullName, String email, String password) {
         fillRegistrationForm(fullName, email, password);
         clickCreateAccount();
-        // Vẫn ở RegisterPage để verify error
     }
 
     private boolean isElementDisplayed(WebElement element) {

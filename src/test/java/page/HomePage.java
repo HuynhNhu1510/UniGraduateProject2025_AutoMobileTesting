@@ -52,8 +52,7 @@ public class HomePage {
     }
 
     public boolean isHomePageDisplayed() {
-        return isElementDisplayed(registerButton)
-                && isElementDisplayed(signInButton);
+        return isElementDisplayed(contentDescHomePage);
     }
 
     public boolean isNotLoggedIn() {
@@ -84,7 +83,7 @@ public class HomePage {
     }
 
     public boolean waitForHomePageToLoad() {
-        return waitForHomePageToLoad(5);
+        return waitForHomePageToLoad(2);
     }
 
     public boolean waitForHomePageToLoad(int timeoutSeconds) {

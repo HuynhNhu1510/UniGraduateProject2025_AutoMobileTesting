@@ -17,7 +17,7 @@ import static org.example.drivers.DriverManager.getDriver;
 
 public class MobileUI {
 
-    private static final int DEFAULT_TIMEOUT = 2;
+    private static final int DEFAULT_TIMEOUT = 0;
 
     public static void sleep(double second) {
         System.out.println("[MobileUI] Sleeping for " + second + " seconds.");
@@ -46,7 +46,7 @@ public class MobileUI {
         int startY = (int) (size.height * 0.3);
         int endX = (int) (size.width * 0.2);
         int endY = startY;
-        int duration = 200;
+        int duration = 100;
         swipe(startX, startY, endX, endY, duration);
     }
 

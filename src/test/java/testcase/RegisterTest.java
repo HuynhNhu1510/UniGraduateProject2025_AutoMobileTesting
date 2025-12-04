@@ -2,6 +2,7 @@ package testcase;
 
 import common.BaseTest;
 import common.AppFlowManager;
+import org.example.drivers.DriverManager;
 import org.example.keywords.MobileUI;
 import page.AccountPage;
 import page.BasePage;
@@ -19,50 +20,102 @@ public class RegisterTest extends BaseTest {
     HomePage homePage;
     AppFlowManager appFlowManager;
 
-
     // Xử lý trạng thái onboarding
     @BeforeMethod
     public void setUp() {
         appFlowManager = new AppFlowManager();
-        appFlowManager.handleAppLaunch();  // ← Auto handle onboarding
+        appFlowManager.handleAppLaunch();  // Auto handle onboarding
     }
 
     @AfterMethod
     public void tearDown() {
-        // CRITICAL: Logout after each test to ensure test isolation
-        homePage = new HomePage();
-        if (homePage.isLoggedIn()) {
-            System.out.println("[RegisterTest] User is logged in, performing logout...");
-            BasePage basePage = new BasePage();
-            AccountPage accountPage = basePage.clickAccountMenuItem();
-            accountPage.scrollAndLogout(); // This now handles modal properly
-            MobileUI.sleep(1); // Wait for navigation to complete
-            System.out.println("[RegisterTest] ✓ Logged out successfully");
-        } else {
-            System.out.println("[RegisterTest] User not logged in, skip logout");
+        System.out.println("\n[RegisterTest] ========== CLEANUP STARTED ==========");
+        try {
+            homePage = new HomePage();
+
+            if (homePage.isLoggedIn()) {
+                System.out.println("[RegisterTest] User is logged in, performing logout...");
+                BasePage basePage = new BasePage();
+                AccountPage accountPage = basePage.clickAccountMenuItem();
+                accountPage.scrollAndLogout();
+                MobileUI.sleep(0.5);
+                System.out.println("[RegisterTest] ✓ Logged out successfully");
+            }
+
+            // Case 2: User NOT logged in → Press back to HomePage
+            else {
+                System.out.println("[RegisterTest] User not logged in, checking current screen...");
+                if (homePage.isHomePageDisplayed()) {
+                    System.out.println("[RegisterTest] Already on HomePage, no action needed");
+                } else {
+                    // Not on HomePage → Press back button
+                    System.out.println("[RegisterTest] Not on HomePage, pressing back button...");
+                    DriverManager.getDriver().navigate().back();
+                    MobileUI.sleep(0.05);
+
+                    // Verify we reached HomePage
+                    homePage = new HomePage();
+                    if (homePage.isHomePageDisplayed()) {
+                        System.out.println("[RegisterTest] Successfully navigated to HomePage");
+                    } else {
+                        System.out.println("[RegisterTest] Still not on HomePage, pressing back again...");
+                        DriverManager.getDriver().navigate().back();
+                        MobileUI.sleep(0.05);
+                    }
+                }
+            }
+
+        } catch (Exception e) {
+            System.out.println("[RegisterTest] Error during cleanup: " + e.getMessage());
         }
+        System.out.println("[RegisterTest] ========== CLEANUP COMPLETED ==========\n");
+    }
+
+    private String generateUniqueEmail(String prefix) {
+        long timestamp = System.currentTimeMillis();
+        return prefix + timestamp + "@gmail.com";
     }
 
     @Test(priority = 2, description = "RG.02 - Register successfully with valid information")
-    public void registerSuccessfully() {
+    public void registerSuccessfullyWithValidData() {
         registerPage = new HomePage().clickRegisterButton();
-
-        // Register và nhận HomePage luôn (giống LoginPage)
-        homePage = registerPage.registerExpectSuccess("Huynh Alice", "huynhphamdangkhoa@gmail.com", "Kikiga18@");
+        homePage = registerPage.registerExpectSuccess("Huynh Alice", "tancang123@gmail.com", "Kikiga18@");
         Assert.assertTrue(homePage.isLoggedIn(),
                 "User should be logged in after successful registration");
         Assert.assertFalse(homePage.isRegisterButtonDisplayed(),
                 "Register button should not be displayed when logged in");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "RG.03 - Register failed with email already existed")
     public void registerFailedWithEmailAlreadyExisted() {
         registerPage = new HomePage().clickRegisterButton();
-
-        // Register và vẫn ở RegisterPage
+        System.out.println("[Test] Navigated to Register Page");
         registerPage.registerExpectFailure("Huynh Alice", "lytuthat1234@gmail.com", "Kikiga18123@");
 
-        // Verify error trên RegisterPage
-        Assert.assertTrue(registerPage.isEmailExistedMessageDisplayed());
+        //Verify error message (đã có wait bên trong method)
+        System.out.println("[Test] Verifying error message...");
+        boolean isErrorDisplayed = registerPage.isEmailExistedMessageDisplayed();
+
+        Assert.assertTrue(isErrorDisplayed,
+                "ERROR: 'User already exists' message should be displayed but was not found after 5 seconds wait");
+
+        System.out.println("[Test] Test PASSED: Error message displayed correctly");
+    }
+
+    @Test(priority = 4, description = "Verify system validates full name requires at least 2 words")
+    public void registerFailedWithInvalidFullName_SingleWord () {
+        registerPage = new HomePage().clickRegisterButton();
+        String testEmail = generateUniqueEmail("fn1char");
+
+        System.out.println("[Test] Testing invalid full name: 'a ^h'");
+        System.out.println("  Analysis: First word = 1 char → Should be INVALID");
+
+        registerPage.registerExpectFailure("a ^h", testEmail, "Kikiga18@");
+
+        boolean hasFullNameError = registerPage.isFullNameInvalidMessageDisplayed();
+
+        Assert.assertTrue(hasFullNameError,
+                "Full name with first word = 1 char should be rejected");
+        System.out.println("[Test] ✓ Test PASSED: System correctly rejected full name with 1-char first word");
     }
 }

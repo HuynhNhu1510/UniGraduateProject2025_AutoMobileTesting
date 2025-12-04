@@ -7,8 +7,6 @@ import org.example.keywords.MobileUI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import java.sql.Driver;
-
 public class AccountPage {
 
     public AccountPage() {

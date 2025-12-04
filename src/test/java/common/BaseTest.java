@@ -25,7 +25,7 @@ public class BaseTest {
     @BeforeSuite
     public void runAppiumServer() {
         //Kill process on port
-        SystemHelpers.killProcessOnPort("");
+        SystemHelpers.killProcessOnPort(PORT);
 
         //Build the Appium service
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
