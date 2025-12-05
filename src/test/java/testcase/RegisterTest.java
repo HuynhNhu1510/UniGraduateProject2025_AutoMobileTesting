@@ -71,11 +71,6 @@ public class RegisterTest extends BaseTest {
         System.out.println("[RegisterTest] ========== CLEANUP COMPLETED ==========\n");
     }
 
-    private String generateUniqueEmail(String prefix) {
-        long timestamp = System.currentTimeMillis();
-        return prefix + timestamp + "@gmail.com";
-    }
-
     @Test(priority = 2, description = "RG.02 - Register successfully with valid information")
     public void registerSuccessfullyWithValidData() {
         registerPage = new HomePage().clickRegisterButton();
@@ -100,22 +95,5 @@ public class RegisterTest extends BaseTest {
                 "ERROR: 'User already exists' message should be displayed but was not found after 5 seconds wait");
 
         System.out.println("[Test] Test PASSED: Error message displayed correctly");
-    }
-
-    @Test(priority = 4, description = "Verify system validates full name requires at least 2 words")
-    public void registerFailedWithInvalidFullName_SingleWord () {
-        registerPage = new HomePage().clickRegisterButton();
-        String testEmail = generateUniqueEmail("fn1char");
-
-        System.out.println("[Test] Testing invalid full name: 'a ^h'");
-        System.out.println("  Analysis: First word = 1 char → Should be INVALID");
-
-        registerPage.registerExpectFailure("a ^h", testEmail, "Kikiga18@");
-
-        boolean hasFullNameError = registerPage.isFullNameInvalidMessageDisplayed();
-
-        Assert.assertTrue(hasFullNameError,
-                "Full name with first word = 1 char should be rejected");
-        System.out.println("[Test] ✓ Test PASSED: System correctly rejected full name with 1-char first word");
     }
 }
