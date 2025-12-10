@@ -17,7 +17,9 @@ import static org.example.drivers.DriverManager.getDriver;
 
 public class MobileUI {
 
-    private static final int DEFAULT_TIMEOUT = 0;
+    private static final int DEFAULT_TIMEOUT = 2;
+    private static final int POLLING_INTERVAL_MS = 100;
+    private static final boolean DEBUG_MODE = false;
 
     public static void sleep(double second) {
         System.out.println("[MobileUI] Sleeping for " + second + " seconds.");
@@ -90,7 +92,7 @@ public class MobileUI {
         tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
         tap.addAction(new Pause(finger, Duration.ofMillis(200))); //Chạm nhẹ nhanh
         tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        getDriver().perform(Arrays.asList(tap));
+        getDriver().perform(List.of(tap));
     }
 
     public static void tap(int x, int y, int milliSecondDuration) {
@@ -101,7 +103,7 @@ public class MobileUI {
         tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
         tap.addAction(new Pause(finger, Duration.ofMillis(milliSecondDuration))); //Chạm vào với thời gian chỉ định
         tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        getDriver().perform(Arrays.asList(tap));
+        getDriver().perform(Collections.singletonList(tap));
     }
 
     public static void zoom(WebElement element, double scale) {
@@ -348,10 +350,9 @@ public class MobileUI {
 
     public static boolean isElementPresentAndDisplayed(By locator) {
         System.out.println("[MobileUI] Checking if element is present and displayed: " + locator);
-        boolean result;
         try {
-            WebElement element = getDriver().findElement(locator); // Find first, then check display
-            result = element != null && element.isDisplayed();
+            WebElement element = getDriver().findElement(locator);
+            boolean result = element.isDisplayed();
             System.out.println("[MobileUI] Element present and displayed check result: " + result + " for locator: " + locator);
             return result;
         } catch (NoSuchElementException e) {
@@ -473,7 +474,10 @@ public class MobileUI {
     public static void assertTrueCondition(boolean condition, String message) {
         System.out.println("[MobileUI] Asserting condition: " + condition + ". Message if failed: " + message);
         Assert.assertTrue(condition, message);
-        System.out.println("[MobileUI] Assertion passed for condition: " + condition);
+/*        System.out.println("[MobileUI] Assertion passed for condition: true");*/
+        if (DEBUG_MODE) {
+            System.out.println("[MobileUI] Assertion passed");
+        }
     }
 
 
@@ -481,25 +485,29 @@ public class MobileUI {
 
     public static WebElement waitForElementToBeClickable(By locator, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be clickable: " + locator);
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
+        wait.pollingEvery(Duration.ofMillis(POLLING_INTERVAL_MS));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public static WebElement waitForElementToBeClickable(By locator) {
         System.out.println("[MobileUI] Waiting up to " + DEFAULT_TIMEOUT + "s (default) for element to be clickable: " + locator);
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
+        wait.pollingEvery(Duration.ofMillis(POLLING_INTERVAL_MS));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public static WebElement waitForElementToBeClickable(WebElement element, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be clickable: " + element);
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
+        wait.pollingEvery(Duration.ofMillis(POLLING_INTERVAL_MS));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static WebElement waitForElementToBeClickable(WebElement element) {
         System.out.println("[MobileUI] Waiting up to " + DEFAULT_TIMEOUT + "s (default) for element to be clickable: " + element);
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
+        wait.pollingEvery(Duration.ofMillis(POLLING_INTERVAL_MS));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -512,6 +520,7 @@ public class MobileUI {
     public static WebElement waitForElementVisibe(By locator) {
         System.out.println("[MobileUI] Waiting up to " + DEFAULT_TIMEOUT + "s (default) for element to be visible: " + locator);
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
+        wait.pollingEvery(Duration.ofMillis(POLLING_INTERVAL_MS));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 

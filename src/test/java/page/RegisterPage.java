@@ -147,8 +147,9 @@ public class RegisterPage{
         clickCreateAccount();
         System.out.println("Đã nhấn vào nút Create account");
 
-        MobileUI.sleep(1);
-        return new HomePage();  // ← Expect success
+        HomePage homePage = new HomePage();
+        homePage.waitForHomePageToLoad(1);
+        return homePage;
     }
 
     public void registerExpectFailure(String fullName, String email, String password) {

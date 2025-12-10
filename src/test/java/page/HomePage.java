@@ -34,7 +34,6 @@ public class HomePage {
     public RegisterPage clickRegisterButton() {
         MobileUI.clickElement(registerButton);
         System.out.println("[HomePage] Clicked Register button");
-        MobileUI.sleep(0.5); // Wait for page transition
         return new RegisterPage();
     }
 
@@ -56,8 +55,7 @@ public class HomePage {
     }
 
     public boolean isNotLoggedIn() {
-        return isElementDisplayed(registerButton)
-                && isElementDisplayed(signInButton);
+        return isElementDisplayed(contentDescHomePage);
     }
 
     public boolean isLoggedIn() {
@@ -83,7 +81,7 @@ public class HomePage {
     }
 
     public boolean waitForHomePageToLoad() {
-        return waitForHomePageToLoad(2);
+        return waitForHomePageToLoad(1);
     }
 
     public boolean waitForHomePageToLoad(int timeoutSeconds) {
@@ -95,7 +93,7 @@ public class HomePage {
                 System.out.println("[HomePage] Home page loaded after " + attempts + " seconds");
                 return true;
             }
-            MobileUI.sleep(1);  // ← DÙNG MobileUI.sleep(1) - 1 giây
+            MobileUI.sleep(0.3);
             attempts++;
         }
         System.out.println("[HomePage] Home page did not load within " + timeoutSeconds + " seconds");

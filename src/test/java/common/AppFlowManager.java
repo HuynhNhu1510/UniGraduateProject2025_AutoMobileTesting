@@ -9,6 +9,9 @@ public class AppFlowManager {
     private OnBoardingPage onboardingPage;
     private HomePage homePage;
 
+    private static boolean isOnboardingCompleted = false;
+    private static boolean isFirstCheck = true;
+
     private OnBoardingPage getOnboardingPage() {
         if (onboardingPage == null) {
             onboardingPage = new OnBoardingPage();
@@ -23,37 +26,44 @@ public class AppFlowManager {
         return homePage;
     }
 
-    /**
-     * Handle app launch intelligently
-     * Detects if onboarding is present and handles it
-     * @return true if onboarding was handled, false if not present
-     */
+
     public boolean handleAppLaunch() {
         System.out.println("\n[AppFlow] Handling app launch...");
-        MobileUI.sleep(0.5);
 
-        // Lazy init - chỉ tạo khi cần
-        if (getOnboardingPage().isOnboardingDisplayed()) {
-            System.out.println("[AppFlow] First launch detected - Onboarding shown");
-            getOnboardingPage().completeOnboarding();
-            getHomePage().waitForHomePageToLoad();
-            System.out.println("[AppFlow] Onboarding completed → Home Page");
-            return true;
-        } else {
-            System.out.println("[AppFlow] Subsequent launch - No onboarding");
-            if (getHomePage().isHomePageDisplayed()) {
-                System.out.println("[AppFlow] Already on Home Page - State: " + getHomePage().getCurrentState());
+        if (isFirstCheck) {
+            MobileUI.sleep(0.3);
+
+            if (getOnboardingPage().isOnboardingDisplayed()) {
+                System.out.println("[AppFlow] First launch detected - Onboarding shown");
+                getOnboardingPage().completeOnboarding();
+                getHomePage().waitForHomePageToLoad();
+                System.out.println("[AppFlow] Onboarding completed → Home Page");
+                isOnboardingCompleted = true;
+                isFirstCheck = false;
+                return true;
             } else {
-                System.out.println("[AppFlow] Warning: Unknown screen state");
+                System.out.println("[AppFlow] Onboarding already completed or skipped");
+                isOnboardingCompleted = true;
+                isFirstCheck = false;
             }
-            return false;
+        } else {
+            System.out.println("[AppFlow] Using cached state - Onboarding already handled");
         }
+
+        // Quick validation - chỉ khi cần thiết
+        if (getHomePage().isHomePageDisplayed()) {
+            System.out.println("[AppFlow] On Home Page - State: " + getHomePage().getCurrentState());
+        }
+        return isOnboardingCompleted;
     }
 
-    /**
-     * Navigate to Create Account page from Home Page
-     * @return true if navigation successful
-     */
+    // Thêm method để reset cache nếu cần
+    public static void resetAppFlowCache() {
+        isOnboardingCompleted = false;
+        isFirstCheck = true;
+        System.out.println("[AppFlow] Cache reset");
+    }
+
     public boolean navigateToCreateAccount() {
         System.out.println("\n[AppFlow] Navigating to Create Account...");
 
