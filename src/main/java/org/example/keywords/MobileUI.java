@@ -1,5 +1,6 @@
 package org.example.keywords;
 
+import org.example.constants.ConfigData;
 import org.example.drivers.DriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
@@ -17,7 +18,9 @@ import static org.example.drivers.DriverManager.getDriver;
 
 public class MobileUI {
 
-    private static final int DEFAULT_TIMEOUT = 1;
+    private static final int DEFAULT_TIMEOUT = ConfigData.TIMEOUT_EXPLICIT_DEFAULT != null
+            ? Integer.parseInt(ConfigData.TIMEOUT_EXPLICIT_DEFAULT)
+            : 1;
     private static final int POLLING_INTERVAL_MS = 100;
     private static final boolean DEBUG_MODE = false;
 

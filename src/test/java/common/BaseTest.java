@@ -22,7 +22,7 @@ public class BaseTest {
     private AppiumDriverLocalService service;
     private String HOST = "127.0.0.1";
     private String PORT = "4723";
-    private int TIMEOUT_SERVICE = 50;
+    private int TIMEOUT_SERVICE = 60;
 
     /**
      * Chạy Appium server với host và port được chỉ định.
