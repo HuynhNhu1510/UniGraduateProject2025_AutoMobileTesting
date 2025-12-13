@@ -28,39 +28,44 @@ public class SystemHelpers {
      * @return Get the path to your source directory with a / at the end
      */
     public static String getCurrentDir() {
-        String current = System.getProperty("user.dir") + File.separator;
+        String current;
+        current = System.getProperty("user.dir") + File.separator;
         return current;
     }
 
-    /**
-     * Create folder empty
-     *
-     * @param path path to create folder
-     */
-    public static void createFolder(String path) {
-        // File is a class inside java.io package
-        File file = new File(path);
+    public static String convertPath(String path) {
+        if (path == null || path.isEmpty()) {
+            return path;
+        }
+        return path.replace("/", File.separator);
+    }
 
-        String result = null;
+    public static boolean createFolder(String path) {
+        try {
+            File folder = new File(path);
 
-        int lengthSum = path.length();
-        int lengthSub = path.substring(0, path.lastIndexOf('/')).length();
+            // Kiểm tra xem đã tồn tại và có phải là folder không
+            if (folder.exists() && folder.isDirectory()) {
+                System.out.println("Folder đã tồn tại: " + path);
+                return false;
+            }
 
-        result = path.substring(lengthSub, lengthSum);
+            // Tạo folder và các thư mục cha
+            boolean created = folder.mkdirs();
 
-        if (!file.exists()) {
-            file.mkdir();  // mkdir is used to create folder
-            System.out.println("Folder " + file.getName() + " created: " + path);
-        } else {
-            System.out.println("Folder already created");
+            if (created) {
+                System.out.println("Tạo folder thành công: " + path);
+            } else {
+                System.out.println("Tạo folder thất bại: " + path);
+            }
+
+            return created;
+        } catch (Exception e) {
+            System.out.println("Lỗi khi tạo folder: " + e.getMessage());
+            return false;
         }
     }
 
-    /**
-     * @param str        string to be split based on condition
-     * @param valueSplit the character to split the string into an array of values
-     * @return array of string values after splitting
-     */
     public static ArrayList<String> splitString(String str, String valueSplit) {
         ArrayList<String> arrayListString = new ArrayList<>();
         for (String s : str.split(valueSplit, 0)) {

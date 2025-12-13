@@ -1,84 +1,19 @@
 package testcase;
 
-import common.BaseTest;
-import common.AppFlowManager;
-import org.example.drivers.DriverManager;
-import org.example.keywords.MobileUI;
-import org.testng.annotations.BeforeClass;
-import page.AccountPage;
-import page.BasePage;
+import common.CommonTest;
 import page.HomePage;
 
 import page.RegisterPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-public class RegisterTest extends BaseTest {
+public class RegisterTest extends CommonTest {
     RegisterPage registerPage;
-    HomePage homePage;
-    AppFlowManager appFlowManager;
 
-    @BeforeClass
-    public void setUpClass() {
-        appFlowManager = new AppFlowManager();
-        appFlowManager.handleAppLaunch();
-        System.out.println("[RegisterTest] ========== TEST SUITE STARTED ==========");
-    }
-
-    @BeforeMethod
-    public void setUp() {
-        System.out.println("\n[RegisterTest] ========== TEST STARTED ==========");
-        homePage = new HomePage();
-
-        // Ensure we're on HomePage before each test
-        if (!homePage.isHomePageDisplayed()) {
-            System.out.println("[RegisterTest] Not on HomePage, navigating back...");
-            DriverManager.getDriver().navigate().back();
-            MobileUI.sleep(0.1);
-        }
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        System.out.println("\n[RegisterTest] ========== CLEANUP STARTED ==========");
-        try {
-            homePage = new HomePage();
-            if (homePage.isLoggedIn()) {
-                performLogout();
-            }
-            else if (!homePage.isHomePageDisplayed()) {
-                navigateBackToHomePage();
-            }
-            else {
-                System.out.println("[RegisterTest] Already on HomePage - No cleanup needed");
-            }
-
-        } catch (Exception e) {
-            System.out.println("[RegisterTest] Cleanup error: " + e.getMessage());
-            try {
-                DriverManager.getDriver().navigate().back();
-            } catch (Exception ex) {
-                System.out.println("[RegisterTest] Fallback navigation failed");
-            }
-        }
-        System.out.println("[RegisterTest] ========== CLEANUP COMPLETED ==========\n");
-    }
-
-    private void performLogout() {
-        System.out.println("[RegisterTest] Logging out...");
-        BasePage basePage = new BasePage();
-        AccountPage accountPage = basePage.clickAccountMenuItem();
-        accountPage.scrollAndLogout();
-        MobileUI.sleep(0.1);
-        System.out.println("[RegisterTest] Logged out");
-    }
-
-    private void navigateBackToHomePage() {
-        System.out.println("[RegisterTest] Navigating back to HomePage...");
-        DriverManager.getDriver().navigate().back();
+    @Override
+    protected String getTestName() {
+        return "Register Test";
     }
 
 

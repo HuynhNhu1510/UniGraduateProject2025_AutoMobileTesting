@@ -17,7 +17,7 @@ import static org.example.drivers.DriverManager.getDriver;
 
 public class MobileUI {
 
-    private static final int DEFAULT_TIMEOUT = 2;
+    private static final int DEFAULT_TIMEOUT = 1;
     private static final int POLLING_INTERVAL_MS = 100;
     private static final boolean DEBUG_MODE = false;
 

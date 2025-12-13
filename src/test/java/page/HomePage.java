@@ -37,9 +37,10 @@ public class HomePage {
         return new RegisterPage();
     }
 
-    public void clickSignInButton() {
+    public LoginPage clickSignInButton() {
         MobileUI.clickElement(signInButton);
         System.out.println("[HomePage] Clicked Sign In button");
+        return new LoginPage();
     }
 
     public void navigateToCreateAccount() {
