@@ -15,7 +15,7 @@ public class PropertiesHelpers {
     private static Properties properties;
     private static String linkFile;
     private static FileInputStream file;
-    private static final String DEFAULT_PROPERTIES_FILE = "src/main/resources/config/config.properties";
+    private static final String DEFAULT_PROPERTIES_FILE = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "config" + File.separator + "config.properties";
     // Sau đó khi sử dụng, gọi SystemHelpers.convertPath(DEFAULT_PROPERTIES_FILE)
 
     /**

@@ -22,7 +22,7 @@ public class BaseTest {
     private AppiumDriverLocalService service;
     private String HOST = "127.0.0.1";
     private String PORT = "4723";
-    private int TIMEOUT_SERVICE = 60;
+    private int TIMEOUT_SERVICE;
 
     /**
      * Chạy Appium server với host và port được chỉ định.
@@ -47,7 +47,10 @@ public class BaseTest {
             PORT = port;
         }
 
-        TIMEOUT_SERVICE = Integer.parseInt(ConfigData.TIMEOUT_SERVICE);
+        // Lấy timeout từ ConfigData
+        if (ConfigData.TIMEOUT_SERVICE != null && !ConfigData.TIMEOUT_SERVICE.isEmpty()) {
+            TIMEOUT_SERVICE = Integer.parseInt(ConfigData.TIMEOUT_SERVICE);
+        }
 
         //Kill process on port
         SystemHelpers.killProcessOnPort(PORT);
