@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mobile App Testing Suite" verbose="1">
+
+    <!-- Test Suite cho Android Local -->
+    <test name="Android Local Tests">
+
+        <!-- CẤU HÌNH THIẾT BỊ - BẠN CẦN SỬA CÁC GIÁ TRỊ NÀY -->
+        <parameter name="platformName" value="Android"/>
+        <parameter name="platformVersion" value="15"/>
+        <parameter name="deviceName" value="Pixel 7 API 35"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="automationName" value="UiAutomator2"/>
+
+        <!-- CẤU HÌNH APP -->
+        <parameter name="appPackage" value="com.H2MobileLtd.OpenFashion"/>
+        <parameter name="appActivity" value="com.H2MobileLtd.OpenFashion.MainActivity"/>
+
+        <!-- CẤU HÌNH RESET -->
+        <parameter name="noReset" value="true"/>
+        <parameter name="fullReset" value="false"/>
+        <parameter name="autoGrantPermissions" value="true"/>
+
+        <!-- CẤU HÌNH APPIUM SERVER -->
+        <parameter name="host" value="127.0.0.1"/>
+        <parameter name="port" value="4723"/>
+
+        <!-- DANH SÁCH TEST CLASSES -->
+        <classes>
+            <class name="testcase.LoginTest"/>
+            <class name="testcase.RegisterTest"/>
+            <class name="testcase.ChangePasswordTest"/>
+        </classes>
+    </test>
+
+</suite>

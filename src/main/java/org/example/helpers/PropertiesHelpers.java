@@ -15,8 +15,8 @@ public class PropertiesHelpers {
     private static Properties properties;
     private static String linkFile;
     private static FileInputStream file;
-    private static final String DEFAULT_PROPERTIES_FILE = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "config" + File.separator + "config.properties";
-    // Sau đó khi sử dụng, gọi SystemHelpers.convertPath(DEFAULT_PROPERTIES_FILE)
+    private static final String DEFAULT_PROPERTIES_FILE = String.join(File.separator,
+            "src", "main", "resources", "config", "config.properties");
 
     /**
      * Load all properties files
@@ -26,10 +26,8 @@ public class PropertiesHelpers {
         LinkedList<String> files = new LinkedList<>();
 
         // Add all properties files here
-        files.add("src" + File.separator + "main" + File.separator + "resources" + File.separator + "config" + File.separator + "config.properties");
-        // files.add("src" + File.separator + "test" + File.separator + "resources" + File.separator + "local.properties");
-        // files.add("src" + File.separator + "test" + File.separator + "resources" + File.separator + "production.properties");
-
+        files.add(String.join(File.separator,
+                "src", "main", "resources", "config", "config.properties"));
         try {
             properties = new Properties();
 
