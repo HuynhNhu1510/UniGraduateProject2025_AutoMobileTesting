@@ -27,6 +27,17 @@ public class ConfigData {
     public static final String STEP_ACTION_TIMEOUT = PropertiesHelpers.getValue("STEP_ACTION_TIMEOUT");
 
     public static final String APPIUM_DRIVER_LOCAL_SERVICE = PropertiesHelpers.getValue("APPIUM_DRIVER_LOCAL_SERVICE");
+    public static final String APPIUM_HOST = PropertiesHelpers.getValue("APPIUM_HOST");
+    public static final String APPIUM_PORT = PropertiesHelpers.getValue("APPIUM_PORT");
+
+    public static final String PLATFORM_NAME = PropertiesHelpers.getValue("PLATFORM_NAME");
+    public static final String PLATFORM_VERSION = PropertiesHelpers.getValue("PLATFORM_VERSION");
+    public static final String DEVICE_NAME = PropertiesHelpers.getValue("DEVICE_NAME");
+    public static final String AUTOMATION_NAME = PropertiesHelpers.getValue("AUTOMATION_NAME");
+    public static final String APP_PACKAGE = PropertiesHelpers.getValue("APP_PACKAGE");
+    public static final String APP_ACTIVITY = PropertiesHelpers.getValue("APP_ACTIVITY");
+    public static final String NO_RESET = PropertiesHelpers.getValue("NO_RESET");
+    public static final String FULL_RESET = PropertiesHelpers.getValue("FULL_RESET");
 
     public static final String LOG_LEVEL = PropertiesHelpers.getValue("LOG_LEVEL");
     public static final String LOG_ENABLE_DEBUG = PropertiesHelpers.getValue("LOG_ENABLE_DEBUG");

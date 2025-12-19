@@ -46,7 +46,7 @@ public class PropertiesHelpers {
         } catch (IOException ioe) {
             System.err.println("[PropertiesHelpers] Error loading properties files: " + ioe.getMessage());
             ioe.printStackTrace();
-            new Properties();
+            properties = new Properties();
         }
     }
 

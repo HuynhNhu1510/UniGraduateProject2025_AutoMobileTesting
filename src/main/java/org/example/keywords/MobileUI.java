@@ -488,7 +488,7 @@ public class MobileUI {
 
     public static WebElement waitForElementToBeClickable(By locator, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be clickable: " + locator);
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
         wait.pollingEvery(Duration.ofMillis(POLLING_INTERVAL_MS));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
@@ -516,7 +516,8 @@ public class MobileUI {
 
     public static WebElement waitForElementVisibe(By locator, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be visible: " + locator);
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
+        wait.pollingEvery(Duration.ofMillis(POLLING_INTERVAL_MS));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
@@ -529,7 +530,7 @@ public class MobileUI {
 
     public static WebElement waitForElementVisibe(WebElement element, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be visible: " + element);
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -541,7 +542,7 @@ public class MobileUI {
 
     public static boolean waitForElementInvisibe(By locator, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be invisible: " + locator);
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
@@ -553,7 +554,7 @@ public class MobileUI {
 
     public static boolean waitForElementInvisibe(WebElement element, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be invisible: " + element);
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
         return wait.until(ExpectedConditions.invisibilityOf(element));
     }
 

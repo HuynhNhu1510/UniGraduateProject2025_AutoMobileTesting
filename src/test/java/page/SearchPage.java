@@ -1,9 +1,16 @@
 package page;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.example.drivers.DriverManager;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
+
+    public SearchPage() {
+        PageFactory.initElements(new AppiumFieldDecorator(DriverManager.getDriver()), this);
+    }
 
     @AndroidFindBy(accessibility = "Find your favorite designer")
     WebElement searchField;
