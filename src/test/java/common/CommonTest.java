@@ -59,7 +59,6 @@ public abstract class CommonTest extends BaseTest{
     }
 
     // Performs logout by navigating to account page and clicking logout
-
     protected void performLogout() {
         System.out.println("[" + getTestName() + "] Logging out...");
         BasePage basePage = new BasePage();

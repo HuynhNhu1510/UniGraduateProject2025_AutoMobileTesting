@@ -2,7 +2,6 @@ package testcase;
 
 import common.CommonTest;
 import page.HomePage;
-
 import page.RegisterPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,11 +15,10 @@ public class RegisterTest extends CommonTest {
         return "Register Test";
     }
 
-
     @Test(priority = 2, description = "RG.02 - Register successfully with valid information")
     public void registerSuccessfullyWithValidData() {
         registerPage = new HomePage().clickRegisterButton();
-        homePage = registerPage.registerExpectSuccess("Huynh Alice", "qui123678@gmail.com", "Kikiga18@");
+        homePage = registerPage.registerExpectSuccess("Huynh Alice", "sakurakimono1234@gmail.com", "Kikiga18@");
         Assert.assertTrue(homePage.isLoggedIn(),
                 "User should be logged in after successful registration");
         Assert.assertFalse(homePage.isRegisterButtonDisplayed(),
