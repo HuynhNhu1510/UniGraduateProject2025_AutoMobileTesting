@@ -34,5 +34,5 @@ public class ChangePasswordPage {
     WebElement currentPasswordErrorMessage;
 
     @AndroidFindBy(accessibility = "Please enter your password")
-    WebElement emptyNewPassword;
+    WebElement passwordEmptyMessage;
 }

@@ -6,8 +6,8 @@ import org.example.drivers.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class DetailsAndPassword {
-    public DetailsAndPassword() {
+public class DetailsAndPasswordPage {
+    public DetailsAndPasswordPage() {
         PageFactory.initElements(
                 new AppiumFieldDecorator(DriverManager.getDriver()),
                 this
@@ -16,5 +16,8 @@ public class DetailsAndPassword {
 
     @AndroidFindBy(accessibility = "Change my password")
     WebElement changePasswordButton;
+
+    @AndroidFindBy(accessibility = "Details & password")
+    WebElement title;
 
 }
