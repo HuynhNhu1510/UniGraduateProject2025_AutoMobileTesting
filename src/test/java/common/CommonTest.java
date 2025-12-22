@@ -26,7 +26,7 @@ public abstract class CommonTest extends BaseTest{
         System.out.println("\n[" + getTestName() + "] ========== TEST STARTED ==========");
         homePage = new HomePage();
 
-        // Ensure we're on HomePage before each test
+        // Check on HomePage before each test
         if (!homePage.isHomePageDisplayed()) {
             System.out.println("[" + getTestName() + "] Not on HomePage, navigating back...");
             DriverManager.getDriver().navigate().back();
@@ -58,7 +58,6 @@ public abstract class CommonTest extends BaseTest{
         System.out.println("[" + getTestName() + "] ========== CLEANUP COMPLETED ==========\n");
     }
 
-    // Performs logout by navigating to account page and clicking logout
     protected void performLogout() {
         System.out.println("[" + getTestName() + "] Logging out...");
         BasePage basePage = new BasePage();
@@ -67,8 +66,6 @@ public abstract class CommonTest extends BaseTest{
         MobileUI.sleep(0.1);
         System.out.println("[" + getTestName() + "] Logged out");
     }
-
-    //Navigates back to home page using back button
 
     protected void navigateBackToHomePage() {
         System.out.println("[" + getTestName() + "] Navigating back to HomePage...");
