@@ -13,15 +13,14 @@ public class ChangePasswordTest extends CommonTest {
     AccountPage accountPage;
     LoginPage loginPage;
 
-    private static final String VALID_EMAIL = "lytuthat1234@gmail.com";
-    private static final String VALID_CURRENT_PASSWORD = "NewPass123@";
+    private static final String VALID_EMAIL = "Kikiga18123@gmail.com";
+    private static final String VALID_CURRENT_PASSWORD = "Kikiga18123@";
 
     @Override
     protected String getTestName() {
         return "Change Password Test";
     }
 
-    // ==================== OVERRIDE METHODS FROM COMMON TEST ====================
     @Override
     protected boolean requiresLoginPrecondition() {
         return true;
@@ -37,8 +36,6 @@ public class ChangePasswordTest extends CommonTest {
         return false;
     }
 
-    // ==================== SETUP ====================
-
     @BeforeMethod
     public void navigateToChangePasswordScreenBeforeEachTest() {
         changePasswordPage = navigateToChangePasswordScreen();
@@ -49,7 +46,7 @@ public class ChangePasswordTest extends CommonTest {
     public void CP01_changePasswordSuccessfullyWithValidCredentials() {
         System.out.println("[Test CP.01] Testing successful password change...");
 
-        String newPassword = "Pass456@";
+        String newPassword = "Khoa0306@";
         boolean passwordChanged = false;
 
         try {

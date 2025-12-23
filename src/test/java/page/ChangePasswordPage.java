@@ -16,8 +16,6 @@ public class ChangePasswordPage {
         );
     }
 
-    // ==================== ELEMENTS ====================
-
     @AndroidFindBy(accessibility = "Change password")
     private WebElement title;
 

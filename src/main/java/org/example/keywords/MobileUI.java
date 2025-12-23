@@ -345,6 +345,19 @@ public class MobileUI {
         } catch (NoSuchElementException e) {
             System.out.println("[MobileUI] Element not found during presence/display check: " + element + " - " + e.getMessage());
             return false;
+        } catch (org.openqa.selenium.WebDriverException e) {
+            String errorMsg = e.getMessage();
+            if (errorMsg != null && (errorMsg.contains("socket hang up") ||
+                    errorMsg.contains("instrumentation process is not running") ||
+                    errorMsg.contains("session not created"))) {
+                System.out.println("[MobileUI] CRITICAL ERROR: WebDriver session issue detected!");
+                System.out.println("[MobileUI] Error: " + errorMsg);
+                System.out.println("[MobileUI] This may require session restart or emulator restart!");
+                throw e;  // Re-throw để caller biết session đã chết
+            } else {
+                System.out.println("[MobileUI] WebDriver error (non-critical): " + errorMsg);
+                return false;
+            }
         } catch (Exception e) {
             System.out.println("[MobileUI] An error occurred checking presence/display for element: " + element + " - " + e.getMessage());
             return false;
@@ -361,8 +374,22 @@ public class MobileUI {
         } catch (NoSuchElementException e) {
             System.out.println("[MobileUI] Element not found during presence/display check: " + locator + " - " + e.getMessage());
             return false;
+        } catch (org.openqa.selenium.WebDriverException e) {
+            // PHÂN BIỆT LỖI NGHIÊM TRỌNG
+            String errorMsg = e.getMessage();
+            if (errorMsg != null && (errorMsg.contains("socket hang up") ||
+                    errorMsg.contains("instrumentation process is not running") ||
+                    errorMsg.contains("session not created"))) {
+                System.out.println("[MobileUI] CRITICAL ERROR: WebDriver session issue detected!");
+                System.out.println("[MobileUI] Error: " + errorMsg);
+                System.out.println("[MobileUI] This may require session restart or emulator restart!");
+                throw e;  // Re-throw để caller biết session đã chết
+            } else {
+                System.out.println("[MobileUI] WebDriver error (non-critical): " + errorMsg);
+                return false;
+            }
         } catch (Exception e) {
-            System.out.println("[MobileUI] An error occurred checking presence/display for locator: " + locator + " - " + e.getMessage());
+            System.out.println("[MobileUI] An error occurred checking presence/display for element: " + locator + " - " + e.getMessage());
             return false;
         }
     }

@@ -33,31 +33,63 @@ public class AppFlowManager {
         activateApp();
 
         if (isFirstCheck) {
-            MobileUI.sleep(0.3);
+            // THÊM SLEEP DÀI HƠN để app có thời gian khởi động hoàn toàn
+            System.out.println("[AppFlow] Waiting for app to fully initialize...");
+            MobileUI.sleep(1);  // Tăng từ 0.3s lên 1.5s
 
-            if (getOnboardingPage().isOnboardingDisplayed()) {
-                System.out.println("[AppFlow] First launch detected - Onboarding shown");
-                getOnboardingPage().completeOnboarding();
-                getHomePage().waitForHomePageToLoad();
-                System.out.println("[AppFlow] Onboarding completed → Home Page");
-                isOnboardingCompleted = true;
-                isFirstCheck = false;
-                return true;
-            } else {
-                System.out.println("[AppFlow] Onboarding already completed or skipped");
-                isOnboardingCompleted = true;
-                isFirstCheck = false;
+            // THÊM RETRY LOGIC khi check onboarding
+            int maxRetries = 3;
+            boolean onboardingCheckSuccess = false;
+
+            for (int attempt = 1; attempt <= maxRetries; attempt++) {
+                try {
+                    System.out.println("[AppFlow] Checking onboarding status (Attempt " + attempt + "/" + maxRetries + ")");
+
+                    if (getOnboardingPage().isOnboardingDisplayed()) {
+                        System.out.println("[AppFlow] First launch detected - Onboarding shown");
+                        getOnboardingPage().completeOnboarding();
+                        getHomePage().waitForHomePageToLoad();
+                        System.out.println("[AppFlow] Onboarding completed → Home Page");
+                        isOnboardingCompleted = true;
+                        isFirstCheck = false;
+                        onboardingCheckSuccess = true;
+                        return true;
+                    } else {
+                        System.out.println("[AppFlow] Onboarding already completed or skipped");
+                        isOnboardingCompleted = true;
+                        isFirstCheck = false;
+                        onboardingCheckSuccess = true;
+                        break;
+                    }
+                } catch (org.openqa.selenium.WebDriverException e) {
+                    System.out.println("[AppFlow] WARNING: WebDriver error on attempt " + attempt + " - " + e.getMessage());
+
+                    if (attempt < maxRetries) {
+                        System.out.println("[AppFlow] Retrying after 2 seconds...");
+                        MobileUI.sleep(2.0);
+                    } else {
+                        System.out.println("[AppFlow] ERROR: All retry attempts failed!");
+                        throw new RuntimeException("App launch failed after " + maxRetries + " attempts", e);
+                    }
+                }
             }
         } else {
             System.out.println("[AppFlow] Using cached state - Onboarding already handled");
         }
 
         // Quick validation - chỉ khi cần thiết
-        if (getHomePage().isHomePageDisplayed()) {
-            System.out.println("[AppFlow] On Home Page - State: " + getHomePage().getCurrentState());
+        try {
+            String currentState = getHomePage().getCurrentState();
+            if (!currentState.equals("UNKNOWN")) {
+                System.out.println("[AppFlow] On Home Page - State: " + currentState);
+            }
+        } catch (org.openqa.selenium.WebDriverException e) {
+            System.out.println("[AppFlow] WARNING: Could not validate home page state - " + e.getMessage());
         }
+
         return isOnboardingCompleted;
     }
+
 
     private void activateApp() {
         try {

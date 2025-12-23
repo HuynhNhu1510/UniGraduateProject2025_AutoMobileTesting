@@ -94,8 +94,6 @@ public abstract class CommonTest extends BaseTest {
         return null;
     }
 
-    // ==================== COMMON HELPER METHODS ====================
-
     protected void performLogout() {
         System.out.println("[" + getTestName() + "] Logging out...");
         BasePage basePage = new BasePage();

@@ -2,6 +2,7 @@ package page;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.example.drivers.DriverManager;
+import org.example.keywords.MobileUI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -42,15 +43,15 @@ public class BasePage {
         }
 
         public HomePage clickHomeMenuItem() {
-            homeMenuItem.click();
+            MobileUI.clickElement(homeMenuItem);
             return new HomePage();
         }
         public void clickSearchMenuItem() {
-            searchMenuItem.click();
+            MobileUI.clickElement(searchMenuItem);
         }
 
         public void clickWishListMenuItem() {
-            wishListMenuItem.click();
+            MobileUI.clickElement(wishListMenuItem);
         }
 
         public void clickShoppingCartMenuItem() {
@@ -62,12 +63,12 @@ public class BasePage {
         }
 
         public AccountPage clickAccountMenuItem() {
-            accountMenuItem.click();
-            return new AccountPage();
-        }
+        MobileUI.clickElement(accountMenuItem);
+        return new AccountPage();
+    }
 
         public void clickCloseButton() {
-            closeButton.click();
+            MobileUI.clickElement(closeButton);
         }
 
 
