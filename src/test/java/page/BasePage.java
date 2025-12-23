@@ -69,5 +69,7 @@ public class BasePage {
         public void clickCloseButton() {
             closeButton.click();
         }
+
+
 }
 

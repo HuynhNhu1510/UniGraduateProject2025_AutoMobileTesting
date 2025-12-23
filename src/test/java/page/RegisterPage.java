@@ -50,7 +50,6 @@ public class RegisterPage{
     public void enterFullName(String fullNameValue) {
         fullName.click();
         fullName.clear();
-        fullName.sendKeys(fullNameValue);
     }
 
     public void enterEmail(String emailValue) {

@@ -54,10 +54,12 @@ public class AccountPage {
         MobileUI.clickElement(orderAndReturns);
     }
 
-    public void clickOnAccountInformation(){
+    public DetailsAndPasswordPage clickOnAccountInformation(){
         MobileUI.clickElement(accountInformation);
+        System.out.println("[AccountPage] Clicked 'Details & password'");
+        MobileUI.sleep(0.2);
+        return new DetailsAndPasswordPage();
     }
-
     public void clickOnAddressBook(){
         MobileUI.clickElement(addressBook);
     }

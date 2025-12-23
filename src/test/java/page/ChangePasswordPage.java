@@ -16,99 +16,96 @@ public class ChangePasswordPage {
         );
     }
 
+    // ==================== ELEMENTS ====================
+
     @AndroidFindBy(accessibility = "Change password")
-    WebElement title;
+    private WebElement title;
 
     @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[1]")
-    WebElement currentPassword;
+    private WebElement currentPassword;
 
     @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[2]")
-    WebElement newPassword;
+    private WebElement newPassword;
 
     @AndroidFindBy(accessibility = "Save my new password")
-    WebElement saveNewPasswordButton;
+    private WebElement saveNewPasswordButton;
 
     @AndroidFindBy(accessibility = "Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase character, 1 number, and 1 special character in (!@#$%^&*)")
-    WebElement passwordInvalidMessage;
+    private WebElement passwordInvalidMessage;
 
     @AndroidFindBy(accessibility = "Current password is invalid")
-    WebElement currentPasswordErrorMessage;
+    private WebElement currentPasswordErrorMessage;
 
     @AndroidFindBy(accessibility = "Please enter your password")
-    WebElement passwordEmptyMessage;
+    private WebElement passwordEmptyMessage;
 
-    public void enterCurrentPassword(String password) {
-        MobileUI.setText(currentPassword, password);
+    public void enterCurrentPassword(String passwordValue) {
+        MobileUI.setText(currentPassword, passwordValue);
         System.out.println("[ChangePasswordPage] Entered current password");
     }
 
-    public void enterNewPassword(String password) {
-        MobileUI.setText(newPassword, password);
+    public void enterNewPassword(String passwordValue) {
+        MobileUI.setText(newPassword, passwordValue);
         System.out.println("[ChangePasswordPage] Entered new password");
     }
 
-    public void clickSaveNewPasswordButton() {
+    public void fillChangePasswordForm(String currentPass, String newPass) {
+        enterCurrentPassword(currentPass);
+        enterNewPassword(newPass);
+        System.out.println("[ChangePasswordPage] Filled change password form");
+    }
+
+    public void clickSaveButton() {
         MobileUI.clickElement(saveNewPasswordButton);
-        System.out.println("[ChangePasswordPage] Clicked Save my new password button");
-        MobileUI.sleep(1.0); // Wait for navigation or error message
+        System.out.println("[ChangePasswordPage] Clicked 'Save my new password' button");
+    }
+
+    public void clearAllFields() {
+        MobileUI.clearText(currentPassword);
+        MobileUI.clearText(newPassword);
+        System.out.println("[ChangePasswordPage] Cleared all fields");
+    }
+
+    public boolean isChangePasswordTitleDisplayed() {
+        return MobileUI.isElementPresentAndDisplayed(title);
+    }
+
+    public boolean isCurrentPasswordErrorDisplayed() {
+        return MobileUI.isElementPresentAndDisplayed(currentPasswordErrorMessage);
+    }
+
+    public boolean isPasswordEmptyMessageDisplayed() {
+        return MobileUI.isElementPresentAndDisplayed(passwordEmptyMessage);
+    }
+
+    public boolean isPasswordInvalidMessageDisplayed() {
+        return MobileUI.isElementPresentAndDisplayed(passwordInvalidMessage);
+    }
+
+    public String getCurrentPasswordErrorMessage() {
+        return MobileUI.getElementAttribute(currentPasswordErrorMessage, "content-desc");
+    }
+
+    public String getPasswordEmptyMessage() {
+        return MobileUI.getElementAttribute(passwordEmptyMessage, "content-desc");
+    }
+
+    public String getPasswordInvalidMessage() {
+        return MobileUI.getElementAttribute(passwordInvalidMessage, "content-desc");
     }
 
     public DetailsAndPasswordPage changePasswordExpectSuccess(String currentPass, String newPass) {
-        if (!currentPass.isEmpty()) {
-            enterCurrentPassword(currentPass);
-        }
-        if (!newPass.isEmpty()) {
-            enterNewPassword(newPass);
-        }
-        clickSaveNewPasswordButton();
+        fillChangePasswordForm(currentPass, newPass);
+        clickSaveButton();
+        MobileUI.sleep(0.3);
         System.out.println("[ChangePasswordPage] Change password successful - navigating to Details & Password");
         return new DetailsAndPasswordPage();
     }
 
     public void changePasswordExpectFailure(String currentPass, String newPass) {
-        if (!currentPass.isEmpty()) {
-            enterCurrentPassword(currentPass);
-        }
-        if (!newPass.isEmpty()) {
-            enterNewPassword(newPass);
-        }
-        clickSaveNewPasswordButton();
-        System.out.println("[ChangePasswordPage] Change password failed - error expected");
-    }
-
-    public boolean isCurrentPasswordErrorDisplayed() {
-        boolean isDisplayed = MobileUI.isElementPresentAndDisplayed(currentPasswordErrorMessage);
-        System.out.println("[ChangePasswordPage] Current password error displayed: " + isDisplayed);
-        return isDisplayed;
-    }
-
-    public boolean isPasswordEmptyMessageDisplayed() {
-        boolean isDisplayed = MobileUI.isElementPresentAndDisplayed(passwordEmptyMessage);
-        System.out.println("[ChangePasswordPage] Password empty message displayed: " + isDisplayed);
-        return isDisplayed;
-    }
-
-    public boolean isPasswordFormatErrorDisplayed() {
-        boolean isDisplayed = MobileUI.isElementPresentAndDisplayed(passwordInvalidMessage);
-        System.out.println("[ChangePasswordPage] Password format error displayed: " + isDisplayed);
-        return isDisplayed;
-    }
-
-    public boolean isChangePasswordPageDisplayed() {
-        boolean isDisplayed = MobileUI.isElementPresentAndDisplayed(title);
-        System.out.println("[ChangePasswordPage] Change Password page displayed: " + isDisplayed);
-        return isDisplayed;
-    }
-
-    public String getCurrentPasswordErrorMessage() {
-        return MobileUI.getElementText(currentPasswordErrorMessage);
-    }
-
-    public String getPasswordEmptyMessage() {
-        return MobileUI.getElementText(passwordEmptyMessage);
-    }
-
-    public String getPasswordFormatErrorMessage() {
-        return MobileUI.getElementText(passwordInvalidMessage);
+        fillChangePasswordForm(currentPass, newPass);
+        clickSaveButton();
+        MobileUI.sleep(0.2);
+        System.out.println("[ChangePasswordPage] Change password failed as expected");
     }
 }

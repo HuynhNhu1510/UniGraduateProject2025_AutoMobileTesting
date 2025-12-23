@@ -16,7 +16,7 @@ public class ChangePasswordTest extends CommonTest {
 
     // Valid credentials for testing
     private static final String VALID_EMAIL = "lytuthat1234@gmail.com";
-    private static final String VALID_CURRENT_PASSWORD = "Kikiga18123@";
+    private static final String VALID_CURRENT_PASSWORD = "Nhu151003@";
 
     @Override
     protected String getTestName() {
@@ -232,5 +232,21 @@ public class ChangePasswordTest extends CommonTest {
                 "Page title should be 'Details & password'");
 
         System.out.println("[Test CP.12] ✓ 8-character password accepted and navigated correctly");
+    }
+
+    @Test(priority = 13, description = "CP.13 - Show password empty error when current password is incorrect and new password is empty")
+    public void showPasswordEmptyErrorWhenCurrentIncorrectAndNewPasswordEmpty() {
+        System.out.println("[Test CP.13] Testing with incorrect current password and empty new password...");
+
+        changePasswordPage.changePasswordExpectFailure("WrongPass123@", "");
+
+        Assert.assertTrue(changePasswordPage.isPasswordEmptyMessageDisplayed(),
+                "Error message 'Please enter your password' should be displayed for empty new password");
+
+        String errorMessage = changePasswordPage.getPasswordEmptyMessage();
+        Assert.assertEquals(errorMessage, "Please enter your password",
+                "Error message text should match");
+
+        System.out.println("[Test CP.13] ✓ Error displayed correctly");
     }
 }
