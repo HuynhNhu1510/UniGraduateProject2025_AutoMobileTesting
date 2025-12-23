@@ -1,20 +1,14 @@
 package common;
 
-import io.appium.java_client.android.AndroidDriver;
-import org.example.drivers.DriverManager;
-import org.example.helpers.PropertiesHelpers;
+import org.example.constants.ConfigData;
 import org.example.keywords.MobileUI;
 import page.HomePage;
-import org.example.constants.ConfigData;
 import page.OnBoardingPage;
 
 
 public class AppFlowManager {
     private OnBoardingPage onboardingPage;
     private HomePage homePage;
-
-    public static final String APP_PACKAGE = PropertiesHelpers.getValue("APP_PACKAGE");
-    public static final String APP_ACTIVITY = PropertiesHelpers.getValue("APP_ACTIVITY");
 
     private static boolean isOnboardingCompleted = false;
     private static boolean isFirstCheck = true;
@@ -33,37 +27,9 @@ public class AppFlowManager {
         return homePage;
     }
 
-    private void activateApp() {
-        try {
-            AndroidDriver driver = (AndroidDriver) DriverManager.getDriver();
-
-            String currentPackage = driver.getCurrentPackage();
-
-            if (currentPackage == null || !currentPackage.equals(ConfigData.APP_PACKAGE)) {
-                System.out.println("[AppFlow] App not active, activating...");
-                driver.activateApp(ConfigData.APP_PACKAGE);
-                MobileUI.sleep(0.5);
-                System.out.println("[AppFlow] App activated successfully");
-            } else {
-                System.out.println("[AppFlow] App already active");
-            }
-
-        } catch (Exception e) {
-            System.out.println("[AppFlow] Warning: Could not verify app state - " + e.getMessage());
-            try {
-                AndroidDriver driver = (AndroidDriver) DriverManager.getDriver();
-                driver.activateApp(ConfigData.APP_PACKAGE);
-                MobileUI.sleep(0.5);
-                System.out.println("[AppFlow] App activation attempted");
-            } catch (Exception ex) {
-                System.out.println("[AppFlow] ERROR: Failed to activate app - " + ex.getMessage());
-            }
-        }
-    }
-
-
     public boolean handleAppLaunch() {
         System.out.println("\n[AppFlow] Handling app launch...");
+
         activateApp();
 
         if (isFirstCheck) {
@@ -73,7 +39,7 @@ public class AppFlowManager {
                 System.out.println("[AppFlow] First launch detected - Onboarding shown");
                 getOnboardingPage().completeOnboarding();
                 getHomePage().waitForHomePageToLoad();
-                System.out.println("[AppFlow] Onboarding completed -> Home Page");
+                System.out.println("[AppFlow] Onboarding completed → Home Page");
                 isOnboardingCompleted = true;
                 isFirstCheck = false;
                 return true;
@@ -91,6 +57,27 @@ public class AppFlowManager {
             System.out.println("[AppFlow] On Home Page - State: " + getHomePage().getCurrentState());
         }
         return isOnboardingCompleted;
+    }
+
+    private void activateApp() {
+        try {
+            System.out.println("[AppFlow] Activating app via ADB...");
+
+            String command = "adb shell am start -n " + ConfigData.APP_PACKAGE + "/" + ConfigData.APP_ACTIVITY;
+            Process process = Runtime.getRuntime().exec(command);
+
+            int exitCode = process.waitFor();
+
+            if (exitCode == 0) {
+                MobileUI.sleep(0.3);
+                System.out.println("[AppFlow] App activated successfully via ADB");
+            } else {
+                System.out.println("[AppFlow] Warning: ADB command returned exit code: " + exitCode);
+            }
+
+        } catch (Exception e) {
+            System.out.println("[AppFlow] ERROR: Failed to activate app - " + e.getMessage());
+        }
     }
 
     // Thêm method để reset cache nếu cần
