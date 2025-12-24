@@ -80,7 +80,6 @@ public abstract class CommonTest extends BaseTest {
         System.out.println("[" + getTestName() + "] ========== CLEANUP COMPLETED ==========\n");
     }
 
-    // ==================== OVERRIDABLE METHODS ====================
 
     protected boolean shouldLogoutAfterPassedTest() {
         return true; // Default: logout after passed test

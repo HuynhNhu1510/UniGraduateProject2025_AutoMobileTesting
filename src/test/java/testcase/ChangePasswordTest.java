@@ -1,5 +1,6 @@
 package testcase;
 
+import common.ChangePasswordTestHelper;
 import common.CommonTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -10,11 +11,11 @@ public class ChangePasswordTest extends CommonTest {
 
     ChangePasswordPage changePasswordPage;
     DetailsAndPasswordPage detailsAndPasswordPage;
-    AccountPage accountPage;
-    LoginPage loginPage;
 
-    private static final String VALID_EMAIL = "Kikiga18123@gmail.com";
-    private static final String VALID_CURRENT_PASSWORD = "Khoa0306@";
+    ChangePasswordTestHelper helper;
+
+    private static final String VALID_EMAIL = "danthuy18123@gmail.com";
+    private static final String VALID_CURRENT_PASSWORD = "Kikiga18@";
 
     @Override
     protected String getTestName() {
@@ -38,10 +39,12 @@ public class ChangePasswordTest extends CommonTest {
 
     @BeforeMethod
     public void navigateToChangePasswordScreenBeforeEachTest() {
-        changePasswordPage = navigateToChangePasswordScreen();
+        // Bước 1: Khởi tạo helper với test name
+        helper = new ChangePasswordTestHelper(getTestName());
+        helper.ensureOnHomePageBeforeNavigation();
+        changePasswordPage = helper.navigateToChangePasswordScreen();
     }
 
-    // ==================== MUTATION TESTS ====================
     @Test(priority = 1, description = "CP.01 - Change password successfully with valid current and new password")
     public void CP01_changePasswordSuccessfullyWithValidCredentials() {
         System.out.println("[Test CP.01] Testing successful password change...");
@@ -55,19 +58,17 @@ public class ChangePasswordTest extends CommonTest {
                     newPassword
             );
             passwordChanged = true;
-
             Assert.assertTrue(detailsAndPasswordPage.isDetailsAndPasswordPageDisplayed(),
                     "Should navigate to 'Details & password' page after successful password change");
 
             String pageTitle = detailsAndPasswordPage.getPageTitle();
             Assert.assertEquals(pageTitle, "Details & password",
                     "Page title should be 'Details & password'");
-
-            System.out.println("[Test CP.01] Password changed successfully and navigated to correct page");
+            System.out.println("[Test CP.01] Password changed successfully");
 
         } finally {
             if (passwordChanged) {
-                resetPasswordToDefault(newPassword, VALID_CURRENT_PASSWORD);
+                helper.resetPasswordToDefault(newPassword, VALID_CURRENT_PASSWORD);
             }
         }
     }

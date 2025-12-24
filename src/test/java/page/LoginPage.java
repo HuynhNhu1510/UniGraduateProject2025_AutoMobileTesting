@@ -43,12 +43,16 @@ public class LoginPage {
 
 
     public void enterEmail(String emailValue) {
-        MobileUI.setText(email, emailValue);
+        email.click();
+        email.clear();
+        email.sendKeys(emailValue);
         System.out.println("[LoginPage] Entered email");
     }
 
     public void enterPassword(String passwordValue) {
-        MobileUI.setText(password, passwordValue);
+        password.click();
+        password.clear();
+        password.sendKeys(passwordValue);
         System.out.println("[LoginPage] Entered password");
     }
 
