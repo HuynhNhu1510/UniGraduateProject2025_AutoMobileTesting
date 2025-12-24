@@ -6,8 +6,8 @@
     <test name="Login and Register Tests">
         <!-- DANH SÁCH TEST CLASSES - Chỉ Login và Register -->
         <classes>
-            <class name="testcase.ChangePasswordTest"/>
             <class name="testcase.RegisterTest"/>
+            <class name="testcase.ChangePasswordTest"/>
             <class name="testcase.LoginTest"/>
         </classes>
     </test>

@@ -50,6 +50,7 @@ public class RegisterPage{
     public void enterFullName(String fullNameValue) {
         fullName.click();
         fullName.clear();
+        fullName.sendKeys(fullNameValue);
     }
 
     public void enterEmail(String emailValue) {
@@ -65,9 +66,14 @@ public class RegisterPage{
     }
 
     public void fillRegistrationForm(String fullNameValue, String emailValue, String passwordValue) {
+        System.out.println("[RegisterPage] Filling registration form...");
         enterFullName(fullNameValue);
+        MobileUI.sleep(0.1);
         enterEmail(emailValue);
+        MobileUI.sleep(0.1);
         enterPassword(passwordValue);
+        MobileUI.sleep(0.1);
+        System.out.println("[RegisterPage] Form filled completely");
     }
 
     public void clickCreateAccount() {
@@ -142,9 +148,9 @@ public class RegisterPage{
 
     public HomePage registerExpectSuccess(String fullName, String email, String password) {
         fillRegistrationForm(fullName, email, password);
-        System.out.println("Đã điền đủ thông tin");
+        System.out.println("[RegisterPage] Fill in form already");
         clickCreateAccount();
-        System.out.println("Đã nhấn vào nút Create account");
+        System.out.println("[RegisterPage] Create account button has been clicked");
 
         HomePage homePage = new HomePage();
         homePage.waitForHomePageToLoad(1);
@@ -154,6 +160,8 @@ public class RegisterPage{
     public void registerExpectFailure(String fullName, String email, String password) {
         fillRegistrationForm(fullName, email, password);
         clickCreateAccount();
+        MobileUI.sleep(0.2);
+        System.out.println("[RegisterPage] Waiting for error message...");
     }
 
     private boolean isElementDisplayed(WebElement element) {

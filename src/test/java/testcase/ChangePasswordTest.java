@@ -14,7 +14,7 @@ public class ChangePasswordTest extends CommonTest {
     LoginPage loginPage;
 
     private static final String VALID_EMAIL = "Kikiga18123@gmail.com";
-    private static final String VALID_CURRENT_PASSWORD = "Kikiga18123@";
+    private static final String VALID_CURRENT_PASSWORD = "Khoa0306@";
 
     @Override
     protected String getTestName() {
@@ -46,7 +46,7 @@ public class ChangePasswordTest extends CommonTest {
     public void CP01_changePasswordSuccessfullyWithValidCredentials() {
         System.out.println("[Test CP.01] Testing successful password change...");
 
-        String newPassword = "Khoa0306@";
+        String newPassword = " Kikiga18123@";
         boolean passwordChanged = false;
 
         try {
