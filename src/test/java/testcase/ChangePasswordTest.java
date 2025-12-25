@@ -2,6 +2,7 @@ package testcase;
 
 import common.ChangePasswordTestHelper;
 import common.CommonTest;
+import org.example.keywords.MobileUI;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -40,6 +41,7 @@ public class ChangePasswordTest extends CommonTest {
     @BeforeMethod
     public void navigateToChangePasswordScreenBeforeEachTest() {
         helper = new ChangePasswordTestHelper(getTestName());
+        MobileUI.sleep(0.5);
         helper.ensureOnHomePageBeforeNavigation();
         changePasswordPage = helper.navigateToChangePasswordScreen();
     }
@@ -96,7 +98,7 @@ public class ChangePasswordTest extends CommonTest {
 
         } finally {
             if (passwordChanged) {
-                resetPasswordToDefault(newPassword, VALID_CURRENT_PASSWORD);
+                helper.resetPasswordToDefault(newPassword, VALID_CURRENT_PASSWORD);
             }
         }
     }

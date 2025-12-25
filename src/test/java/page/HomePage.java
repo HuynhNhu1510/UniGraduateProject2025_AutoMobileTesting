@@ -52,7 +52,7 @@ public class HomePage {
     }
 
     public boolean isHomePageDisplayed() {
-        return isElementDisplayed(contentDescHomePage);
+        return isElementDisplayed(contentDescHomePage) || isElementDisplayed(shopRecentlyButton);
     }
 
     public boolean isNotLoggedIn() {

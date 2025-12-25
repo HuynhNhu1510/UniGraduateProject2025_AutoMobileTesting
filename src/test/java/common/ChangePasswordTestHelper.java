@@ -37,8 +37,7 @@ public class ChangePasswordTestHelper {
         System.out.println("[" + testName + "] Resetting password back to default...");
 
         try {
-            // FIX: Từ DetailsAndPasswordPage, click trực tiếp vào ChangePasswordButton
-            // KHÔNG cần navigate qua AccountPage nữa
+            // FIX: Từ DetailsAndPasswordPage, click trực tiếp vào ChangePasswordButto
             DetailsAndPasswordPage detailsAndPasswordPage = new DetailsAndPasswordPage();
 
             ChangePasswordPage changePasswordPage = detailsAndPasswordPage.clickChangePasswordButton();
@@ -107,7 +106,6 @@ public class ChangePasswordTestHelper {
             System.out.println("[" + testName + "] setUp() should have ensured we're on HomePage");
             throw new RuntimeException("PRECONDITION FAILED: Not on HomePage. This should not happen if setUp() works correctly.");
         }
-
         System.out.println("[" + testName + "] Verified: Currently on HomePage");
     }
 }

@@ -45,16 +45,12 @@ public class LoginPage {
 
 
     public void enterEmail(String emailValue) {
-        email.click();
-        email.clear();
-        email.sendKeys(emailValue);
+        MobileUI.setText(email, emailValue);
         System.out.println("[LoginPage] Entered email");
     }
 
     public void enterPassword(String passwordValue) {
-        password.click();
-        password.clear();
-        password.sendKeys(passwordValue);
+        MobileUI.setText(password, passwordValue);
         System.out.println("[LoginPage] Entered password");
     }
 
@@ -120,9 +116,11 @@ public class LoginPage {
         System.out.println("[LoginPage] Filled login form");
         clickSignInButton();
         System.out.println("[LoginPage] Clicked Sign In button");
+        MobileUI.sleep(1);
 
         HomePage homePage = new HomePage();
-        homePage.waitForHomePageToLoad(1);
+        homePage.waitForHomePageToLoad(3);
+        System.out.println("[LoginPage] Login completed, HomePage loaded");
         return homePage;
     }
 

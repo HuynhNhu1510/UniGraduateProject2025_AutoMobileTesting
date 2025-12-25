@@ -32,12 +32,27 @@ public abstract class CommonTest extends BaseTest {
         System.out.println("\n[" + getTestName() + "] ========== TEST STARTED ==========");
         homePage = new HomePage();
 
+        // Log current state để debug
+        String currentState = homePage.getCurrentState();
+        System.out.println("[" + getTestName() + "] Current state: " + currentState);
+
         if (!homePage.isHomePageDisplayed()) {
-            System.out.println("[" + getTestName() + "] Not on HomePage, navigating back...");
+            System.out.println("[" + getTestName() + "] Not on HomePage (state: " + currentState + "), navigating back...");
             DriverManager.getDriver().navigate().back();
-            MobileUI.sleep(0.1);
+            MobileUI.sleep(0.5);
+
+            // Verify lại sau khi navigate back
+            homePage = new HomePage();
+            if (homePage.isHomePageDisplayed()) {
+                System.out.println("[" + getTestName() + "] Successfully navigated back to HomePage");
+            } else {
+                System.out.println("[" + getTestName() + "] WARNING: Still not on HomePage after navigation!");
+            }
+        } else {
+            System.out.println("[" + getTestName() + "] Already on HomePage (state: " + currentState + ")");
         }
     }
+
 
     @AfterMethod
     public void tearDown(ITestResult result) {
@@ -153,6 +168,7 @@ public abstract class CommonTest extends BaseTest {
 
             if (homePage.isLoggedIn()) {
                 System.out.println("[" + getTestName() + "] Logged in successfully");
+                MobileUI.sleep(1);
             } else {
                 System.out.println("[" + getTestName() + "] ERROR: Login failed!");
             }
@@ -161,58 +177,5 @@ public abstract class CommonTest extends BaseTest {
         }
 
         System.out.println("[" + getTestName() + "] ========== LOGIN PRECONDITION COMPLETED ==========\n");
-    }
-
-    // ==================== CHANGE PASSWORD HELPERS ====================
-
-    protected ChangePasswordPage navigateToChangePasswordScreen() {
-        System.out.println("[" + getTestName() + "] Navigating to Change Password screen...");
-
-        BasePage basePage = new BasePage();
-        AccountPage accountPage = basePage.clickAccountMenuItem();
-        MobileUI.sleep(0.2);
-
-        DetailsAndPasswordPage detailsAndPasswordPage = accountPage.clickOnAccountInformation();
-        MobileUI.sleep(0.2);
-
-        ChangePasswordPage changePasswordPage = detailsAndPasswordPage.clickChangePasswordButton();
-        MobileUI.sleep(0.2);
-
-        Assert.assertTrue(changePasswordPage.isChangePasswordTitleDisplayed(),
-                "PRECONDITION FAILED: Should be on Change Password screen");
-
-        System.out.println("[" + getTestName() + "] Successfully navigated to Change Password screen");
-        return changePasswordPage;
-    }
-
-    protected void resetPasswordToDefault(String currentPassword, String defaultPassword) {
-        System.out.println("[" + getTestName() + "] Resetting password back to default...");
-
-        try {
-            BasePage basePage = new BasePage();
-            AccountPage accountPage = basePage.clickAccountMenuItem();
-            MobileUI.sleep(0.2);
-
-            DetailsAndPasswordPage detailsAndPasswordPage = accountPage.clickOnAccountInformation();
-            MobileUI.sleep(0.2);
-
-            ChangePasswordPage changePasswordPage = detailsAndPasswordPage.clickChangePasswordButton();
-            MobileUI.sleep(0.2);
-
-            DetailsAndPasswordPage result = changePasswordPage.changePasswordExpectSuccess(
-                    currentPassword,
-                    defaultPassword
-            );
-
-            System.out.println("[" + getTestName() + "] Password reset successfully to default");
-
-        } catch (Exception e) {
-            System.err.println("[" + getTestName() + "] CRITICAL ERROR: Failed to reset password!");
-            System.err.println("[" + getTestName() + "] Current password: " + currentPassword);
-            System.err.println("[" + getTestName() + "] Target default password: " + defaultPassword);
-            System.err.println("[" + getTestName() + "] MANUAL INTERVENTION REQUIRED!");
-
-            throw new RuntimeException("CRITICAL: Password reset failed - cannot continue tests safely", e);
-        }
     }
 }
