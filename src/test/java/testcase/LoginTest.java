@@ -16,12 +16,10 @@ public class LoginTest extends CommonTest {
         return "Login Test";
     }
 
-    // ==================== HIGH PRIORITY TEST CASES ====================
-
     @Test(priority = 1, description = "LG.01 - Login successfully with valid credentials")
     public void loginSuccessfullyWithValidCredentials() {
         loginPage = new HomePage().clickSignInButton();
-        homePage = loginPage.loginExpectSuccess("lytuthat1234@gmail.com", "Kikiga18123@");
+        homePage = loginPage.loginExpectSuccess("hpqn1510@gmail.com", "Kikiga18123@");
 
         Assert.assertTrue(homePage.isLoggedIn(),
                 "User should be logged in after successful login");
@@ -103,7 +101,7 @@ public class LoginTest extends CommonTest {
         loginPage.loginExpectFailure("wronguser@gmail.com", "WrongPass123@");
 
         // Wait for error message to appear
-        MobileUI.sleep(0.2);
+        MobileUI.sleep(1);
 
         boolean isErrorModalDisplayed = loginPage.isEmailNotExistedErrorDisplayed();
         Assert.assertTrue(isErrorModalDisplayed,
@@ -119,6 +117,8 @@ public class LoginTest extends CommonTest {
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure("user+test@gmail.com", "ValidPass123@");
 
+        MobileUI.sleep(1);
+
         // Should show error if email doesn't exist
         Assert.assertTrue(loginPage.isEmailNotExistedErrorDisplayed(),
                 "Error message should be displayed for non-existing email with special characters");
@@ -130,6 +130,7 @@ public class LoginTest extends CommonTest {
         loginPage.loginExpectFailure("testuser@gmail.com", "Pass123@");
 
         // Should allow 8 character password that meets requirements
+        MobileUI.sleep(1);
         Assert.assertTrue(loginPage.isEmailNotExistedErrorDisplayed(),
                 "Should show 'email not exist' error, not password format error");
     }
