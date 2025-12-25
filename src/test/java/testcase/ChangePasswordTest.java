@@ -14,8 +14,8 @@ public class ChangePasswordTest extends CommonTest {
 
     ChangePasswordTestHelper helper;
 
-    private static final String VALID_EMAIL = "danthuy18123@gmail.com";
-    private static final String VALID_CURRENT_PASSWORD = "Kikiga18@";
+    private static final String VALID_EMAIL = "hpqn1510@gmail.com";
+    private static final String VALID_CURRENT_PASSWORD = "Kikiga18123@";
 
     @Override
     protected String getTestName() {
@@ -39,7 +39,6 @@ public class ChangePasswordTest extends CommonTest {
 
     @BeforeMethod
     public void navigateToChangePasswordScreenBeforeEachTest() {
-        // Bước 1: Khởi tạo helper với test name
         helper = new ChangePasswordTestHelper(getTestName());
         helper.ensureOnHomePageBeforeNavigation();
         changePasswordPage = helper.navigateToChangePasswordScreen();
@@ -48,8 +47,7 @@ public class ChangePasswordTest extends CommonTest {
     @Test(priority = 1, description = "CP.01 - Change password successfully with valid current and new password")
     public void CP01_changePasswordSuccessfullyWithValidCredentials() {
         System.out.println("[Test CP.01] Testing successful password change...");
-
-        String newPassword = " Kikiga18123@";
+        String newPassword = " Nhu151003@";
         boolean passwordChanged = false;
 
         try {
@@ -59,7 +57,7 @@ public class ChangePasswordTest extends CommonTest {
             );
             passwordChanged = true;
             Assert.assertTrue(detailsAndPasswordPage.isDetailsAndPasswordPageDisplayed(),
-                    "Should navigate to 'Details & password' page after successful password change");
+                    "Should navigate to 'Details & Password' page after successful password change");
 
             String pageTitle = detailsAndPasswordPage.getPageTitle();
             Assert.assertEquals(pageTitle, "Details & password",

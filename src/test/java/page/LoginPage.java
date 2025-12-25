@@ -7,6 +7,8 @@ import org.example.keywords.MobileUI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.xpath.XPath;
+
 public class LoginPage {
 
     // constructor
@@ -18,28 +20,28 @@ public class LoginPage {
     }
 
     @AndroidFindBy(accessibility = "We've had a problem, please try again")
-    WebElement emailNotExistedErrorMessage;
+    private WebElement emailNotExistedErrorMessage;
 
     @AndroidFindBy(accessibility = "Please enter valid email address")
-    WebElement emailInvalidMessage;
+    private WebElement emailInvalidMessage;
 
     @AndroidFindBy(accessibility = "Please enter your email address")
-    WebElement emailEmptyField;
+    private WebElement emailEmptyField;
 
     @AndroidFindBy(accessibility = "Please enter your password")
-    WebElement passwordEmptyField;
+    private WebElement passwordEmptyField;
 
     @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[1]")
-    WebElement email;
+    private WebElement email;
 
     @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[2]")
-    WebElement password;
+    private WebElement password;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Sign in\"]")
-    WebElement signInButton;
+    private WebElement signInButton;
 
     @AndroidFindBy(accessibility = "Create account")
-    WebElement createAccount;
+    private WebElement createAccount;
 
 
     public void enterEmail(String emailValue) {
