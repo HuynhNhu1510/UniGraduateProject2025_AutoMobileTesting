@@ -543,7 +543,7 @@ public class MobileUI {
 
     public static WebElement waitForElementVisibe(By locator, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be visible: " + locator);
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
         wait.pollingEvery(Duration.ofMillis(POLLING_INTERVAL_MS));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
@@ -557,7 +557,7 @@ public class MobileUI {
 
     public static WebElement waitForElementVisibe(WebElement element, int timeout) {
         System.out.println("[MobileUI] Waiting up to " + timeout + "s for element to be visible: " + element);
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(DEFAULT_TIMEOUT));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 

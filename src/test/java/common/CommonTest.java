@@ -1,8 +1,11 @@
 package common;
 
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.example.drivers.DriverManager;
 import org.example.keywords.MobileUI;
-import org.testng.Assert;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -32,17 +35,15 @@ public abstract class CommonTest extends BaseTest {
         System.out.println("\n[" + getTestName() + "] ========== TEST STARTED ==========");
         homePage = new HomePage();
 
-        // Log current state để debug
         String currentState = homePage.getCurrentState();
         System.out.println("[" + getTestName() + "] Current state: " + currentState);
 
         if (!homePage.isHomePageDisplayed()) {
             System.out.println("[" + getTestName() + "] Not on HomePage (state: " + currentState + "), navigating back...");
             DriverManager.getDriver().navigate().back();
-            MobileUI.sleep(0.5);
 
-            // Verify lại sau khi navigate back
-            homePage = new HomePage();
+            homePage.waitForHomePageToLoad(1);
+
             if (homePage.isHomePageDisplayed()) {
                 System.out.println("[" + getTestName() + "] Successfully navigated back to HomePage");
             } else {
@@ -53,6 +54,10 @@ public abstract class CommonTest extends BaseTest {
         }
     }
 
+    public void refresh() {
+        // Re-initialize elements if needed
+        PageFactory.initElements(new AppiumFieldDecorator(DriverManager.getDriver()), this);
+    }
 
     @AfterMethod
     public void tearDown(ITestResult result) {
@@ -62,7 +67,10 @@ public abstract class CommonTest extends BaseTest {
         System.out.println("[" + getTestName() + "] Test Status: " + (isTestPassed ? "PASSED" : "FAILED"));
 
         try {
-            homePage = new HomePage();
+            // Reuse existing homePage instance instead of creating new
+            if (homePage == null) {
+                homePage = new HomePage();
+            }
 
             if (isTestPassed) {
                 // Test PASSED - Check nếu cần logout
@@ -84,17 +92,20 @@ public abstract class CommonTest extends BaseTest {
                 clearAppDataOnly();
             }
 
+        } catch (NoSuchElementException e) {
+            System.out.println("[" + getTestName() + "] Element not found during cleanup: " + e.getMessage());
+            navigateBackFallback();
+        } catch (WebDriverException e) {
+            System.out.println("[" + getTestName() + "] WebDriver error during cleanup: " + e.getMessage());
+            e.printStackTrace();
+            navigateBackFallback();
         } catch (Exception e) {
-            System.out.println("[" + getTestName() + "] Cleanup error: " + e.getMessage());
-            try {
-                DriverManager.getDriver().navigate().back();
-            } catch (Exception ex) {
-                System.out.println("[" + getTestName() + "] Fallback navigation failed");
-            }
+            System.out.println("[" + getTestName() + "] Unexpected cleanup error: " + e.getClass().getName());
+            e.printStackTrace();
+            navigateBackFallback();
         }
         System.out.println("[" + getTestName() + "] ========== CLEANUP COMPLETED ==========\n");
     }
-
 
     protected boolean shouldLogoutAfterPassedTest() {
         return true; // Default: logout after passed test
@@ -113,30 +124,49 @@ public abstract class CommonTest extends BaseTest {
         BasePage basePage = new BasePage();
         AccountPage accountPage = basePage.clickAccountMenuItem();
         accountPage.scrollAndLogout();
-        MobileUI.sleep(0.1);
+
+        homePage = new HomePage();
+        homePage.waitForHomePageToLoad(1);
+
         System.out.println("[" + getTestName() + "] Logged out successfully");
+
     }
 
     protected void navigateBackToHomePage() {
         System.out.println("[" + getTestName() + "] Navigating back to HomePage...");
         DriverManager.getDriver().navigate().back();
-        MobileUI.sleep(0.1);
+
+        if (homePage == null) {
+            homePage = new HomePage();
+        }
+        homePage.waitForHomePageToLoad(1);
+        System.out.println("[" + getTestName() + "] Navigated back to HomePage");
     }
 
     protected void clearAppDataOnly() {
         System.out.println("[" + getTestName() + "] Clearing app data (no logout)...");
         try {
+            // Reuse homePage instance
+            if (homePage == null) {
+                homePage = new HomePage();
+            }
+
             if (!homePage.isHomePageDisplayed()) {
-                // Navigate back to home page
+                // Navigate back to home page with retry
                 int maxAttempts = 3;
                 for (int i = 0; i < maxAttempts; i++) {
+                    System.out.println("[" + getTestName() + "] Navigate back attempt " + (i+1) + "/" + maxAttempts);
                     DriverManager.getDriver().navigate().back();
-                    MobileUI.sleep(0.2);
 
-                    homePage = new HomePage();
-                    if (homePage.isHomePageDisplayed()) {
+                    // Wait for page to load instead of fixed sleep
+                    boolean loaded = homePage.waitForHomePageToLoad(2);
+                    if (loaded && homePage.isHomePageDisplayed()) {
                         System.out.println("[" + getTestName() + "] Successfully navigated back to HomePage");
                         break;
+                    }
+
+                    if (i == maxAttempts - 1) {
+                        System.out.println("[" + getTestName() + "] WARNING: Failed to navigate back after " + maxAttempts + " attempts");
                     }
                 }
             } else {
@@ -144,38 +174,64 @@ public abstract class CommonTest extends BaseTest {
             }
 
             System.out.println("[" + getTestName() + "] App data cleared successfully");
+        } catch (NoSuchElementException e) {
+            System.out.println("[" + getTestName() + "] Element not found during clear: " + e.getMessage());
+        } catch (WebDriverException e) {
+            System.out.println("[" + getTestName() + "] WebDriver error during clear: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("[" + getTestName() + "] Clear data error: " + e.getMessage());
+            System.out.println("[" + getTestName() + "] Clear data error: " + e.getClass().getName() + " - " + e.getMessage());
         }
     }
 
     private void performLoginPrecondition() {
         System.out.println("[" + getTestName() + "] ========== CHECKING LOGIN PRECONDITION ==========");
 
-        homePage = new HomePage();
+        // Reuse homePage instance if exists
+        if (homePage == null) {
+            homePage = new HomePage();
+        }
 
         if (!homePage.isLoggedIn()) {
             String[] credentials = getLoginCredentials();
             if (credentials == null || credentials.length != 2) {
-                System.out.println("[" + getTestName() + "] WARNING: Login credentials not provided!");
-                return;
+                String errorMsg = "Login precondition required but credentials not provided in " + getTestName();
+                System.out.println("[" + getTestName() + "] ERROR: " + errorMsg);
+                throw new IllegalStateException(errorMsg);
             }
 
             System.out.println("[" + getTestName() + "] User not logged in -> Logging in...");
 
-            LoginPage loginPage = homePage.clickSignInButton();
-            homePage = loginPage.loginExpectSuccess(credentials[0], credentials[1]);
+            try {
+                LoginPage loginPage = homePage.clickSignInButton();
+                homePage = loginPage.loginExpectSuccess(credentials[0], credentials[1]);
 
-            if (homePage.isLoggedIn()) {
+                if (!homePage.isLoggedIn()) {
+                    throw new RuntimeException("Login succeeded but user state shows not logged in");
+                }
+
                 System.out.println("[" + getTestName() + "] Logged in successfully");
-                MobileUI.sleep(1);
-            } else {
-                System.out.println("[" + getTestName() + "] ERROR: Login failed!");
+
+            } catch (Exception e) {
+                String errorMsg = "Login precondition failed for " + getTestName();
+                System.out.println("[" + getTestName() + "] ERROR: " + errorMsg);
+                e.printStackTrace();
+                throw new RuntimeException(errorMsg, e);
             }
         } else {
             System.out.println("[" + getTestName() + "] User already logged in - Skipping login");
         }
 
         System.out.println("[" + getTestName() + "] ========== LOGIN PRECONDITION COMPLETED ==========\n");
+    }
+
+    private void navigateBackFallback() {
+        try {
+            System.out.println("[" + getTestName() + "] Attempting fallback navigation...");
+            DriverManager.getDriver().navigate().back();
+            MobileUI.sleep(0.3);
+            System.out.println("[" + getTestName() + "] Fallback navigation completed");
+        } catch (Exception ex) {
+            System.out.println("[" + getTestName() + "] Fallback navigation also failed: " + ex.getMessage());
+        }
     }
 }

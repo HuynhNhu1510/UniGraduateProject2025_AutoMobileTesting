@@ -25,4 +25,8 @@ public class DriverManager {
             driver.remove();
         }
     }
+
+    public static void cleanup() {
+        driver.remove(); // Ensure ThreadLocal is cleared
+    }
 }

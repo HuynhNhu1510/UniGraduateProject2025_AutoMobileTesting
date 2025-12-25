@@ -116,10 +116,10 @@ public class LoginPage {
         System.out.println("[LoginPage] Filled login form");
         clickSignInButton();
         System.out.println("[LoginPage] Clicked Sign In button");
-        MobileUI.sleep(1);
+        MobileUI.sleep(1.5);
 
         HomePage homePage = new HomePage();
-        homePage.waitForHomePageToLoad(3);
+        homePage.waitForHomePageToLoad(2);
         System.out.println("[LoginPage] Login completed, HomePage loaded");
         return homePage;
     }

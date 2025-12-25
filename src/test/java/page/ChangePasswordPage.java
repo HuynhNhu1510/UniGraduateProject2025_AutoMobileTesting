@@ -4,6 +4,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.example.drivers.DriverManager;
 
+import org.example.keywords.MobileUI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -26,7 +27,7 @@ public class ChangePasswordPage {
     private WebElement newPassword;
 
     @AndroidFindBy(accessibility = "Save my new password")
-    private WebElement saveNewPasswordButton;
+    private WebElement saveButton;
 
     @AndroidFindBy(accessibility = "Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase character, 1 number, and 1 special character in (!@#$%^&*)")
     private WebElement passwordInvalidMessage;
@@ -36,6 +37,80 @@ public class ChangePasswordPage {
 
     @AndroidFindBy(accessibility = "Please enter your password")
     private WebElement passwordEmptyMessage;
+
+    public void enterCurrentPassword(String password) {
+        MobileUI.setText(currentPassword, password);
+        System.out.println("[ChangePasswordPage] Entered current password");
+    }
+
+    public void enterNewPassword(String password) {
+        MobileUI.setText(newPassword, password);
+        System.out.println("[ChangePasswordPage] Entered new password");
+    }
+
+    public void clickSaveButton() {
+        MobileUI.clickElement(saveButton);
+        System.out.println("[ChangePasswordPage] Clicked Save button");
+    }
+
+    public void fillChangePasswordForm(String currentPassword, String newPassword) {
+        enterCurrentPassword(currentPassword);
+        MobileUI.sleep(0.1);
+        enterNewPassword(newPassword);
+        MobileUI.sleep(0.1);
+        System.out.println("[ChangePasswordPage] Filled change password form");
+    }
+
+    public DetailsAndPasswordPage changePasswordExpectSuccess(String currentPassword, String newPassword) {
+        fillChangePasswordForm(currentPassword, newPassword);
+        clickSaveButton();
+        System.out.println("[ChangePasswordPage] Submitted password change");
+        MobileUI.sleep(2);
+
+        DetailsAndPasswordPage detailsPage = new DetailsAndPasswordPage();
+        System.out.println("[ChangePasswordPage] Returned to Details & Password page");
+        return detailsPage;
+    }
+
+    public void changePasswordExpectFailure(String currentPassword, String newPassword) {
+        fillChangePasswordForm(currentPassword, newPassword);
+        clickSaveButton();
+        MobileUI.sleep(1);
+        System.out.println("[ChangePasswordPage] Waiting for error message...");
+    }
+
+    public boolean isChangePasswordPageDisplayed() {
+        return MobileUI.isElementPresentAndDisplayed(title);
+    }
+
+    public boolean isPasswordInvalidMessageDisplayed() {
+        return MobileUI.isElementPresentAndDisplayed(passwordInvalidMessage);
+    }
+
+    public boolean isCurrentPasswordErrorDisplayed() {
+        return MobileUI.isElementPresentAndDisplayed(currentPasswordErrorMessage);
+    }
+
+    public boolean isPasswordEmptyMessageDisplayed() {
+        return MobileUI.isElementPresentAndDisplayed(passwordEmptyMessage);
+    }
+
+    public String getPasswordInvalidMessage() {
+        return MobileUI.getElementAttribute(passwordInvalidMessage, "content-desc");
+    }
+
+    public String getCurrentPasswordErrorMessage() {
+        return MobileUI.getElementAttribute(currentPasswordErrorMessage, "content-desc");
+    }
+
+    public String getPasswordEmptyMessage() {
+        return MobileUI.getElementAttribute(passwordEmptyMessage, "content-desc");
+    }
+
+    public void clearAllFields() {
+        currentPassword.clear();
+        newPassword.clear();
+    }
 
 
 }

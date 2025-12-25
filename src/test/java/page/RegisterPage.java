@@ -153,7 +153,7 @@ public class RegisterPage{
         System.out.println("[RegisterPage] Create account button has been clicked");
 
         HomePage homePage = new HomePage();
-        homePage.waitForHomePageToLoad(1);
+        homePage.waitForHomePageToLoad();
         return homePage;
     }
 

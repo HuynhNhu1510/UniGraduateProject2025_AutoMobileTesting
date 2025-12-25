@@ -75,6 +75,7 @@ public class BaseTest {
 
         int implicitWait = Integer.parseInt(ConfigData.TIMEOUT_EXPLICIT_DEFAULT);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
+        System.out.println("Driver initialized with EXPLICIT WAIT strategy only");
     }
 
     @AfterTest
@@ -90,5 +91,6 @@ public class BaseTest {
             service.stop();
             System.out.println("##### Appium server stopped.");
         }
+        DriverManager.cleanup();
     }
 }
