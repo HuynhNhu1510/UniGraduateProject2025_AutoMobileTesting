@@ -1,6 +1,7 @@
 package testcase;
 
 import common.CommonTest;
+import org.example.drivers.DriverManager;
 import org.example.keywords.MobileUI;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -36,26 +37,35 @@ public class ChangePasswordTest extends CommonTest {
     }
 
     private void navigateToChangePassword() {
-        System.out.println("[ChangePasswordTest] Navigating to Change Password page...");
-        BasePage basePage = new BasePage();
-        accountPage = basePage.clickAccountMenuItem();
-        MobileUI.sleep(0.3);
+        int maxBackAttempts = 3;
+        for (int i = 0; i < maxBackAttempts; i++) {
+            try {
+                homePage = new HomePage();
+                if (homePage.isHomePageDisplayed()) {
+                    System.out.println("[ChangePasswordTest] Reached HomePage");
+                    return;
+                }
+                System.out.println("[ChangePasswordTest] Not on HomePage yet, navigating back...");
+                DriverManager.getDriver().navigate().back();
+                MobileUI.sleep(0.5);
+            } catch (Exception e) {
+                System.out.println("[ChangePasswordTest] Error during back navigation: " + e.getMessage());
+            }
+        }
 
-        detailsPage = accountPage.clickOnAccountInformation();
-        changePasswordPage = detailsPage.clickChangePasswordButton();
-
-        Assert.assertTrue(changePasswordPage.isChangePasswordPageDisplayed(),
-                "Change Password page should be displayed");
-        System.out.println("[ChangePasswordTest] Successfully navigated to Change Password page");
+        // Final check
+        homePage = new HomePage();
+        if (!homePage.isHomePageDisplayed()) {
+            throw new RuntimeException("Failed to navigate back to HomePage after " + maxBackAttempts + " attempts");
+        }
     }
 
     @Test(priority = 1, description = "CP.01 - Change password success with valid credentials")
     public void testChangePasswordSuccess() {
         String newPassword = "Kikiga18123@";
-
         navigateToChangePassword();
 
-        // Step 1: Change password from ORIGINAL → NEW
+        // Change password from ORIGINAL → NEW
         System.out.println("[CP.01] Step 1: Changing password from original to new...");
         detailsPage = changePasswordPage.changePasswordExpectSuccess(ORIGINAL_PASSWORD, newPassword);
 
@@ -63,12 +73,15 @@ public class ChangePasswordTest extends CommonTest {
                 "Should return to Details & Password page after successful password change");
         System.out.println("[CP.01] Password changed successfully to new password");
 
-        // Step 2: Verify new password works (logout and login with new password)
+
+        navigateBackToHomePage();
+
+        // Verify new password works (logout and login with new password)
         System.out.println("[CP.01] Step 2: Verifying new password by re-login...");
         performLogout();
         MobileUI.sleep(0.5);
 
-        HomePage homePage = new HomePage();
+        homePage = new HomePage();
         LoginPage loginPage = homePage.clickSignInButton();
         homePage = loginPage.loginExpectSuccess(TEST_EMAIL, newPassword);
 
@@ -76,7 +89,7 @@ public class ChangePasswordTest extends CommonTest {
                 "Should be able to login with new password");
         System.out.println("[CP.01] Successfully logged in with new password");
 
-        // Step 3: CRITICAL - Change password BACK to original for test independence
+        // Change password back to original
         System.out.println("[CP.01] Step 3: Changing password back to original (cleanup)...");
         navigateToChangePassword();
         detailsPage = changePasswordPage.changePasswordExpectSuccess(newPassword, ORIGINAL_PASSWORD);
@@ -84,8 +97,6 @@ public class ChangePasswordTest extends CommonTest {
         Assert.assertTrue(detailsPage.isDetailsAndPasswordPageDisplayed(),
                 "Should return to Details & Password page after changing back");
         System.out.println("[CP.01] Password restored to original - Test cleanup completed");
-
-        // Verification: Old password should NOT work anymore would be tested in CP.10
     }
 
     @Test(priority = 2, description = "CP.02 - Invalid new password format")
