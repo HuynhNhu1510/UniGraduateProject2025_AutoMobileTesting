@@ -1,0 +1,1769 @@
+{
+  "login_test_data": {
+    "valid_credentials": [
+      {
+        "testId": "LG.01",
+        "category": "Valid Partition",
+        "email": "hpqn1510@gmail.com",
+        "password": "Kikiga18123@",
+        "expectedResult": "success",
+        "description": "Valid email and password"
+      },
+      {
+        "testId": "LG.01_V2",
+        "category": "Valid - All Allowed Special Chars",
+        "email": "testuser@example.com",
+        "password": "P@ss!#$%^&*1",
+        "expectedResult": "success",
+        "description": "Password with all allowed special characters"
+      }
+    ],
+
+    "equivalence_partitioning": {
+      "invalid_email_format": [
+        {
+          "testId": "LG.05_EP1",
+          "category": "Invalid Email Format - Missing @",
+          "email": "invalidemail",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG.05_EP2",
+          "category": "Invalid Email Format - Missing domain",
+          "email": "test@",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG.05_EP3",
+          "category": "Invalid Email Format - Double @",
+          "email": "test@@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG_EP4",
+          "category": "Invalid Email - Missing local part",
+          "email": "@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG_EP5",
+          "category": "Invalid Email - Dot at start",
+          "email": ".test@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG_EP6",
+          "category": "Invalid Email - Dot at end",
+          "email": "test.@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG_EP7",
+          "category": "Invalid Email - Consecutive dots",
+          "email": "test..user@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG_EP8",
+          "category": "Invalid Email - Space in local",
+          "email": "test user@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG_EP9",
+          "category": "Invalid Email - Missing TLD",
+          "email": "test@example",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG_EP10",
+          "category": "Invalid Email - Special chars in domain",
+          "email": "test@exam$ple.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        }
+      ],
+
+      "invalid_password_format": [
+        {
+          "testId": "LG.12_EP1",
+          "category": "Missing Uppercase",
+          "email": "testuser@gmail.com",
+          "password": "password123@",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again"
+        },
+        {
+          "testId": "LG.13_EP2",
+          "category": "Missing Lowercase",
+          "email": "testuser@gmail.com",
+          "password": "PASSWORD123@",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again"
+        },
+        {
+          "testId": "LG.14_EP3",
+          "category": "Missing Special Character",
+          "email": "testuser@gmail.com",
+          "password": "Password123",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again"
+        },
+        {
+          "testId": "LG_EP4",
+          "category": "Missing Number",
+          "email": "testuser@gmail.com",
+          "password": "Password@@@",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again"
+        },
+        {
+          "testId": "LG_EP5",
+          "category": "Only Lowercase",
+          "email": "testuser@gmail.com",
+          "password": "abcdefgh",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again"
+        },
+        {
+          "testId": "LG_EP6",
+          "category": "Only Uppercase",
+          "email": "testuser@gmail.com",
+          "password": "ABCDEFGH",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again"
+        },
+        {
+          "testId": "LG_EP7",
+          "category": "Only Numbers",
+          "email": "testuser@gmail.com",
+          "password": "12345678",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again"
+        },
+        {
+          "testId": "LG_EP8",
+          "category": "Only Special Characters",
+          "email": "testuser@gmail.com",
+          "password": "!@#$%^&*",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again"
+        }
+      ],
+
+      "invalid_special_characters": [
+        {
+          "testId": "LG_ISC1",
+          "category": "Invalid Char - Question Mark (?)",
+          "email": "testuser@gmail.com",
+          "password": "Pass123?word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "? is not in allowed list"
+        },
+        {
+          "testId": "LG_ISC2",
+          "category": "Invalid Char - Forward Slash (/)",
+          "email": "testuser@gmail.com",
+          "password": "Pass123/word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "/ is not allowed"
+        },
+        {
+          "testId": "LG_ISC3",
+          "category": "Invalid Char - Backslash (\\)",
+          "email": "testuser@gmail.com",
+          "password": "Pass123\\word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "\\ is not allowed"
+        },
+        {
+          "testId": "LG_ISC4",
+          "category": "Invalid Char - Pipe (|)",
+          "email": "testuser@gmail.com",
+          "password": "Pass123|word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "| is not allowed"
+        },
+        {
+          "testId": "LG_ISC5",
+          "category": "Invalid Char - Tilde (~)",
+          "email": "testuser@gmail.com",
+          "password": "Pass123~word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "~ is not allowed"
+        },
+        {
+          "testId": "LG_ISC6",
+          "category": "Invalid Char - Backtick (`)",
+          "email": "testuser@gmail.com",
+          "password": "Pass123`word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "` is not allowed"
+        },
+        {
+          "testId": "LG_ISC7",
+          "category": "Invalid Char - Underscore (_)",
+          "email": "testuser@gmail.com",
+          "password": "Pass_123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "_ is not allowed"
+        },
+        {
+          "testId": "LG_ISC8",
+          "category": "Invalid Char - Hyphen (-)",
+          "email": "testuser@gmail.com",
+          "password": "Pass-123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "- is not allowed"
+        },
+        {
+          "testId": "LG_ISC9",
+          "category": "Invalid Char - Equals (=)",
+          "email": "testuser@gmail.com",
+          "password": "Pass=123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "= is not allowed"
+        },
+        {
+          "testId": "LG_ISC10",
+          "category": "Invalid Char - Plus (+)",
+          "email": "testuser@gmail.com",
+          "password": "Pass+123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "+ is not allowed"
+        },
+        {
+          "testId": "LG_ISC11",
+          "category": "Invalid Char - Square Bracket ([)",
+          "email": "testuser@gmail.com",
+          "password": "Pass[123]word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "[ ] are not allowed"
+        },
+        {
+          "testId": "LG_ISC12",
+          "category": "Invalid Char - Curly Brace ({)",
+          "email": "testuser@gmail.com",
+          "password": "Pass{123}word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "{ } are not allowed"
+        },
+        {
+          "testId": "LG_ISC13",
+          "category": "Invalid Char - Angle Bracket (<>)",
+          "email": "testuser@gmail.com",
+          "password": "Pass<123>word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "< > are not allowed"
+        },
+        {
+          "testId": "LG_ISC14",
+          "category": "Invalid Char - Comma (,)",
+          "email": "testuser@gmail.com",
+          "password": "Pass,123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": ", is not allowed"
+        },
+        {
+          "testId": "LG_ISC15",
+          "category": "Invalid Char - Period (.)",
+          "email": "testuser@gmail.com",
+          "password": "Pass.123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": ". is not allowed"
+        },
+        {
+          "testId": "LG_ISC16",
+          "category": "Invalid Char - Semicolon (;)",
+          "email": "testuser@gmail.com",
+          "password": "Pass;123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "; is not allowed"
+        },
+        {
+          "testId": "LG_ISC17",
+          "category": "Invalid Char - Colon (:)",
+          "email": "testuser@gmail.com",
+          "password": "Pass:123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": ": is not allowed"
+        },
+        {
+          "testId": "LG_ISC18",
+          "category": "Invalid Char - Single Quote (')",
+          "email": "testuser@gmail.com",
+          "password": "Pass'123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "' is not allowed"
+        },
+        {
+          "testId": "LG_ISC19",
+          "category": "Invalid Char - Double Quote (\")",
+          "email": "testuser@gmail.com",
+          "password": "Pass\"123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "\" is not allowed"
+        },
+        {
+          "testId": "LG_ISC20",
+          "category": "Invalid Char - Space",
+          "email": "testuser@gmail.com",
+          "password": "Pass 123 word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "Space is not allowed"
+        },
+        {
+          "testId": "LG_ISC21",
+          "category": "Invalid Char - Tab",
+          "email": "testuser@gmail.com",
+          "password": "Pass\t123word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "Tab character not allowed"
+        },
+        {
+          "testId": "LG_ISC22",
+          "category": "Invalid Char - Multiple Invalid Mixed",
+          "email": "testuser@gmail.com",
+          "password": "Pass?/123_word",
+          "expectedResult": "credential_error",
+          "expectedMessage": "We've had a problem, please try again",
+          "description": "Multiple invalid special chars"
+        }
+      ],
+
+      "empty_fields": [
+        {
+          "testId": "LG.06_EP1",
+          "category": "Both Fields Empty",
+          "email": "",
+          "password": "",
+          "expectedResult": "empty_field_error",
+          "expectedMessage": "Please enter your email address"
+        },
+        {
+          "testId": "LG.07_EP2",
+          "category": "Email Empty",
+          "email": "",
+          "password": "ValidPass123@",
+          "expectedResult": "email_empty",
+          "expectedMessage": "Please enter your email address"
+        },
+        {
+          "testId": "LG.08_EP3",
+          "category": "Password Empty",
+          "email": "validuser@gmail.com",
+          "password": "",
+          "expectedResult": "password_empty",
+          "expectedMessage": "Please enter your password"
+        },
+        {
+          "testId": "LG_EP_SPACE1",
+          "category": "Email - Only Spaces",
+          "email": "   ",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "LG_EP_SPACE2",
+          "category": "Password - Only Spaces",
+          "email": "test@example.com",
+          "password": "        ",
+          "expectedResult": "password_empty",
+          "expectedMessage": "Please enter your password"
+        }
+      ]
+    },
+
+    "boundary_value_analysis": {
+      "password_length": [
+        {
+          "testId": "LG.11_BVA1",
+          "category": "BVA - Exactly 8 chars (Min Boundary)",
+          "email": "testuser@gmail.com",
+          "password": "Pass123@",
+          "expectedResult": "credential_error",
+          "description": "Minimum valid password length"
+        },
+        {
+          "testId": "LG.15_BVA2",
+          "category": "BVA - 7 chars (Min-1)",
+          "email": "testuser@gmail.com",
+          "password": "Pass1@",
+          "expectedResult": "credential_error",
+          "description": "Below minimum boundary"
+        },
+        {
+          "testId": "LG_BVA3",
+          "category": "BVA - 7 chars (Min-1) Full Requirements",
+          "email": "testuser@gmail.com",
+          "password": "Pas12@",
+          "expectedResult": "credential_error",
+          "description": "Just below minimum boundary"
+        },
+        {
+          "testId": "LG_BVA4",
+          "category": "BVA - 9 chars (Min+1)",
+          "email": "testuser@gmail.com",
+          "password": "Pass1234@",
+          "expectedResult": "credential_error",
+          "description": "Just above minimum boundary"
+        },
+        {
+          "testId": "LG_BVA5",
+          "category": "BVA - 1 char",
+          "email": "testuser@gmail.com",
+          "password": "P",
+          "expectedResult": "credential_error",
+          "description": "Minimum length possible"
+        },
+        {
+          "testId": "LG_BVA6",
+          "category": "BVA - 2 chars",
+          "email": "testuser@gmail.com",
+          "password": "P1",
+          "expectedResult": "credential_error",
+          "description": "Very short password"
+        },
+        {
+          "testId": "LG_BVA7",
+          "category": "BVA - 50 chars",
+          "email": "testuser@gmail.com",
+          "password": "Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@AB",
+          "expectedResult": "credential_error",
+          "description": "Long password"
+        },
+        {
+          "testId": "LG_BVA8",
+          "category": "BVA - 100 chars",
+          "email": "testuser@gmail.com",
+          "password": "Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@Pass123",
+          "expectedResult": "credential_error",
+          "description": "Very long password"
+        }
+      ],
+
+      "email_length": [
+        {
+          "testId": "LG_BVA_EMAIL1",
+          "category": "BVA - Shortest valid email (6 chars)",
+          "email": "a@b.c",
+          "password": "ValidPass123@",
+          "expectedResult": "credential_error",
+          "description": "Minimum valid email format"
+        },
+        {
+          "testId": "LG_BVA_EMAIL2",
+          "category": "BVA - 5 chars email",
+          "email": "a@bc",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "description": "Below minimum with missing TLD"
+        },
+        {
+          "testId": "LG_BVA_EMAIL3",
+          "category": "BVA - 64 chars local part (Max)",
+          "email": "abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz12@test.com",
+          "password": "ValidPass123@",
+          "expectedResult": "credential_error",
+          "description": "Maximum local part length (64)"
+        },
+        {
+          "testId": "LG_BVA_EMAIL4",
+          "category": "BVA - 65 chars local part (Max+1)",
+          "email": "abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz123@test.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "description": "Exceeds maximum local part length"
+        },
+        {
+          "testId": "LG_BVA_EMAIL5",
+          "category": "BVA - 254 chars total (Max)",
+          "email": "verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "credential_error",
+          "description": "Maximum total email length"
+        },
+        {
+          "testId": "LG_BVA_EMAIL6",
+          "category": "BVA - 320 chars total (Exceeds)",
+          "email": "verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "description": "Exceeds maximum total length"
+        }
+      ],
+
+      "special_character_count": [
+        {
+          "testId": "LG_BVA_SC1",
+          "category": "BVA - 1 Special Char (Min)",
+          "email": "testuser@gmail.com",
+          "password": "Password1@",
+          "expectedResult": "credential_error",
+          "description": "Minimum special char count"
+        },
+        {
+          "testId": "LG_BVA_SC2",
+          "category": "BVA - 0 Special Char (Min-1)",
+          "email": "testuser@gmail.com",
+          "password": "Password123",
+          "expectedResult": "credential_error",
+          "description": "Below minimum special char"
+        },
+        {
+          "testId": "LG_BVA_SC3",
+          "category": "BVA - 2 Special Chars (Min+1)",
+          "email": "testuser@gmail.com",
+          "password": "Password1@#",
+          "expectedResult": "credential_error",
+          "description": "Above minimum special char"
+        },
+        {
+          "testId": "LG_BVA_SC4",
+          "category": "BVA - All Special Chars",
+          "email": "testuser@gmail.com",
+          "password": "Pass!@#$%^&*123",
+          "expectedResult": "credential_error",
+          "description": "Maximum allowed special chars"
+        }
+      ]
+    },
+
+    "special_cases": [
+      {
+        "testId": "LG.10_SC1",
+        "category": "Email with plus (+) - RFC 5322 Valid",
+        "email": "user+test@gmail.com",
+        "password": "ValidPass123@",
+        "expectedResult": "credential_error",
+        "description": "Email with plus sign (valid per RFC)"
+      },
+      {
+        "testId": "LG_SC2",
+        "category": "Email with subdomain",
+        "email": "test@mail.example.com",
+        "password": "ValidPass123@",
+        "expectedResult": "credential_error",
+        "description": "Email with subdomain"
+      },
+      {
+        "testId": "LG_SC3",
+        "category": "Email with number in domain",
+        "email": "test@example123.com",
+        "password": "ValidPass123@",
+        "expectedResult": "credential_error",
+        "description": "Domain contains numbers"
+      },
+      {
+        "testId": "LG_SC4",
+        "category": "Email with hyphen in domain",
+        "email": "test@my-domain.com",
+        "password": "ValidPass123@",
+        "expectedResult": "credential_error",
+        "description": "Hyphen in domain (valid)"
+      },
+      {
+        "testId": "LG_SC5",
+        "category": "Email with dots in local",
+        "email": "first.last@example.com",
+        "password": "ValidPass123@",
+        "expectedResult": "credential_error",
+        "description": "Dots in local part (valid)"
+      },
+      {
+        "testId": "LG_SC6",
+        "category": "SQL Injection - Email",
+        "email": "admin'--@gmail.com",
+        "password": "ValidPass123@",
+        "expectedResult": "email_invalid",
+        "description": "Security test - SQL injection in email"
+      },
+      {
+        "testId": "LG_SC7",
+        "category": "SQL Injection - Password",
+        "email": "test@example.com",
+        "password": "' OR '1'='1",
+        "expectedResult": "credential_error",
+        "description": "Security test - SQL injection in password"
+      },
+      {
+        "testId": "LG_SC8",
+        "category": "XSS in Email",
+        "email": "<script>alert('xss')</script>@test.com",
+        "password": "ValidPass123@",
+        "expectedResult": "email_invalid",
+        "description": "Security test - XSS in email"
+      },
+      {
+        "testId": "LG_SC9",
+        "category": "XSS in Password",
+        "email": "test@example.com",
+        "password": "<script>Pass123@</script>",
+        "expectedResult": "credential_error",
+        "description": "Security test - XSS in password"
+      },
+      {
+        "testId": "LG_SC10",
+        "category": "Unicode in Email",
+        "email": "tëst@example.com",
+        "password": "ValidPass123@",
+        "expectedResult": "email_invalid",
+        "description": "Email with Unicode characters"
+      },
+      {
+        "testId": "LG_SC11",
+        "category": "Unicode in Password",
+        "email": "test@example.com",
+        "password": "Pàss123@",
+        "expectedResult": "credential_error",
+        "description": "Password with Unicode characters"
+      },
+      {
+        "testId": "LG_SC12",
+        "category": "Emoji in Password",
+        "email": "test@example.com",
+        "password": "Pass123@EmojiChar",
+        "expectedResult": "credential_error",
+        "description": "Password with emoji character"
+      },
+      {
+        "testId": "LG_SC13",
+        "category": "Leading/Trailing Spaces - Email",
+        "email": "  test@example.com  ",
+        "password": "ValidPass123@",
+        "expectedResult": "email_invalid",
+        "description": "Email with spaces around"
+      },
+      {
+        "testId": "LG_SC14",
+        "category": "Leading/Trailing Spaces - Password",
+        "email": "test@example.com",
+        "password": "  ValidPass123@  ",
+        "expectedResult": "credential_error",
+        "description": "Password with spaces around"
+      },
+      {
+        "testId": "LG_SC15",
+        "category": "Case Sensitivity - Email lowercase",
+        "email": "TEST@EXAMPLE.COM",
+        "password": "ValidPass123@",
+        "expectedResult": "credential_error",
+        "description": "Email in uppercase (should work per RFC)"
+      },
+      {
+        "testId": "LG_SC16",
+        "category": "Null byte in password",
+        "email": "test@example.com",
+        "password": "Pass\u0000123@",
+        "expectedResult": "credential_error",
+        "description": "Null byte injection test"
+      },
+      {
+        "testId": "LG_SC17",
+        "category": "Password - All uppercase except special",
+        "email": "test@example.com",
+        "password": "PASSWORD123@",
+        "expectedResult": "credential_error",
+        "description": "Missing lowercase"
+      },
+      {
+        "testId": "LG_SC18",
+        "category": "Password - Repeating characters",
+        "email": "test@example.com",
+        "password": "Aaaa1111@@@@",
+        "expectedResult": "credential_error",
+        "description": "Valid but weak (repeating pattern)"
+      },
+      {
+        "testId": "LG_SC19",
+        "category": "Password - Sequential characters",
+        "email": "test@example.com",
+        "password": "Abc12345@",
+        "expectedResult": "credential_error",
+        "description": "Valid but sequential"
+      },
+      {
+        "testId": "LG_SC20",
+        "category": "Newline in password",
+        "email": "test@example.com",
+        "password": "Pass\n123@",
+        "expectedResult": "credential_error",
+        "description": "Newline character test"
+      }
+    ],
+
+    "combination_testing": [
+      {
+        "testId": "LG_COMBO1",
+        "category": "Combination - Invalid Email + Invalid Password",
+        "email": "invalidemail",
+        "password": "weak",
+        "expectedResult": "email_invalid",
+        "description": "Both inputs invalid - email checked first"
+      },
+      {
+        "testId": "LG_COMBO2",
+        "category": "Combination - Valid Email + Empty Password",
+        "email": "test@example.com",
+        "password": "",
+        "expectedResult": "password_empty",
+        "description": "Valid email, empty password"
+      },
+      {
+        "testId": "LG_COMBO3",
+        "category": "Combination - Empty Email + Valid Password",
+        "email": "",
+        "password": "ValidPass123@",
+        "expectedResult": "email_empty",
+        "description": "Empty email, valid password"
+      },
+      {
+        "testId": "LG_COMBO4",
+        "category": "Combination - Valid Format, Wrong Credentials",
+        "email": "nonexist@example.com",
+        "password": "ValidPass123@",
+        "expectedResult": "credential_error",
+        "description": "Valid format but wrong credentials"
+      }
+    ]
+  },
+
+  "register_test_data": {
+    "valid_registration": [
+      {
+        "testId": "REG.01",
+        "category": "Valid Registration - All Fields Correct",
+        "fullName": "Test User",
+        "email": "newuser{{timestamp}}@test.com",
+        "password": "NewPass@123",
+        "expectedResult": "success",
+        "description": "Valid registration with all fields correct"
+      },
+      {
+        "testId": "REG.01_V2",
+        "category": "Valid - Min Length Full Name",
+        "fullName": "Ab",
+        "email": "user2{{timestamp}}@test.com",
+        "password": "NewPass@123",
+        "expectedResult": "success",
+        "description": "Minimum valid full name"
+      },
+      {
+        "testId": "REG.01_V3",
+        "category": "Valid - All Special Chars in Password",
+        "fullName": "Test User",
+        "email": "user3{{timestamp}}@test.com",
+        "password": "P!@#$%^&*123a",
+        "expectedResult": "success",
+        "description": "Password with all allowed special chars"
+      }
+    ],
+
+    "equivalence_partitioning": {
+      "fullname_validation": [
+        {
+          "testId": "REG_EP1",
+          "category": "Empty Full Name",
+          "fullName": "",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "fullname_error",
+          "expectedMessage": "Please enter a full name"
+        },
+        {
+          "testId": "REG_EP2",
+          "category": "Single Character Name",
+          "fullName": "A",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "fullname_error",
+          "expectedMessage": "Please enter a full name"
+        },
+        {
+          "testId": "REG_EP3",
+          "category": "Numbers in Name",
+          "fullName": "Test123",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "success_or_fullname_error",
+          "description": "Depends on validation rules"
+        },
+        {
+          "testId": "REG_EP4",
+          "category": "Special Characters in Name",
+          "fullName": "Test@#$",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "success_or_fullname_error",
+          "description": "Depends on validation rules"
+        },
+        {
+          "testId": "REG_EP5",
+          "category": "Name with spaces",
+          "fullName": "First Middle Last",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "success",
+          "description": "Multiple spaces in name"
+        },
+        {
+          "testId": "REG_EP6",
+          "category": "Name with leading/trailing spaces",
+          "fullName": "  Test User  ",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "success_or_error",
+          "description": "Spaces trimmed or not"
+        },
+        {
+          "testId": "REG_EP7",
+          "category": "Name - Only spaces",
+          "fullName": "     ",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "fullname_error",
+          "description": "Only whitespace"
+        },
+        {
+          "testId": "REG_EP8",
+          "category": "Name with unicode",
+          "fullName": "Nguyễn Văn A",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "success",
+          "description": "Vietnamese name with diacritics"
+        },
+        {
+          "testId": "REG_EP9",
+          "category": "Name with special character",
+          "fullName": "Test User Special",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "success_or_error",
+          "description": "Name with special character"
+        }
+      ],
+
+      "email_validation": [
+        {
+          "testId": "REG_EP_EMAIL1",
+          "category": "Existing Email",
+          "fullName": "Test User",
+          "email": "hpqn1510@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_exists",
+          "expectedMessage": "User already exists"
+        },
+        {
+          "testId": "REG_EP_EMAIL2",
+          "category": "Invalid Email - No @",
+          "fullName": "Test User",
+          "email": "invalidemail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "REG_EP_EMAIL3",
+          "category": "Empty Email",
+          "fullName": "Test User",
+          "email": "",
+          "password": "ValidPass123@",
+          "expectedResult": "email_empty",
+          "expectedMessage": "Please enter your email address"
+        },
+        {
+          "testId": "REG_EP_EMAIL4",
+          "category": "Email - Missing local part",
+          "fullName": "Test User",
+          "email": "@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "REG_EP_EMAIL5",
+          "category": "Email - Missing domain",
+          "fullName": "Test User",
+          "email": "test@",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "REG_EP_EMAIL6",
+          "category": "Email - Double @@",
+          "fullName": "Test User",
+          "email": "test@@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "REG_EP_EMAIL7",
+          "category": "Email - Consecutive dots",
+          "fullName": "Test User",
+          "email": "test..user@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "REG_EP_EMAIL8",
+          "category": "Email - Dot at start",
+          "fullName": "Test User",
+          "email": ".test@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "REG_EP_EMAIL9",
+          "category": "Email - Dot at end of local",
+          "fullName": "Test User",
+          "email": "test.@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        },
+        {
+          "testId": "REG_EP_EMAIL10",
+          "category": "Email - Space in local",
+          "fullName": "Test User",
+          "email": "test user@example.com",
+          "password": "ValidPass123@",
+          "expectedResult": "email_invalid",
+          "expectedMessage": "Please enter valid email address"
+        }
+      ],
+
+      "password_validation": [
+        {
+          "testId": "REG_EP_PASS1",
+          "category": "Weak Password - Only lowercase",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "abcdefgh",
+          "expectedResult": "password_invalid",
+          "expectedMessage": "Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase character, 1 number, and 1 special character in (!@#$%^&*)"
+        },
+        {
+          "testId": "REG_EP_PASS2",
+          "category": "Invalid Special Character (?)",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "Pass123?",
+          "expectedResult": "password_invalid",
+          "expectedMessage": "Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase character, 1 number, and 1 special character in (!@#$%^&*)"
+        },
+        {
+          "testId": "REG_EP_PASS3",
+          "category": "Empty Password",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "",
+          "expectedResult": "password_empty",
+          "expectedMessage": "Please enter your password"
+        },
+        {
+          "testId": "REG_EP_PASS4",
+          "category": "Missing Uppercase",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "password123@",
+          "expectedResult": "password_invalid"
+        },
+        {
+          "testId": "REG_EP_PASS5",
+          "category": "Missing Lowercase",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "PASSWORD123@",
+          "expectedResult": "password_invalid"
+        },
+        {
+          "testId": "REG_EP_PASS6",
+          "category": "Missing Number",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "Password@@@",
+          "expectedResult": "password_invalid"
+        },
+        {
+          "testId": "REG_EP_PASS7",
+          "category": "Missing Special Char",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "Password123",
+          "expectedResult": "password_invalid"
+        }
+      ],
+
+      "invalid_special_characters_register": [
+        {
+          "testId": "REG_ISC1",
+          "category": "Invalid Char - Question Mark (?)",
+          "fullName": "Test User",
+          "email": "test1@gmail.com",
+          "password": "Pass123?word",
+          "expectedResult": "password_invalid",
+          "description": "? not in allowed list"
+        },
+        {
+          "testId": "REG_ISC2",
+          "category": "Invalid Char - Slash (/)",
+          "fullName": "Test User",
+          "email": "test2@gmail.com",
+          "password": "Pass123/word",
+          "expectedResult": "password_invalid",
+          "description": "/ not allowed"
+        },
+        {
+          "testId": "REG_ISC3",
+          "category": "Invalid Char - Backslash (\\)",
+          "fullName": "Test User",
+          "email": "test3@gmail.com",
+          "password": "Pass123\\word",
+          "expectedResult": "password_invalid",
+          "description": "\\ not allowed"
+        },
+        {
+          "testId": "REG_ISC4",
+          "category": "Invalid Char - Pipe (|)",
+          "fullName": "Test User",
+          "email": "test4@gmail.com",
+          "password": "Pass123|word",
+          "expectedResult": "password_invalid",
+          "description": "| not allowed"
+        },
+        {
+          "testId": "REG_ISC5",
+          "category": "Invalid Char - Tilde (~)",
+          "fullName": "Test User",
+          "email": "test5@gmail.com",
+          "password": "Pass123~word",
+          "expectedResult": "password_invalid",
+          "description": "~ not allowed"
+        },
+        {
+          "testId": "REG_ISC6",
+          "category": "Invalid Char - Underscore (_)",
+          "fullName": "Test User",
+          "email": "test6@gmail.com",
+          "password": "Pass_123word",
+          "expectedResult": "password_invalid",
+          "description": "_ not allowed"
+        },
+        {
+          "testId": "REG_ISC7",
+          "category": "Invalid Char - Hyphen (-)",
+          "fullName": "Test User",
+          "email": "test7@gmail.com",
+          "password": "Pass-123word",
+          "expectedResult": "password_invalid",
+          "description": "- not allowed"
+        },
+        {
+          "testId": "REG_ISC8",
+          "category": "Invalid Char - Equals (=)",
+          "fullName": "Test User",
+          "email": "test8@gmail.com",
+          "password": "Pass=123word",
+          "expectedResult": "password_invalid",
+          "description": "= not allowed"
+        },
+        {
+          "testId": "REG_ISC9",
+          "category": "Invalid Char - Plus (+)",
+          "fullName": "Test User",
+          "email": "test9@gmail.com",
+          "password": "Pass+123word",
+          "expectedResult": "password_invalid",
+          "description": "+ not allowed"
+        },
+        {
+          "testId": "REG_ISC10",
+          "category": "Invalid Char - Brackets []",
+          "fullName": "Test User",
+          "email": "test10@gmail.com",
+          "password": "Pass[123]word",
+          "expectedResult": "password_invalid",
+          "description": "[] not allowed"
+        },
+        {
+          "testId": "REG_ISC11",
+          "category": "Invalid Char - Curly Braces {}",
+          "fullName": "Test User",
+          "email": "test11@gmail.com",
+          "password": "Pass{123}word",
+          "expectedResult": "password_invalid",
+          "description": "{} not allowed"
+        },
+        {
+          "testId": "REG_ISC12",
+          "category": "Invalid Char - Angle Brackets <>",
+          "fullName": "Test User",
+          "email": "test12@gmail.com",
+          "password": "Pass<123>word",
+          "expectedResult": "password_invalid",
+          "description": "<> not allowed"
+        },
+        {
+          "testId": "REG_ISC13",
+          "category": "Invalid Char - Period (.)",
+          "fullName": "Test User",
+          "email": "test13@gmail.com",
+          "password": "Pass.123word",
+          "expectedResult": "password_invalid",
+          "description": ". not allowed"
+        },
+        {
+          "testId": "REG_ISC14",
+          "category": "Invalid Char - Comma (,)",
+          "fullName": "Test User",
+          "email": "test14@gmail.com",
+          "password": "Pass,123word",
+          "expectedResult": "password_invalid",
+          "description": ", not allowed"
+        },
+        {
+          "testId": "REG_ISC15",
+          "category": "Invalid Char - Semicolon (;)",
+          "fullName": "Test User",
+          "email": "test15@gmail.com",
+          "password": "Pass;123word",
+          "expectedResult": "password_invalid",
+          "description": "; not allowed"
+        },
+        {
+          "testId": "REG_ISC16",
+          "category": "Invalid Char - Colon (:)",
+          "fullName": "Test User",
+          "email": "test16@gmail.com",
+          "password": "Pass:123word",
+          "expectedResult": "password_invalid",
+          "description": ": not allowed"
+        },
+        {
+          "testId": "REG_ISC17",
+          "category": "Invalid Char - Quote (')",
+          "fullName": "Test User",
+          "email": "test17@gmail.com",
+          "password": "Pass'123word",
+          "expectedResult": "password_invalid",
+          "description": "' not allowed"
+        },
+        {
+          "testId": "REG_ISC18",
+          "category": "Invalid Char - Double Quote (\")",
+          "fullName": "Test User",
+          "email": "test18@gmail.com",
+          "password": "Pass\"123word",
+          "expectedResult": "password_invalid",
+          "description": "\" not allowed"
+        },
+        {
+          "testId": "REG_ISC19",
+          "category": "Invalid Char - Space",
+          "fullName": "Test User",
+          "email": "test19@gmail.com",
+          "password": "Pass 123 word",
+          "expectedResult": "password_invalid",
+          "description": "Space not allowed"
+        },
+        {
+          "testId": "REG_ISC20",
+          "category": "Invalid Char - Backtick (`)",
+          "fullName": "Test User",
+          "email": "test20@gmail.com",
+          "password": "Pass`123word",
+          "expectedResult": "password_invalid",
+          "description": "` not allowed"
+        }
+      ]
+    },
+
+    "boundary_value_analysis": {
+      "fullname_length": [
+        {
+          "testId": "REG_BVA1",
+          "category": "BVA - 1 character name (Min)",
+          "fullName": "A",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "fullname_error"
+        },
+        {
+          "testId": "REG_BVA2",
+          "category": "BVA - 2 characters (Min+1)",
+          "fullName": "Ab",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "success"
+        },
+        {
+          "testId": "REG_BVA3",
+          "category": "BVA - 255 chars name (Typical Max)",
+          "fullName": "TestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUser12345",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "success_or_error",
+          "description": "Max boundary test - 255 chars"
+        },
+        {
+          "testId": "REG_BVA4",
+          "category": "BVA - 256 chars (Max+1)",
+          "fullName": "TestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUserTestUser123456",
+          "email": "test@gmail.com",
+          "password": "ValidPass123@",
+          "expectedResult": "fullname_error",
+          "description": "Exceeds maximum"
+        }
+      ],
+
+      "password_length": [
+        {
+          "testId": "REG_BVA_PASS1",
+          "category": "BVA - Exactly 8 chars (Min Boundary)",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "Pass12@!",
+          "expectedResult": "success",
+          "description": "Minimum valid length"
+        },
+        {
+          "testId": "REG_BVA_PASS2",
+          "category": "BVA - 7 chars (Min-1)",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "Pas12@",
+          "expectedResult": "password_invalid"
+        },
+        {
+          "testId": "REG_BVA_PASS3",
+          "category": "BVA - 9 chars (Min+1)",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "Pass123@!",
+          "expectedResult": "success"
+        },
+        {
+          "testId": "REG_BVA_PASS4",
+          "category": "BVA - 50 chars",
+          "fullName": "Test User",
+          "email": "test@gmail.com",
+          "password": "Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@AB",
+          "expectedResult": "success",
+          "description": "Long valid password"
+        }
+      ]
+    },
+
+    "decision_table": [
+      {
+        "testId": "REG_DT1",
+        "scenario": "All Valid",
+        "fullName": "Test User",
+        "email": "valid@test.com",
+        "password": "ValidPass123@",
+        "fullNameValid": true,
+        "emailValid": true,
+        "passwordValid": true,
+        "expectedResult": "success"
+      },
+      {
+        "testId": "REG_DT2",
+        "scenario": "Invalid Name, Valid Email & Password",
+        "fullName": "",
+        "email": "valid@test.com",
+        "password": "ValidPass123@",
+        "fullNameValid": false,
+        "emailValid": true,
+        "passwordValid": true,
+        "expectedResult": "fullname_error"
+      },
+      {
+        "testId": "REG_DT3",
+        "scenario": "Valid Name, Invalid Email, Valid Password",
+        "fullName": "Test User",
+        "email": "invalidemail",
+        "password": "ValidPass123@",
+        "fullNameValid": true,
+        "emailValid": false,
+        "passwordValid": true,
+        "expectedResult": "email_invalid"
+      },
+      {
+        "testId": "REG_DT4",
+        "scenario": "Valid Name & Email, Invalid Password",
+        "fullName": "Test User",
+        "email": "valid@test.com",
+        "password": "weak",
+        "fullNameValid": true,
+        "emailValid": true,
+        "passwordValid": false,
+        "expectedResult": "password_invalid"
+      },
+      {
+        "testId": "REG_DT5",
+        "scenario": "All Invalid",
+        "fullName": "",
+        "email": "invalidemail",
+        "password": "weak",
+        "fullNameValid": false,
+        "emailValid": false,
+        "passwordValid": false,
+        "expectedResult": "multiple_errors"
+      },
+      {
+        "testId": "REG_DT6",
+        "scenario": "Invalid Name & Email, Valid Password",
+        "fullName": "A",
+        "email": "test@",
+        "password": "ValidPass123@",
+        "fullNameValid": false,
+        "emailValid": false,
+        "passwordValid": true,
+        "expectedResult": "fullname_or_email_error"
+      },
+      {
+        "testId": "REG_DT7",
+        "scenario": "Invalid Name & Password, Valid Email",
+        "fullName": "",
+        "email": "valid@test.com",
+        "password": "weak",
+        "fullNameValid": false,
+        "emailValid": true,
+        "passwordValid": false,
+        "expectedResult": "fullname_or_password_error"
+      },
+      {
+        "testId": "REG_DT8",
+        "scenario": "Invalid Email & Password, Valid Name",
+        "fullName": "Test User",
+        "email": "invalidemail",
+        "password": "weak",
+        "fullNameValid": true,
+        "emailValid": false,
+        "passwordValid": false,
+        "expectedResult": "email_or_password_error"
+      }
+    ]
+  },
+
+  "change_password_test_data": {
+    "valid_change": [
+      {
+        "testId": "CP.01",
+        "category": "Valid Password Change",
+        "currentPassword": "NewPass@123",
+        "newPassword": "NewPass@456",
+        "expectedResult": "success",
+        "description": "Change password with valid credentials"
+      },
+      {
+        "testId": "CP.01_V2",
+        "category": "Valid - All Special Chars",
+        "currentPassword": "NewPass@123",
+        "newPassword": "P!@#$%^&*123a",
+        "expectedResult": "success",
+        "description": "New password with all allowed special chars"
+      }
+    ],
+
+    "equivalence_partitioning": {
+      "new_password_format": [
+        {
+          "testId": "CP.02_EP1",
+          "category": "Invalid Format - Missing Uppercase",
+          "currentPassword": "NewPass@123",
+          "newPassword": "newpass@123",
+          "expectedResult": "password_invalid",
+          "expectedMessage": "Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase character, 1 number, and 1 special character in (!@#$%^&*)"
+        },
+        {
+          "testId": "CP.02_EP2",
+          "category": "Invalid Format - Missing Lowercase",
+          "currentPassword": "NewPass@123",
+          "newPassword": "NEWPASS@123",
+          "expectedResult": "password_invalid"
+        },
+        {
+          "testId": "CP.02_EP3",
+          "category": "Invalid Format - Missing Number",
+          "currentPassword": "NewPass@123",
+          "newPassword": "NewPass@abc",
+          "expectedResult": "password_invalid"
+        },
+        {
+          "testId": "CP.02_EP4",
+          "category": "Invalid Format - Missing Special Char",
+          "currentPassword": "NewPass@123",
+          "newPassword": "NewPass1234",
+          "expectedResult": "password_invalid"
+        },
+        {
+          "testId": "CP.11_EP5",
+          "category": "Invalid Special Character (?)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "NewPass123?",
+          "expectedResult": "password_invalid",
+          "description": "? is not in allowed special chars"
+        }
+      ],
+
+      "invalid_special_characters_change": [
+        {
+          "testId": "CP_ISC1",
+          "category": "Invalid Char - Question Mark (?)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass123?word",
+          "expectedResult": "password_invalid",
+          "description": "? not allowed"
+        },
+        {
+          "testId": "CP_ISC2",
+          "category": "Invalid Char - Slash (/)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass123/word",
+          "expectedResult": "password_invalid",
+          "description": "/ not allowed"
+        },
+        {
+          "testId": "CP_ISC3",
+          "category": "Invalid Char - Backslash (\\)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass123\\word",
+          "expectedResult": "password_invalid",
+          "description": "\\ not allowed"
+        },
+        {
+          "testId": "CP_ISC4",
+          "category": "Invalid Char - Pipe (|)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass123|word",
+          "expectedResult": "password_invalid",
+          "description": "| not allowed"
+        },
+        {
+          "testId": "CP_ISC5",
+          "category": "Invalid Char - Tilde (~)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass123~word",
+          "expectedResult": "password_invalid",
+          "description": "~ not allowed"
+        },
+        {
+          "testId": "CP_ISC6",
+          "category": "Invalid Char - Underscore (_)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass_123word",
+          "expectedResult": "password_invalid",
+          "description": "_ not allowed"
+        },
+        {
+          "testId": "CP_ISC7",
+          "category": "Invalid Char - Hyphen (-)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass-123word",
+          "expectedResult": "password_invalid",
+          "description": "- not allowed"
+        },
+        {
+          "testId": "CP_ISC8",
+          "category": "Invalid Char - Equals (=)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass=123word",
+          "expectedResult": "password_invalid",
+          "description": "= not allowed"
+        },
+        {
+          "testId": "CP_ISC9",
+          "category": "Invalid Char - Plus (+)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass+123word",
+          "expectedResult": "password_invalid",
+          "description": "+ not allowed"
+        },
+        {
+          "testId": "CP_ISC10",
+          "category": "Invalid Char - Brackets []",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass[123]word",
+          "expectedResult": "password_invalid",
+          "description": "[] not allowed"
+        },
+        {
+          "testId": "CP_ISC11",
+          "category": "Invalid Char - Curly Braces {}",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass{123}word",
+          "expectedResult": "password_invalid",
+          "description": "{} not allowed"
+        },
+        {
+          "testId": "CP_ISC12",
+          "category": "Invalid Char - Angle Brackets <>",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass<123>word",
+          "expectedResult": "password_invalid",
+          "description": "<> not allowed"
+        },
+        {
+          "testId": "CP_ISC13",
+          "category": "Invalid Char - Period (.)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass.123word",
+          "expectedResult": "password_invalid",
+          "description": ". not allowed"
+        },
+        {
+          "testId": "CP_ISC14",
+          "category": "Invalid Char - Comma (,)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass,123word",
+          "expectedResult": "password_invalid",
+          "description": ", not allowed"
+        },
+        {
+          "testId": "CP_ISC15",
+          "category": "Invalid Char - Semicolon (;)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass;123word",
+          "expectedResult": "password_invalid",
+          "description": "; not allowed"
+        },
+        {
+          "testId": "CP_ISC16",
+          "category": "Invalid Char - Colon (:)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass:123word",
+          "expectedResult": "password_invalid",
+          "description": ": not allowed"
+        },
+        {
+          "testId": "CP_ISC17",
+          "category": "Invalid Char - Quote (')",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass'123word",
+          "expectedResult": "password_invalid",
+          "description": "' not allowed"
+        },
+        {
+          "testId": "CP_ISC18",
+          "category": "Invalid Char - Double Quote (\")",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass\"123word",
+          "expectedResult": "password_invalid",
+          "description": "\" not allowed"
+        },
+        {
+          "testId": "CP_ISC19",
+          "category": "Invalid Char - Space",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass 123 word",
+          "expectedResult": "password_invalid",
+          "description": "Space not allowed"
+        },
+        {
+          "testId": "CP_ISC20",
+          "category": "Invalid Char - Backtick (`)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass`123word",
+          "expectedResult": "password_invalid",
+          "description": "` not allowed"
+        },
+        {
+          "testId": "CP_ISC21",
+          "category": "Invalid Char - Multiple Mixed",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass?/123_word",
+          "expectedResult": "password_invalid",
+          "description": "Multiple invalid chars"
+        }
+      ],
+
+      "current_password_validation": [
+        {
+          "testId": "CP.03_EP1",
+          "category": "Wrong Current Password",
+          "currentPassword": "Wrong@123",
+          "newPassword": "NewPass@123",
+          "expectedResult": "current_password_error",
+          "expectedMessage": "Current password is invalid"
+        },
+        {
+          "testId": "CP.06_EP2",
+          "category": "Empty Current Password",
+          "currentPassword": "",
+          "newPassword": "NewPass@123",
+          "expectedResult": "current_password_error",
+          "expectedMessage": "Current password is invalid"
+        },
+        {
+          "testId": "CP.13_EP3",
+          "category": "Case Sensitive Check",
+          "currentPassword": "newpass@123",
+          "newPassword": "NewPass@456",
+          "expectedResult": "current_password_error",
+          "description": "Password is case-sensitive"
+        }
+      ],
+
+      "empty_fields": [
+        {
+          "testId": "CP.04_EP1",
+          "category": "Empty New Password",
+          "currentPassword": "NewPass@123",
+          "newPassword": "",
+          "expectedResult": "password_empty",
+          "expectedMessage": "Please enter your password"
+        },
+        {
+          "testId": "CP.05_EP2",
+          "category": "Both Fields Empty",
+          "currentPassword": "",
+          "newPassword": "",
+          "expectedResult": "password_empty"
+        }
+      ]
+    },
+
+    "boundary_value_analysis": {
+      "password_length": [
+        {
+          "testId": "CP.12_BVA1",
+          "category": "BVA - Exactly 8 chars (Min Boundary)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "A@b1cdef",
+          "expectedResult": "success",
+          "description": "Minimum valid password length"
+        },
+        {
+          "testId": "CP_BVA2",
+          "category": "BVA - 7 chars (Min-1)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "A@b1cde",
+          "expectedResult": "password_invalid",
+          "description": "Below minimum boundary"
+        },
+        {
+          "testId": "CP_BVA3",
+          "category": "BVA - 9 chars (Min+1)",
+          "currentPassword": "NewPass@123",
+          "newPassword": "A@b1cdefg",
+          "expectedResult": "success",
+          "description": "Above minimum boundary"
+        },
+        {
+          "testId": "CP_BVA4",
+          "category": "BVA - 50 chars",
+          "currentPassword": "NewPass@123",
+          "newPassword": "Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@AB",
+          "expectedResult": "success",
+          "description": "Long valid password"
+        }
+      ]
+    },
+
+    "special_cases": [
+      {
+        "testId": "CP.09",
+        "category": "New Password Same as Current",
+        "currentPassword": "NewPass@123",
+        "newPassword": "NewPass@123",
+        "expectedResult": "success",
+        "description": "App allows same password"
+      },
+      {
+        "testId": "CP_SC1",
+        "category": "Special Characters - All Allowed",
+        "currentPassword": "NewPass@123",
+        "newPassword": "Pass!@#$%^&*123a",
+        "expectedResult": "success",
+        "description": "Test all allowed special chars"
+      },
+      {
+        "testId": "CP_SC2",
+        "category": "Unicode Characters",
+        "currentPassword": "NewPass@123",
+        "newPassword": "Pàss123@",
+        "expectedResult": "password_invalid",
+        "description": "Test non-ASCII characters"
+      },
+      {
+        "testId": "CP_SC3",
+        "category": "Emoji in Password",
+        "currentPassword": "NewPass@123",
+        "newPassword": "Pass123@EmojiChar",
+        "expectedResult": "password_invalid",
+        "description": "Emoji not allowed"
+      },
+      {
+        "testId": "CP_SC4",
+        "category": "Leading/Trailing Spaces",
+        "currentPassword": "NewPass@123",
+        "newPassword": "  NewPass@456  ",
+        "expectedResult": "password_invalid",
+        "description": "Spaces around password"
+      },
+      {
+        "testId": "CP_SC5",
+        "category": "Null byte injection",
+        "currentPassword": "NewPass@123",
+        "newPassword": "Pass\u0000123@",
+        "expectedResult": "password_invalid",
+        "description": "Security test - null byte"
+      },
+      {
+        "testId": "CP_SC6",
+        "category": "Newline character",
+        "currentPassword": "NewPass@123",
+        "newPassword": "Pass\n123@",
+        "expectedResult": "password_invalid",
+        "description": "Newline character test"
+      }
+    ]
+  }
+}

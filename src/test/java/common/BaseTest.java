@@ -72,9 +72,6 @@ public class BaseTest {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
-
-        int implicitWait = Integer.parseInt(ConfigData.TIMEOUT_EXPLICIT_DEFAULT);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         System.out.println("Driver initialized with EXPLICIT WAIT strategy only");
     }
 
