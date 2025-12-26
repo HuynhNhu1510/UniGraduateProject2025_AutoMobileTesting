@@ -21,10 +21,10 @@ public class ChangePasswordPage {
     private WebElement title;
 
     @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[1]")
-    private WebElement currentPassword;
+    private WebElement currentPasswordField;
 
     @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.EditText[2]")
-    private WebElement newPassword;
+    private WebElement newPasswordField;
 
     @AndroidFindBy(accessibility = "Save my new password")
     private WebElement saveButton;
@@ -39,12 +39,12 @@ public class ChangePasswordPage {
     private WebElement passwordEmptyMessage;
 
     public void enterCurrentPassword(String password) {
-        MobileUI.setText(currentPassword, password);
+        MobileUI.setText(currentPasswordField, password);
         System.out.println("[ChangePasswordPage] Entered current password");
     }
 
     public void enterNewPassword(String password) {
-        MobileUI.setText(newPassword, password);
+        MobileUI.setText(newPasswordField, password);
         System.out.println("[ChangePasswordPage] Entered new password");
     }
 
@@ -65,7 +65,7 @@ public class ChangePasswordPage {
         fillChangePasswordForm(currentPassword, newPassword);
         clickSaveButton();
         System.out.println("[ChangePasswordPage] Submitted password change");
-        MobileUI.sleep(2);
+        MobileUI.sleep(1.85);
 
         DetailsAndPasswordPage detailsPage = new DetailsAndPasswordPage();
         System.out.println("[ChangePasswordPage] Returned to Details & Password page");
@@ -75,7 +75,7 @@ public class ChangePasswordPage {
     public void changePasswordExpectFailure(String currentPassword, String newPassword) {
         fillChangePasswordForm(currentPassword, newPassword);
         clickSaveButton();
-        MobileUI.sleep(1);
+        MobileUI.sleep(1.75);
         System.out.println("[ChangePasswordPage] Waiting for error message...");
     }
 
@@ -108,9 +108,7 @@ public class ChangePasswordPage {
     }
 
     public void clearAllFields() {
-        currentPassword.clear();
-        newPassword.clear();
+        currentPasswordField.clear();
+        newPasswordField.clear();
     }
-
-
 }

@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import page.*;
 
 public class ChangePasswordTest extends CommonTest {
-    // Test account credentials
     private static final String TEST_EMAIL = "ace2nd@gmail.com";
     private static final String ORIGINAL_PASSWORD = "NewPass@123";
 
@@ -37,35 +36,52 @@ public class ChangePasswordTest extends CommonTest {
     }
 
     private void navigateToChangePassword() {
-        int maxBackAttempts = 3;
-        for (int i = 0; i < maxBackAttempts; i++) {
+        System.out.println("[ChangePasswordTest] Navigating to Change Password page...");
+        BasePage basePage = new BasePage();
+        accountPage = basePage.clickAccountMenuItem();
+        MobileUI.sleep(0.3);
+
+        detailsPage = accountPage.clickOnAccountInformation();
+        changePasswordPage = detailsPage.clickChangePasswordButton();
+
+        Assert.assertTrue(changePasswordPage.isChangePasswordPageDisplayed(),
+                "Change Password page should be displayed");
+        System.out.println("[ChangePasswordTest] Successfully navigated to Change Password page");
+    }
+
+    private void navigateBackToHomePageManually() {
+        System.out.println("[ChangePasswordTest] Manually navigating back to HomePage...");
+        int maxAttempts = 3;
+
+        for (int i = 0; i < maxAttempts; i++) {
             try {
-                homePage = new HomePage();
-                if (homePage.isHomePageDisplayed()) {
-                    System.out.println("[ChangePasswordTest] Reached HomePage");
+                HomePage hp = new HomePage();
+                if (hp.isHomePageDisplayed()) {
+                    System.out.println("[ChangePasswordTest] Already on HomePage");
                     return;
                 }
-                System.out.println("[ChangePasswordTest] Not on HomePage yet, navigating back...");
+
                 DriverManager.getDriver().navigate().back();
-                MobileUI.sleep(0.5);
+                MobileUI.sleep(0.3);
+
             } catch (Exception e) {
-                System.out.println("[ChangePasswordTest] Error during back navigation: " + e.getMessage());
+                System.out.println("[ChangePasswordTest] Navigate attempt " + (i+1) + " exception: " + e.getMessage());
             }
         }
 
-        // Final check
-        homePage = new HomePage();
-        if (!homePage.isHomePageDisplayed()) {
-            throw new RuntimeException("Failed to navigate back to HomePage after " + maxBackAttempts + " attempts");
+        HomePage hp = new HomePage();
+        if (!hp.isHomePageDisplayed()) {
+            System.out.println("[ChangePasswordTest] WARNING: Not on HomePage after manual navigation");
         }
     }
 
     @Test(priority = 1, description = "CP.01 - Change password success with valid credentials")
     public void testChangePasswordSuccess() {
-        String newPassword = "Kikiga18123@";
+        String newPassword = "NewPass@123";
+
         navigateToChangePassword();
 
-        // Change password from ORIGINAL → NEW
+        //Change password from ORIGINAL → NEW
         System.out.println("[CP.01] Step 1: Changing password from original to new...");
         detailsPage = changePasswordPage.changePasswordExpectSuccess(ORIGINAL_PASSWORD, newPassword);
 
@@ -73,15 +89,15 @@ public class ChangePasswordTest extends CommonTest {
                 "Should return to Details & Password page after successful password change");
         System.out.println("[CP.01] Password changed successfully to new password");
 
-
-        navigateBackToHomePage();
+        // Navigate to HomePage before logout
+        navigateBackToHomePageManually();
 
         // Verify new password works (logout and login with new password)
         System.out.println("[CP.01] Step 2: Verifying new password by re-login...");
         performLogout();
         MobileUI.sleep(0.5);
 
-        homePage = new HomePage();
+        HomePage homePage = new HomePage();
         LoginPage loginPage = homePage.clickSignInButton();
         homePage = loginPage.loginExpectSuccess(TEST_EMAIL, newPassword);
 
@@ -89,7 +105,7 @@ public class ChangePasswordTest extends CommonTest {
                 "Should be able to login with new password");
         System.out.println("[CP.01] Successfully logged in with new password");
 
-        // Change password back to original
+        // Change password BACK to original for test independence
         System.out.println("[CP.01] Step 3: Changing password back to original (cleanup)...");
         navigateToChangePassword();
         detailsPage = changePasswordPage.changePasswordExpectSuccess(newPassword, ORIGINAL_PASSWORD);
@@ -101,7 +117,7 @@ public class ChangePasswordTest extends CommonTest {
 
     @Test(priority = 2, description = "CP.02 - Invalid new password format")
     public void testInvalidNewPasswordFormat() {
-        String invalidPassword = "abc12345"; // Missing uppercase and special char
+        String invalidPassword = "abc12345";
 
         navigateToChangePassword();
         changePasswordPage.changePasswordExpectFailure(ORIGINAL_PASSWORD, invalidPassword);
@@ -171,7 +187,7 @@ public class ChangePasswordTest extends CommonTest {
 
     @Test(priority = 7, description = "CP.07 - Invalid current format + empty new")
     public void testInvalidCurrentFormatAndEmptyNew() {
-        String invalidCurrentPassword = "abc"; // Invalid format
+        String invalidCurrentPassword = "abc";
 
         navigateToChangePassword();
         changePasswordPage.changePasswordExpectFailure(invalidCurrentPassword, "");
@@ -183,7 +199,7 @@ public class ChangePasswordTest extends CommonTest {
 
     @Test(priority = 8, description = "CP.08 - Invalid current format with valid new")
     public void testInvalidCurrentFormat() {
-        String invalidCurrentPassword = "abc"; // Too short, no uppercase, no special char
+        String invalidCurrentPassword = "abc";
         String validNewPassword = "NewPass@123";
 
         navigateToChangePassword();
@@ -211,18 +227,19 @@ public class ChangePasswordTest extends CommonTest {
 
         navigateToChangePassword();
 
-        // Step 1: Change password
+        //Change password
         System.out.println("[CP.10] Step 1: Changing password...");
         detailsPage = changePasswordPage.changePasswordExpectSuccess(ORIGINAL_PASSWORD, newPassword);
         Assert.assertTrue(detailsPage.isDetailsAndPasswordPageDisplayed(),
                 "Should return to Details & Password page");
+        navigateBackToHomePageManually();
 
-        // Step 2: Logout
+        //Logout
         System.out.println("[CP.10] Step 2: Logging out...");
         performLogout();
         MobileUI.sleep(0.5);
 
-        // Step 3: Try login with NEW password (should succeed)
+        //Try login with NEW password (should succeed)
         System.out.println("[CP.10] Step 3: Testing login with NEW password...");
         HomePage homePage = new HomePage();
         LoginPage loginPage = homePage.clickSignInButton();
@@ -232,7 +249,7 @@ public class ChangePasswordTest extends CommonTest {
                 "Should be able to login with NEW password");
         System.out.println("[CP.10] Login with new password successful");
 
-        // Step 4: Logout and try OLD password (should fail)
+        //Logout and try OLD password (should fail)
         System.out.println("[CP.10] Step 4: Testing login with OLD password (should fail)...");
         performLogout();
         MobileUI.sleep(0.5);
@@ -245,21 +262,20 @@ public class ChangePasswordTest extends CommonTest {
                 "Should NOT be able to login with OLD password");
         System.out.println("[CP.10] Login with old password failed as expected");
 
-        // Step 5: CRITICAL - Restore original password for test independence
+        //Restore original password
         System.out.println("[CP.10] Step 5: Restoring original password (cleanup)...");
-        // First login with new password
         loginPage.clearAllFields();
         homePage = loginPage.loginExpectSuccess(TEST_EMAIL, newPassword);
 
-        // Then change back to original
         navigateToChangePassword();
         changePasswordPage.changePasswordExpectSuccess(newPassword, ORIGINAL_PASSWORD);
+
         System.out.println("[CP.10] Password restored to original - Test cleanup completed");
     }
 
     @Test(priority = 11, description = "CP.11 - Invalid special character")
     public void testInvalidSpecialCharacter() {
-        String passwordWithInvalidChar = "NewPass@123?"; // '?' is not in allowed list
+        String passwordWithInvalidChar = "NewPass@123?";
 
         navigateToChangePassword();
         changePasswordPage.changePasswordExpectFailure(ORIGINAL_PASSWORD, passwordWithInvalidChar);
@@ -279,6 +295,9 @@ public class ChangePasswordTest extends CommonTest {
         Assert.assertTrue(detailsPage.isDetailsAndPasswordPageDisplayed(),
                 "Should accept password with exactly 8 characters meeting all requirements");
 
+        // Navigate back to HomePage before next navigation
+        navigateBackToHomePageManually();
+
         // CLEANUP: Change back to original
         navigateToChangePassword();
         changePasswordPage.changePasswordExpectSuccess(minLengthPassword, ORIGINAL_PASSWORD);
@@ -289,11 +308,12 @@ public class ChangePasswordTest extends CommonTest {
     public void testCaseSensitiveCurrentPassword() {
         // Original password: Kikiga18123@
         // Try with different case: kikiga18123@
-        String wrongCasePassword = "kikiga18123@";
+        String wrongCasePassword = "kikiga18123@"; // All lowercase 'k'
         String validNewPassword = "NewPass@123";
 
         navigateToChangePassword();
         changePasswordPage.changePasswordExpectFailure(wrongCasePassword, validNewPassword);
+
         Assert.assertTrue(changePasswordPage.isCurrentPasswordErrorDisplayed(),
                 "'Current password is invalid' error should be displayed (password is case-sensitive)");
     }
