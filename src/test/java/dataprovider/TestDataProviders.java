@@ -9,12 +9,10 @@ import org.testng.annotations.DataProvider;
 import java.util.List;
 
 public class TestDataProviders {
-    // ==================== LOGIN DATA PROVIDERS ====================
-
     @DataProvider(name = "loginValidCredentials_EP")
     public Object[][] loginValidCredentials() {
         List<LoginTestData> testData = JsonDataReader.getLoginTestData(
-                "login_test_data.equivalence_partitioning.valid_credentials");
+                "login_test_data.valid_credentials");
         return convertLoginDataToArray(testData);
     }
 
@@ -86,6 +84,43 @@ public class TestDataProviders {
         return convertLoginDataToArray(testData);
     }
 
+    @DataProvider(name = "loginInvalidSpecialChars_EP")
+    public Object[][] loginInvalidSpecialChars() {
+        List<LoginTestData> testData = JsonDataReader.getLoginTestData(
+                "login_test_data.equivalence_partitioning.invalid_special_characters");
+        return convertLoginDataToArray(testData);
+    }
+
+    /**
+     * SPECIAL CASES - Security, Unicode, Edge Cases
+     */
+    @DataProvider(name = "loginSpecialCases")
+    public Object[][] loginSpecialCases() {
+        List<LoginTestData> testData = JsonDataReader.getLoginTestData(
+                "login_test_data.special_cases");
+        return convertLoginDataToArray(testData);
+    }
+
+    /**
+     * COMBINATION TESTING
+     */
+    @DataProvider(name = "loginCombinationTests")
+    public Object[][] loginCombinationTests() {
+        List<LoginTestData> testData = JsonDataReader.getLoginTestData(
+                "login_test_data.combination_testing");
+        return convertLoginDataToArray(testData);
+    }
+
+    /**
+     * BOUNDARY VALUE ANALYSIS - Special Character Count
+     */
+    @DataProvider(name = "loginSpecialCharCount_BVA")
+    public Object[][] loginSpecialCharCount() {
+        List<LoginTestData> testData = JsonDataReader.getLoginTestData(
+                "login_test_data.boundary_value_analysis.special_character_count");
+        return convertLoginDataToArray(testData);
+    }
+
     // ==================== REGISTER DATA PROVIDERS ====================
 
     /**
@@ -115,6 +150,46 @@ public class TestDataProviders {
     public Object[][] registerFullNameLength() {
         List<RegisterTestData> testData = JsonDataReader.getRegisterTestData(
                 "register_test_data.boundary_value_analysis.fullname_length");
+        return convertRegisterDataToArray(testData);
+    }
+
+    /**
+     * EQUIVALENCE PARTITIONING - Full Name Validation
+     */
+    @DataProvider(name = "registerFullNameValidation_EP")
+    public Object[][] registerFullNameValidation() {
+        List<RegisterTestData> testData = JsonDataReader.getRegisterTestData(
+                "register_test_data.equivalence_partitioning.fullname_validation");
+        return convertRegisterDataToArray(testData);
+    }
+
+    /**
+     * EQUIVALENCE PARTITIONING - Email Validation
+     */
+    @DataProvider(name = "registerEmailValidation_EP")
+    public Object[][] registerEmailValidation() {
+        List<RegisterTestData> testData = JsonDataReader.getRegisterTestData(
+                "register_test_data.equivalence_partitioning.email_validation");
+        return convertRegisterDataToArray(testData);
+    }
+
+    /**
+     * EQUIVALENCE PARTITIONING - Password Validation
+     */
+    @DataProvider(name = "registerPasswordValidation_EP")
+    public Object[][] registerPasswordValidation() {
+        List<RegisterTestData> testData = JsonDataReader.getRegisterTestData(
+                "register_test_data.equivalence_partitioning.password_validation");
+        return convertRegisterDataToArray(testData);
+    }
+
+    /**
+     * EQUIVALENCE PARTITIONING - Invalid Special Characters
+     */
+    @DataProvider(name = "registerInvalidSpecialChars_EP")
+    public Object[][] registerInvalidSpecialChars() {
+        List<RegisterTestData> testData = JsonDataReader.getRegisterTestData(
+                "register_test_data.equivalence_partitioning.invalid_special_characters_register");
         return convertRegisterDataToArray(testData);
     }
 
@@ -157,6 +232,46 @@ public class TestDataProviders {
     public Object[][] changePasswordLength() {
         List<ChangePasswordTestData> testData = JsonDataReader.getChangePasswordTestData(
                 "change_password_test_data.boundary_value_analysis.new_password_length");
+        return convertChangePasswordDataToArray(testData);
+    }
+
+    /**
+     * EQUIVALENCE PARTITIONING - Invalid New Password Format
+     */
+    @DataProvider(name = "changePasswordInvalidNewFormat_EP")
+    public Object[][] changePasswordInvalidNewFormat() {
+        List<ChangePasswordTestData> testData = JsonDataReader.getChangePasswordTestData(
+                "change_password_test_data.equivalence_partitioning.new_password_format");
+        return convertChangePasswordDataToArray(testData);
+    }
+
+    /**
+     * EQUIVALENCE PARTITIONING - Invalid Special Characters
+     */
+    @DataProvider(name = "changePasswordInvalidSpecialChars_EP")
+    public Object[][] changePasswordInvalidSpecialChars() {
+        List<ChangePasswordTestData> testData = JsonDataReader.getChangePasswordTestData(
+                "change_password_test_data.equivalence_partitioning.invalid_special_characters_change");
+        return convertChangePasswordDataToArray(testData);
+    }
+
+    /**
+     * EQUIVALENCE PARTITIONING - Empty Fields
+     */
+    @DataProvider(name = "changePasswordEmptyFields_EP")
+    public Object[][] changePasswordEmptyFields() {
+        List<ChangePasswordTestData> testData = JsonDataReader.getChangePasswordTestData(
+                "change_password_test_data.equivalence_partitioning.empty_fields");
+        return convertChangePasswordDataToArray(testData);
+    }
+
+    /**
+     * SPECIAL CASES
+     */
+    @DataProvider(name = "changePasswordSpecialCases")
+    public Object[][] changePasswordSpecialCases() {
+        List<ChangePasswordTestData> testData = JsonDataReader.getChangePasswordTestData(
+                "change_password_test_data.special_cases");
         return convertChangePasswordDataToArray(testData);
     }
 
