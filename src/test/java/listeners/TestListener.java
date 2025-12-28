@@ -1,6 +1,5 @@
 package listeners;
 
-import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -48,10 +47,6 @@ public class TestListener implements ITestListener {
 
         captureScreenshotOnSuccess(result);
         ScreenshotUtils.takeScreenshot(testName + "_PASSED");
-
-        // Optional: Capture screenshot on success if needed
-        // Uncomment below if you want screenshots for passed tests too
-        // captureScreenshotOnSuccess(result);
     }
 
     @Override
@@ -59,16 +54,14 @@ public class TestListener implements ITestListener {
         String testName = result.getMethod().getMethodName();
         logger.error("✗ Test FAILED: {}", testName);
 
-        // Capture screenshot and attach to Allure
-        captureScreenshotOnFailure(result);
+        // Capture screenshot - CHI 1 LAN
+        captureScreenshotOnFailure(testName);
 
-        // Attach error details to Allure
+        // Attach error details
         attachErrorDetails(result);
-
-        // Attach stack trace to Allure
         attachStackTrace(result);
 
-        // Also save screenshot to file system
+        // Save to file system
         ScreenshotUtils.takeScreenshot(testName + "_FAILED");
     }
 
@@ -88,22 +81,13 @@ public class TestListener implements ITestListener {
         logger.warn("Test failed but within success percentage: {}", testName);
     }
 
-    @Attachment(value = "Failure Screenshot", type = "image/png")
-    private byte[] captureScreenshotOnFailure(ITestResult result) {
+    @Attachment(value = "Test Failed - {0}", type = "image/png")
+    private byte[] captureScreenshotOnFailure(String testName) {
         try {
-            String testName = result.getMethod().getMethodName();
             logger.debug("Capturing screenshot for failed test: {}", testName);
 
             TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
             byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-
-            // Also attach using Allure.addAttachment for better control
-            Allure.addAttachment(
-                    testName + " - Failure Screenshot",
-                    "image/png",
-                    new ByteArrayInputStream(screenshot),
-                    "png"
-            );
 
             logger.debug("Screenshot captured and attached to Allure Report");
             return screenshot;
