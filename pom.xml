@@ -103,16 +103,19 @@
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
-                    <!-- AspectJ Weaver for Allure Report -->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
 
-                    <!-- Optional: Disable default TestNG listeners if needed -->
                     <properties>
                         <property>
                             <name>usedefaultlisteners</name>
                             <value>true</value>
+                        </property>
+
+                        <property>
+                            <name>listener</name>
+                            <value>listeners.TestListener</value>
                         </property>
                     </properties>
                 </configuration>
@@ -125,8 +128,10 @@
                 <version>2.12.0</version>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
-                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                    <resultsDirectory>${project.basedir}/exports/reports/allure-results</resultsDirectory>
+                    <reportDirectory>${project.basedir}/exports/reports/AllureReport</reportDirectory>
                 </configuration>
+
             </plugin>
         </plugins>
     </build>

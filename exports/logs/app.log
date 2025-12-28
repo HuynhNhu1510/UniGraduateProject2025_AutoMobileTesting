@@ -355,3 +355,980 @@ Session ID: f48ab22c-0252-418d-abca-c692ac57d9fe
 2025-12-28 21:34:26.993 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== TEST SUITE STARTED ==========
 2025-12-28 21:34:27.509 [main] INFO  common.CommonTest - 
 [Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:12:48.456 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2025-12-28 22:12:49.300 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2025-12-28 22:12:58.521 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2025-12-28 22:12:58.553 [main] INFO  common.AppFlowManager - 
+[AppFlow] Handling app launch...
+2025-12-28 22:12:59.238 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2025-12-28 22:12:59.239 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2025-12-28 22:13:03.543 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2025-12-28 22:13:43.962 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: NOT_LOGGED_IN
+2025-12-28 22:13:43.962 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== TEST SUITE STARTED ==========
+2025-12-28 22:13:44.615 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:14:25.007 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 22:15:05.332 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2025-12-28 22:15:05.573 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.05_EP1] Invalid Email Format - Missing @
+2025-12-28 22:15:05.575 [main] INFO  page.HomePage - Clicking Sign In button
+2025-12-28 22:16:37.255 [main] INFO  page.LoginPage - Attempting login expecting failure with email: invalidemail
+2025-12-28 22:16:37.258 [main] INFO  page.LoginPage - Filling login form for email: invalidemail
+2025-12-28 22:16:40.600 [main] INFO  page.LoginPage - Clicking Sign In button
+2025-12-28 22:16:42.255 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.05_EP1] ✓ PASSED
+2025-12-28 22:16:42.270 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2025-12-28 22:16:42.271 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2025-12-28 22:16:48.938 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2025-12-28 22:18:09.219 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2025-12-28 22:18:41.433 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2025-12-28 22:19:02.086 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2025-12-28 22:19:02.088 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2025-12-28 22:19:02.093 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:19:42.239 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 22:20:22.430 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2025-12-28 22:20:22.443 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.05_EP2] Invalid Email Format - Missing domain
+2025-12-28 22:20:22.445 [main] INFO  page.HomePage - Clicking Sign In button
+2025-12-28 22:21:53.786 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@
+2025-12-28 22:21:53.787 [main] INFO  page.LoginPage - Filling login form for email: test@
+2025-12-28 22:21:56.485 [main] INFO  page.LoginPage - Clicking Sign In button
+2025-12-28 22:21:58.099 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.05_EP2] ✓ PASSED
+2025-12-28 22:21:58.103 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2025-12-28 22:21:58.103 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2025-12-28 22:22:04.673 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2025-12-28 22:23:24.961 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2025-12-28 22:24:05.126 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2025-12-28 22:24:25.233 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2025-12-28 22:24:25.234 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2025-12-28 22:24:25.240 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:25:05.386 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 22:25:45.564 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2025-12-28 22:25:45.572 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.05_EP3] Invalid Email Format - Double @
+2025-12-28 22:25:45.575 [main] INFO  page.HomePage - Clicking Sign In button
+2025-12-28 22:27:16.966 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@@example.com
+2025-12-28 22:27:16.967 [main] INFO  page.LoginPage - Filling login form for email: test@@example.com
+2025-12-28 22:27:19.542 [main] INFO  page.LoginPage - Clicking Sign In button
+2025-12-28 22:27:21.258 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.05_EP3] ✓ PASSED
+2025-12-28 22:27:21.262 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2025-12-28 22:27:21.262 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2025-12-28 22:27:27.988 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2025-12-28 22:28:48.289 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2025-12-28 22:29:28.428 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2025-12-28 22:29:48.536 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2025-12-28 22:29:48.536 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2025-12-28 22:29:48.543 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:30:28.708 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 22:31:08.838 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2025-12-28 22:31:08.844 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP4] Invalid Email - Missing local part
+2025-12-28 22:31:08.846 [main] INFO  page.HomePage - Clicking Sign In button
+2025-12-28 22:32:40.168 [main] INFO  page.LoginPage - Attempting login expecting failure with email: @example.com
+2025-12-28 22:32:40.170 [main] INFO  page.LoginPage - Filling login form for email: @example.com
+2025-12-28 22:32:42.790 [main] INFO  page.LoginPage - Clicking Sign In button
+2025-12-28 22:32:44.431 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP4] ✓ PASSED
+2025-12-28 22:32:44.435 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2025-12-28 22:32:44.436 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2025-12-28 22:32:51.377 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2025-12-28 22:34:11.704 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2025-12-28 22:34:51.860 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2025-12-28 22:35:11.984 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2025-12-28 22:35:11.985 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2025-12-28 22:35:11.990 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:35:52.155 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 22:36:32.290 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2025-12-28 22:36:32.296 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP5] Invalid Email - Dot at start
+2025-12-28 22:36:32.299 [main] INFO  page.HomePage - Clicking Sign In button
+2025-12-28 22:38:03.651 [main] INFO  page.LoginPage - Attempting login expecting failure with email: .test@example.com
+2025-12-28 22:38:03.652 [main] INFO  page.LoginPage - Filling login form for email: .test@example.com
+2025-12-28 22:38:06.169 [main] INFO  page.LoginPage - Clicking Sign In button
+2025-12-28 22:38:07.757 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP5] ✓ PASSED
+2025-12-28 22:38:07.761 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2025-12-28 22:38:07.761 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2025-12-28 22:38:14.619 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2025-12-28 22:39:34.884 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2025-12-28 22:40:15.022 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2025-12-28 22:40:35.094 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2025-12-28 22:40:35.094 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2025-12-28 22:40:35.097 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:41:15.210 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 22:41:55.336 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2025-12-28 22:41:55.344 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP6] Invalid Email - Dot at end
+2025-12-28 22:41:55.346 [main] INFO  page.HomePage - Clicking Sign In button
+2025-12-28 22:43:26.666 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test.@example.com
+2025-12-28 22:43:26.667 [main] INFO  page.LoginPage - Filling login form for email: test.@example.com
+2025-12-28 22:43:29.273 [main] INFO  page.LoginPage - Clicking Sign In button
+2025-12-28 22:43:30.881 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP6] ✓ PASSED
+2025-12-28 22:43:30.886 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2025-12-28 22:43:30.886 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2025-12-28 22:43:37.425 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2025-12-28 22:44:57.670 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2025-12-28 22:45:37.790 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2025-12-28 22:45:57.882 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2025-12-28 22:45:57.883 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2025-12-28 22:45:57.887 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:46:38.073 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 22:47:18.372 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2025-12-28 22:47:18.384 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP7] Invalid Email - Consecutive dots
+2025-12-28 22:47:18.387 [main] INFO  page.HomePage - Clicking Sign In button
+2025-12-28 22:48:49.730 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test..user@example.com
+2025-12-28 22:48:49.731 [main] INFO  page.LoginPage - Filling login form for email: test..user@example.com
+2025-12-28 22:48:52.141 [main] INFO  page.LoginPage - Clicking Sign In button
+2025-12-28 22:48:53.677 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP7] ✓ PASSED
+2025-12-28 22:48:53.679 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2025-12-28 22:48:53.680 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2025-12-28 22:49:00.238 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2025-12-28 22:50:20.487 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2025-12-28 22:51:00.626 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2025-12-28 22:51:20.742 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2025-12-28 22:51:20.743 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2025-12-28 22:51:20.746 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 22:52:00.887 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 22:52:41.017 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2025-12-28 22:52:41.025 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP8] Invalid Email - Space in local
+2025-12-28 22:52:41.025 [main] INFO  page.HomePage - Clicking Sign In button
+2025-12-28 22:54:12.348 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test user@example.com
+2025-12-28 22:54:12.349 [main] INFO  page.LoginPage - Filling login form for email: test user@example.com
+2025-12-28 22:54:14.812 [main] INFO  page.LoginPage - Clicking Sign In button
+2025-12-28 22:54:16.344 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP8] ✓ PASSED
+2025-12-28 22:54:16.348 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2025-12-28 22:54:16.348 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2025-12-28 22:54:22.899 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2025-12-28 22:55:43.169 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2025-12-28 23:02:19.780 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2025-12-28 23:02:20.868 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2025-12-28 23:02:20.882 [main] INFO  listeners.TestListener - ========================================
+2025-12-28 23:02:20.882 [main] INFO  listeners.TestListener - Test Suite Started: Surefire test
+2025-12-28 23:02:20.882 [main] INFO  listeners.TestListener - ========================================
+2025-12-28 23:02:30.641 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2025-12-28 23:02:30.680 [main] INFO  common.AppFlowManager - 
+[AppFlow] Handling app launch...
+2025-12-28 23:02:31.202 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2025-12-28 23:02:31.202 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2025-12-28 23:02:43.753 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2025-12-28 23:03:24.020 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: NOT_LOGGED_IN
+2025-12-28 23:03:24.022 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== TEST SUITE STARTED ==========
+2025-12-28 23:03:24.664 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 23:04:04.806 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2025-12-28 23:05:31.984 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2025-12-28 23:05:32.933 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2025-12-28 23:05:32.945 [main] INFO  listeners.TestListener - ========================================
+2025-12-28 23:05:32.946 [main] INFO  listeners.TestListener - Test Suite Started: Surefire test
+2025-12-28 23:05:32.946 [main] INFO  listeners.TestListener - ========================================
+2025-12-28 23:05:41.368 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2025-12-28 23:05:41.445 [main] INFO  common.AppFlowManager - 
+[AppFlow] Handling app launch...
+2025-12-28 23:05:41.955 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2025-12-28 23:05:41.955 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2025-12-28 23:05:50.413 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2025-12-28 23:05:50.536 [main] ERROR org.example.keywords.MobileUI - CRITICAL ERROR: WebDriver session issue detected!
+2025-12-28 23:05:50.537 [main] ERROR org.example.keywords.MobileUI - Error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:50.538 [main] ERROR org.example.keywords.MobileUI - This may require session restart or emulator restart!
+2025-12-28 23:05:50.551 [main] WARN  common.AppFlowManager - [AppFlow] WARNING: Could not validate home page state - 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:50.553 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== TEST SUITE STARTED ==========
+2025-12-28 23:05:51.359 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2025-12-28 23:05:51.501 [main] ERROR org.example.keywords.MobileUI - CRITICAL ERROR: WebDriver session issue detected!
+2025-12-28 23:05:51.501 [main] ERROR org.example.keywords.MobileUI - Error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:51.502 [main] ERROR org.example.keywords.MobileUI - This may require session restart or emulator restart!
+2025-12-28 23:05:51.792 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2025-12-28 23:05:51.821 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginCombinations
+2025-12-28 23:05:51.826 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:51.848 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2025-12-28 23:05:51.859 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginCombinations
+2025-12-28 23:05:51.859 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:51.881 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2025-12-28 23:05:51.894 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginCombinations
+2025-12-28 23:05:51.895 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:51.904 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2025-12-28 23:05:51.916 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginCombinations
+2025-12-28 23:05:51.918 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:51.946 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2025-12-28 23:05:51.962 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmailLength_BVA
+2025-12-28 23:05:51.963 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:51.975 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2025-12-28 23:05:51.986 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmailLength_BVA
+2025-12-28 23:05:51.995 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.012 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2025-12-28 23:05:52.019 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmailLength_BVA
+2025-12-28 23:05:52.021 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.036 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2025-12-28 23:05:52.055 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmailLength_BVA
+2025-12-28 23:05:52.061 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.075 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2025-12-28 23:05:52.085 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmailLength_BVA
+2025-12-28 23:05:52.085 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.095 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2025-12-28 23:05:52.101 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmailLength_BVA
+2025-12-28 23:05:52.101 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.119 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2025-12-28 23:05:52.131 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmptyFields_EP
+2025-12-28 23:05:52.132 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.148 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2025-12-28 23:05:52.162 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmptyFields_EP
+2025-12-28 23:05:52.163 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.180 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2025-12-28 23:05:52.194 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmptyFields_EP
+2025-12-28 23:05:52.194 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.206 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2025-12-28 23:05:52.216 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmptyFields_EP
+2025-12-28 23:05:52.216 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.228 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2025-12-28 23:05:52.235 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginEmptyFields_EP
+2025-12-28 23:05:52.236 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.269 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.290 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.292 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.300 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.308 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.309 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.318 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.331 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.332 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.342 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.352 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.352 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.366 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.382 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.383 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.397 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.404 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.405 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.414 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.429 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.430 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.437 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.448 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.448 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.454 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.468 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.468 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.483 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2025-12-28 23:05:52.492 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidEmailFormat_EP
+2025-12-28 23:05:52.493 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.514 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2025-12-28 23:05:52.530 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidPasswordFormat_EP
+2025-12-28 23:05:52.531 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.546 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2025-12-28 23:05:52.551 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidPasswordFormat_EP
+2025-12-28 23:05:52.552 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.562 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2025-12-28 23:05:52.569 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidPasswordFormat_EP
+2025-12-28 23:05:52.569 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.578 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2025-12-28 23:05:52.586 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidPasswordFormat_EP
+2025-12-28 23:05:52.586 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.599 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2025-12-28 23:05:52.606 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidPasswordFormat_EP
+2025-12-28 23:05:52.608 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.619 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2025-12-28 23:05:52.631 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidPasswordFormat_EP
+2025-12-28 23:05:52.633 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.647 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2025-12-28 23:05:52.653 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidPasswordFormat_EP
+2025-12-28 23:05:52.654 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.670 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2025-12-28 23:05:52.681 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidPasswordFormat_EP
+2025-12-28 23:05:52.682 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.702 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.714 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.715 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.729 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.742 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.745 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.758 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.770 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.771 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.787 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.803 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.804 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.818 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.827 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.828 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.842 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.848 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.849 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.859 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.867 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.867 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.883 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.900 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.904 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.918 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.927 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.928 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.936 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.942 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.942 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.950 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.960 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.961 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:52.978 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:52.987 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:52.987 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.002 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.013 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.013 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.027 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.034 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.036 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.048 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.053 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.054 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.063 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.070 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.070 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.086 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.097 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.098 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.113 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.138 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.139 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.153 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.167 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.167 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.183 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.187 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.188 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.199 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.211 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.212 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.225 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidSpecialCharacters_EP <<<
+2025-12-28 23:05:53.235 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginInvalidSpecialCharacters_EP
+2025-12-28 23:05:53.236 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.259 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginPasswordLength_BVA <<<
+2025-12-28 23:05:53.279 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginPasswordLength_BVA
+2025-12-28 23:05:53.279 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.286 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginPasswordLength_BVA <<<
+2025-12-28 23:05:53.295 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginPasswordLength_BVA
+2025-12-28 23:05:53.296 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.304 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginPasswordLength_BVA <<<
+2025-12-28 23:05:53.315 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginPasswordLength_BVA
+2025-12-28 23:05:53.316 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.332 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginPasswordLength_BVA <<<
+2025-12-28 23:05:53.338 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginPasswordLength_BVA
+2025-12-28 23:05:53.339 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.353 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginPasswordLength_BVA <<<
+2025-12-28 23:05:53.374 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginPasswordLength_BVA
+2025-12-28 23:05:53.375 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.382 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginPasswordLength_BVA <<<
+2025-12-28 23:05:53.387 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginPasswordLength_BVA
+2025-12-28 23:05:53.387 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.396 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginPasswordLength_BVA <<<
+2025-12-28 23:05:53.402 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginPasswordLength_BVA
+2025-12-28 23:05:53.403 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.419 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginPasswordLength_BVA <<<
+2025-12-28 23:05:53.466 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginPasswordLength_BVA
+2025-12-28 23:05:53.466 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.506 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.527 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.528 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.548 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.554 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.554 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.565 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.570 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.570 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.581 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.591 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.591 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.613 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.635 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.638 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.666 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.682 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.682 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.696 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.702 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.702 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.718 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.730 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.731 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.745 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.752 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.755 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.765 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.780 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.780 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.795 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.802 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.803 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.818 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.829 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.829 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.838 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.851 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.852 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.866 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.871 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.872 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.884 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.896 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.896 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.906 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.912 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.913 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.928 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.934 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.935 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.950 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.958 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.959 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.966 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:53.974 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:53.976 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:53.986 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginSpecialCases <<<
+2025-12-28 23:05:54.002 [main] WARN  listeners.TestListener - Test SKIPPED: testLoginSpecialCases
+2025-12-28 23:05:54.002 [main] WARN  listeners.TestListener - Reason: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [edf2182c-32a8-4ced-93db-0d9280f28f0d, findElement {value=Shop Recently Added, using=accessibility id}]
+Capabilities {appium:appActivity: com.italist.mobile.MainActi..., appium:appPackage: com.italist.mobile, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.italist.mobile.MainActi..., appPackage: com.italist.mobile, automationName: UiAutomator2, deviceName: pixel-7-api36, fullReset: false, noReset: true, platformName: ANDROID, platformVersion: 16}, appium:deviceApiLevel: 36, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:fullReset: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 16, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2264, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: edf2182c-32a8-4ced-93db-0d9280f28f0d
+2025-12-28 23:05:54.012 [main] INFO  common.BaseTest - Quitting driver...
+2025-12-28 23:05:54.561 [main] INFO  listeners.TestListener - ========================================
+2025-12-28 23:05:54.563 [main] INFO  listeners.TestListener - Test Suite Finished: Surefire test
+2025-12-28 23:05:54.563 [main] INFO  listeners.TestListener - Total Tests Run: 8
+2025-12-28 23:05:54.563 [main] INFO  listeners.TestListener - Passed: 0
+2025-12-28 23:05:54.563 [main] INFO  listeners.TestListener - Failed: 0
+2025-12-28 23:05:54.563 [main] INFO  listeners.TestListener - Skipped: 83
+2025-12-28 23:05:54.563 [main] INFO  listeners.TestListener - ========================================
+2025-12-28 23:05:54.809 [main] INFO  common.BaseTest - ##### Appium server stopped.
