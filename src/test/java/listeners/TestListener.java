@@ -46,6 +46,9 @@ public class TestListener implements ITestListener {
         String testName = result.getMethod().getMethodName();
         logger.info("✓ Test PASSED: {}", testName);
 
+        captureScreenshotOnSuccess(result);
+        ScreenshotUtils.takeScreenshot(testName + "_PASSED");
+
         // Optional: Capture screenshot on success if needed
         // Uncomment below if you want screenshots for passed tests too
         // captureScreenshotOnSuccess(result);
@@ -72,7 +75,7 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult result) {
         String testName = result.getMethod().getMethodName();
-        logger.warn("⊘ Test SKIPPED: {}", testName);
+        logger.warn("Test SKIPPED: {}", testName);
 
         if (result.getThrowable() != null) {
             logger.warn("Reason: {}", result.getThrowable().getMessage());
