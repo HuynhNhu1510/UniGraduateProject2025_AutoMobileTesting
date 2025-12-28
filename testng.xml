@@ -2,13 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Mobile App Testing Suite" verbose="1" parallel="false">
 
+    <!-- Add TestListener for automatic screenshot and logging -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
     <!-- Test Suite cho Android Local -->
     <test name="Login and Register Tests">
-        <!-- DANH SÁCH TEST CLASSES - Chỉ Login và Register -->
+        <!-- DANH SÁCH TEST CLASSES -->
         <classes>
-            <class name="testcase.ChangePasswordTest"/>
-            <class name="testcase.RegisterTest"/>
+            <class name="testcase_datadriven.LoginTestDataDriven"/>
             <class name="testcase.LoginTest"/>
+            <class name="testcase.RegisterTest"/>
+            <class name="testcase.ChangePasswordTest"/>
         </classes>
     </test>
 

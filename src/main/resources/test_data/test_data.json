@@ -4,7 +4,7 @@
       {
         "testId": "LG.01",
         "category": "Valid Partition",
-        "email": "hpqn1510@gmail.com",
+        "email": "khoadang1510@gmail.com",
         "password": "Kikiga18123@",
         "expectedResult": "success",
         "description": "Valid email and password"
@@ -1397,7 +1397,7 @@
       {
         "testId": "CP.01",
         "category": "Valid Password Change",
-        "currentPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
         "newPassword": "NewPass@456",
         "expectedResult": "success",
         "description": "Change password with valid credentials"
@@ -1405,7 +1405,7 @@
       {
         "testId": "CP.01_V2",
         "category": "Valid - All Special Chars",
-        "currentPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
         "newPassword": "P!@#$%^&*123a",
         "expectedResult": "success",
         "description": "New password with all allowed special chars"
@@ -1417,7 +1417,7 @@
         {
           "testId": "CP.02_EP1",
           "category": "Invalid Format - Missing Uppercase",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "newpass@123",
           "expectedResult": "password_invalid",
           "expectedMessage": "Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase character, 1 number, and 1 special character in (!@#$%^&*)"
@@ -1425,28 +1425,28 @@
         {
           "testId": "CP.02_EP2",
           "category": "Invalid Format - Missing Lowercase",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "NEWPASS@123",
           "expectedResult": "password_invalid"
         },
         {
           "testId": "CP.02_EP3",
           "category": "Invalid Format - Missing Number",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "NewPass@abc",
           "expectedResult": "password_invalid"
         },
         {
           "testId": "CP.02_EP4",
           "category": "Invalid Format - Missing Special Char",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "NewPass1234",
           "expectedResult": "password_invalid"
         },
         {
           "testId": "CP.11_EP5",
           "category": "Invalid Special Character (?)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "NewPass123?",
           "expectedResult": "password_invalid",
           "description": "? is not in allowed special chars"
@@ -1457,7 +1457,7 @@
         {
           "testId": "CP_ISC1",
           "category": "Invalid Char - Question Mark (?)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass123?word",
           "expectedResult": "password_invalid",
           "description": "? not allowed"
@@ -1465,7 +1465,7 @@
         {
           "testId": "CP_ISC2",
           "category": "Invalid Char - Slash (/)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass123/word",
           "expectedResult": "password_invalid",
           "description": "/ not allowed"
@@ -1473,7 +1473,7 @@
         {
           "testId": "CP_ISC3",
           "category": "Invalid Char - Backslash (\\)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass123\\word",
           "expectedResult": "password_invalid",
           "description": "\\ not allowed"
@@ -1481,7 +1481,7 @@
         {
           "testId": "CP_ISC4",
           "category": "Invalid Char - Pipe (|)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass123|word",
           "expectedResult": "password_invalid",
           "description": "| not allowed"
@@ -1489,7 +1489,7 @@
         {
           "testId": "CP_ISC5",
           "category": "Invalid Char - Tilde (~)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass123~word",
           "expectedResult": "password_invalid",
           "description": "~ not allowed"
@@ -1497,7 +1497,7 @@
         {
           "testId": "CP_ISC6",
           "category": "Invalid Char - Underscore (_)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass_123word",
           "expectedResult": "password_invalid",
           "description": "_ not allowed"
@@ -1505,7 +1505,7 @@
         {
           "testId": "CP_ISC7",
           "category": "Invalid Char - Hyphen (-)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass-123word",
           "expectedResult": "password_invalid",
           "description": "- not allowed"
@@ -1513,7 +1513,7 @@
         {
           "testId": "CP_ISC8",
           "category": "Invalid Char - Equals (=)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass=123word",
           "expectedResult": "password_invalid",
           "description": "= not allowed"
@@ -1521,7 +1521,7 @@
         {
           "testId": "CP_ISC9",
           "category": "Invalid Char - Plus (+)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass+123word",
           "expectedResult": "password_invalid",
           "description": "+ not allowed"
@@ -1529,7 +1529,7 @@
         {
           "testId": "CP_ISC10",
           "category": "Invalid Char - Brackets []",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass[123]word",
           "expectedResult": "password_invalid",
           "description": "[] not allowed"
@@ -1537,7 +1537,7 @@
         {
           "testId": "CP_ISC11",
           "category": "Invalid Char - Curly Braces {}",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass{123}word",
           "expectedResult": "password_invalid",
           "description": "{} not allowed"
@@ -1545,7 +1545,7 @@
         {
           "testId": "CP_ISC12",
           "category": "Invalid Char - Angle Brackets <>",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass<123>word",
           "expectedResult": "password_invalid",
           "description": "<> not allowed"
@@ -1553,7 +1553,7 @@
         {
           "testId": "CP_ISC13",
           "category": "Invalid Char - Period (.)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass.123word",
           "expectedResult": "password_invalid",
           "description": ". not allowed"
@@ -1561,7 +1561,7 @@
         {
           "testId": "CP_ISC14",
           "category": "Invalid Char - Comma (,)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass,123word",
           "expectedResult": "password_invalid",
           "description": ", not allowed"
@@ -1569,7 +1569,7 @@
         {
           "testId": "CP_ISC15",
           "category": "Invalid Char - Semicolon (;)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass;123word",
           "expectedResult": "password_invalid",
           "description": "; not allowed"
@@ -1577,7 +1577,7 @@
         {
           "testId": "CP_ISC16",
           "category": "Invalid Char - Colon (:)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass:123word",
           "expectedResult": "password_invalid",
           "description": ": not allowed"
@@ -1585,7 +1585,7 @@
         {
           "testId": "CP_ISC17",
           "category": "Invalid Char - Quote (')",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass'123word",
           "expectedResult": "password_invalid",
           "description": "' not allowed"
@@ -1593,7 +1593,7 @@
         {
           "testId": "CP_ISC18",
           "category": "Invalid Char - Double Quote (\")",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass\"123word",
           "expectedResult": "password_invalid",
           "description": "\" not allowed"
@@ -1601,7 +1601,7 @@
         {
           "testId": "CP_ISC19",
           "category": "Invalid Char - Space",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass 123 word",
           "expectedResult": "password_invalid",
           "description": "Space not allowed"
@@ -1609,7 +1609,7 @@
         {
           "testId": "CP_ISC20",
           "category": "Invalid Char - Backtick (`)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass`123word",
           "expectedResult": "password_invalid",
           "description": "` not allowed"
@@ -1617,7 +1617,7 @@
         {
           "testId": "CP_ISC21",
           "category": "Invalid Char - Multiple Mixed",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass?/123_word",
           "expectedResult": "password_invalid",
           "description": "Multiple invalid chars"
@@ -1644,7 +1644,7 @@
         {
           "testId": "CP.13_EP3",
           "category": "Case Sensitive Check",
-          "currentPassword": "newpass@123",
+          "currentPassword": "kikiga18123@",
           "newPassword": "NewPass@456",
           "expectedResult": "current_password_error",
           "description": "Password is case-sensitive"
@@ -1655,7 +1655,7 @@
         {
           "testId": "CP.04_EP1",
           "category": "Empty New Password",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "",
           "expectedResult": "password_empty",
           "expectedMessage": "Please enter your password"
@@ -1671,11 +1671,11 @@
     },
 
     "boundary_value_analysis": {
-      "password_length": [
+      "new_password_length": [
         {
           "testId": "CP.12_BVA1",
           "category": "BVA - Exactly 8 chars (Min Boundary)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "A@b1cdef",
           "expectedResult": "success",
           "description": "Minimum valid password length"
@@ -1683,7 +1683,7 @@
         {
           "testId": "CP_BVA2",
           "category": "BVA - 7 chars (Min-1)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "A@b1cde",
           "expectedResult": "password_invalid",
           "description": "Below minimum boundary"
@@ -1691,7 +1691,7 @@
         {
           "testId": "CP_BVA3",
           "category": "BVA - 9 chars (Min+1)",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "A@b1cdefg",
           "expectedResult": "success",
           "description": "Above minimum boundary"
@@ -1699,7 +1699,7 @@
         {
           "testId": "CP_BVA4",
           "category": "BVA - 50 chars",
-          "currentPassword": "NewPass@123",
+          "currentPassword": "Kikiga18123@",
           "newPassword": "Pass123@Pass123@Pass123@Pass123@Pass123@Pass123@AB",
           "expectedResult": "success",
           "description": "Long valid password"
@@ -1711,15 +1711,15 @@
       {
         "testId": "CP.09",
         "category": "New Password Same as Current",
-        "currentPassword": "NewPass@123",
-        "newPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
+        "newPassword": "Kikiga18123@",
         "expectedResult": "success",
         "description": "App allows same password"
       },
       {
         "testId": "CP_SC1",
         "category": "Special Characters - All Allowed",
-        "currentPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
         "newPassword": "Pass!@#$%^&*123a",
         "expectedResult": "success",
         "description": "Test all allowed special chars"
@@ -1727,7 +1727,7 @@
       {
         "testId": "CP_SC2",
         "category": "Unicode Characters",
-        "currentPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
         "newPassword": "Pàss123@",
         "expectedResult": "password_invalid",
         "description": "Test non-ASCII characters"
@@ -1735,7 +1735,7 @@
       {
         "testId": "CP_SC3",
         "category": "Emoji in Password",
-        "currentPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
         "newPassword": "Pass123@EmojiChar",
         "expectedResult": "password_invalid",
         "description": "Emoji not allowed"
@@ -1743,7 +1743,7 @@
       {
         "testId": "CP_SC4",
         "category": "Leading/Trailing Spaces",
-        "currentPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
         "newPassword": "  NewPass@456  ",
         "expectedResult": "password_invalid",
         "description": "Spaces around password"
@@ -1751,7 +1751,7 @@
       {
         "testId": "CP_SC5",
         "category": "Null byte injection",
-        "currentPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
         "newPassword": "Pass\u0000123@",
         "expectedResult": "password_invalid",
         "description": "Security test - null byte"
@@ -1759,7 +1759,7 @@
       {
         "testId": "CP_SC6",
         "category": "Newline character",
-        "currentPassword": "NewPass@123",
+        "currentPassword": "Kikiga18123@",
         "newPassword": "Pass\n123@",
         "expectedResult": "password_invalid",
         "description": "Newline character test"

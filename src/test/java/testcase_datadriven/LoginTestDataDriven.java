@@ -2,13 +2,19 @@ package testcase_datadriven;
 
 import common.CommonTest;
 import dataprovider.TestDataProviders;
+import io.qameta.allure.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.model.LoginTestData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.HomePage;
 import page.LoginPage;
 
+@Epic("Authentication")
+@Feature("Login Functionality - Data Driven")
 public class LoginTestDataDriven extends CommonTest {
+    private static final Logger logger = LogManager.getLogger(LoginTestDataDriven.class);
 
     LoginPage loginPage;
 
@@ -17,45 +23,42 @@ public class LoginTestDataDriven extends CommonTest {
         return "Login Test - Data Driven";
     }
 
-    // ==================== EQUIVALENCE PARTITIONING TESTS ====================
-
     @Test(dataProvider = "loginInvalidEmailFormat_EP",
             dataProviderClass = TestDataProviders.class,
             description = "Login with invalid email formats - Equivalence Partitioning")
+    @Story("Login - Email Validation (Equivalence Partitioning)")
+    @Severity(SeverityLevel.CRITICAL)
     public void testLoginInvalidEmailFormat_EP(LoginTestData testData) {
-        System.out.println("\n[" + testData.getTestId() + "] " + testData.getCategory());
-        System.out.println("Description: " + testData.getDescription());
+        logger.info("\n[{}] {}", testData.getTestId(), testData.getCategory());
+        logger.debug("Description: {}", testData.getDescription());
 
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure(testData.getEmail(), testData.getPassword());
 
-        // Verify expected result
-        switch (testData.getExpectedResult()) {
-            case "email_invalid":
-                Assert.assertTrue(loginPage.isEmailInvalidMessageDisplayed(),
-                        "Email invalid message should be displayed for: " + testData.getTestId());
+        if (testData.getExpectedResult().equals("email_invalid")) {
+            Assert.assertTrue(loginPage.isEmailInvalidMessageDisplayed(),
+                    "Email invalid message should be displayed for: " + testData.getTestId());
 
-                String actualMsg = loginPage.getEmailInvalidMessage();
-                Assert.assertEquals(actualMsg, testData.getExpectedMessage(),
-                        "Error message should match for: " + testData.getTestId());
-                break;
-
-            default:
-                Assert.fail("Unknown expected result: " + testData.getExpectedResult());
+            String actualMsg = loginPage.getEmailInvalidMessage();
+            Assert.assertEquals(actualMsg, testData.getExpectedMessage(),
+                    "Error message should match for: " + testData.getTestId());
+        } else {
+            Assert.fail("Unknown expected result: " + testData.getExpectedResult());
         }
-        System.out.println("[" + testData.getTestId() + "] ✓ PASSED");
+        logger.info("[{}] ✓ PASSED", testData.getTestId());
     }
 
     @Test(dataProvider = "loginInvalidPasswordFormat_EP",
             dataProviderClass = TestDataProviders.class,
             description = "Login with invalid password formats - Equivalence Partitioning")
+    @Story("Login - Password Validation (Equivalence Partitioning)")
+    @Severity(SeverityLevel.CRITICAL)
     public void testLoginInvalidPasswordFormat_EP(LoginTestData testData) {
-        System.out.println("\n[" + testData.getTestId() + "] " + testData.getCategory());
+        logger.info("\n[{}] {}", testData.getTestId(), testData.getCategory());
 
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure(testData.getEmail(), testData.getPassword());
 
-        // All invalid password formats should show credential error
         if ("credential_error".equals(testData.getExpectedResult())) {
             Assert.assertTrue(loginPage.isEmailNotExistedErrorDisplayed(),
                     "Credential error should be displayed for: " + testData.getTestId());
@@ -65,15 +68,17 @@ public class LoginTestDataDriven extends CommonTest {
                     "Error message should match for: " + testData.getTestId());
         }
 
-        System.out.println("[" + testData.getTestId() + "] ✓ PASSED");
+        logger.info("[{}] ✓ PASSED", testData.getTestId());
     }
 
     @Test(dataProvider = "loginInvalidSpecialChars_EP",
             dataProviderClass = TestDataProviders.class,
             description = "Login with invalid special characters in password")
+    @Story("Login - Special Characters Validation")
+    @Severity(SeverityLevel.NORMAL)
     public void testLoginInvalidSpecialCharacters_EP(LoginTestData testData) {
-        System.out.println("\n[" + testData.getTestId() + "] " + testData.getCategory());
-        System.out.println("Testing: " + testData.getDescription());
+        logger.info("\n[{}] {}", testData.getTestId(), testData.getCategory());
+        logger.debug("Testing: {}", testData.getDescription());
 
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure(testData.getEmail(), testData.getPassword());
@@ -81,19 +86,20 @@ public class LoginTestDataDriven extends CommonTest {
         Assert.assertTrue(loginPage.isEmailNotExistedErrorDisplayed(),
                 "Error should be displayed for invalid special char: " + testData.getTestId());
 
-        System.out.println("[" + testData.getTestId() + "] ✓ PASSED");
+        logger.info("[{}] ✓ PASSED", testData.getTestId());
     }
 
     @Test(dataProvider = "loginEmptyFields_EP",
             dataProviderClass = TestDataProviders.class,
             description = "Login with empty fields - Equivalence Partitioning")
+    @Story("Login - Empty Fields Validation")
+    @Severity(SeverityLevel.CRITICAL)
     public void testLoginEmptyFields_EP(LoginTestData testData) {
-        System.out.println("\n[" + testData.getTestId() + "] " + testData.getCategory());
+        logger.info("\n[{}] {}", testData.getTestId(), testData.getCategory());
 
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure(testData.getEmail(), testData.getPassword());
 
-        // Handle different empty field scenarios
         switch (testData.getExpectedResult()) {
             case "empty_field_error":
             case "email_empty":
@@ -112,45 +118,44 @@ public class LoginTestDataDriven extends CommonTest {
                 break;
 
             default:
-                // For "empty_field_error" - at least one error should show
                 boolean hasError = loginPage.isEmailEmptyFieldDisplayed() ||
                         loginPage.isPasswordEmptyFieldDisplayed();
                 Assert.assertTrue(hasError, "At least one empty field error should be displayed");
         }
 
-        System.out.println("[" + testData.getTestId() + "] ✓ PASSED");
+        logger.info("[{}] ✓ PASSED", testData.getTestId());
     }
 
     @Test(dataProvider = "loginPasswordLength_BVA",
             dataProviderClass = TestDataProviders.class,
             description = "Login password length - Boundary Value Analysis")
+    @Story("Login - Password Length (Boundary Value Analysis)")
+    @Severity(SeverityLevel.NORMAL)
     public void testLoginPasswordLength_BVA(LoginTestData testData) {
-        System.out.println("\n[" + testData.getTestId() + "] " + testData.getCategory());
-        System.out.println("Password length: " + testData.getPassword().length() + " - " +
-                testData.getDescription());
+        logger.info("\n[{}] {}", testData.getTestId(), testData.getCategory());
+        logger.debug("Password length: {} - {}", testData.getPassword().length(), testData.getDescription());
 
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure(testData.getEmail(), testData.getPassword());
 
-        // All BVA password tests should show credential error (since emails don't exist)
         Assert.assertTrue(loginPage.isEmailNotExistedErrorDisplayed(),
                 "Credential error should be displayed for: " + testData.getTestId());
 
-        System.out.println("[" + testData.getTestId() + "] ✓ PASSED");
+        logger.info("[{}] ✓ PASSED", testData.getTestId());
     }
 
     @Test(dataProvider = "loginEmailLength_BVA",
             dataProviderClass = TestDataProviders.class,
             description = "Login email length - Boundary Value Analysis")
+    @Story("Login - Email Length (Boundary Value Analysis)")
+    @Severity(SeverityLevel.NORMAL)
     public void testLoginEmailLength_BVA(LoginTestData testData) {
-        System.out.println("\n[" + testData.getTestId() + "] " + testData.getCategory());
-        System.out.println("Email length: " + testData.getEmail().length() + " - " +
-                testData.getDescription());
+        logger.info("\n[{}] {}", testData.getTestId(), testData.getCategory());
+        logger.debug("Email length: {} - {}", testData.getEmail().length(), testData.getDescription());
 
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure(testData.getEmail(), testData.getPassword());
 
-        // Check expected result type
         switch (testData.getExpectedResult()) {
             case "email_invalid":
                 Assert.assertTrue(loginPage.isEmailInvalidMessageDisplayed(),
@@ -163,20 +168,21 @@ public class LoginTestDataDriven extends CommonTest {
                 break;
         }
 
-        System.out.println("[" + testData.getTestId() + "] ✓ PASSED");
+        logger.info("[{}] ✓ PASSED", testData.getTestId());
     }
 
     @Test(dataProvider = "loginSpecialCases",
             dataProviderClass = TestDataProviders.class,
             description = "Login special cases - Security & Edge Cases")
+    @Story("Login - Special Cases")
+    @Severity(SeverityLevel.MINOR)
     public void testLoginSpecialCases(LoginTestData testData) {
-        System.out.println("\n[" + testData.getTestId() + "] " + testData.getCategory());
-        System.out.println("Testing: " + testData.getDescription());
+        logger.info("\n[{}] {}", testData.getTestId(), testData.getCategory());
+        logger.debug("Testing: {}", testData.getDescription());
 
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure(testData.getEmail(), testData.getPassword());
 
-        // Handle different special case results
         switch (testData.getExpectedResult()) {
             case "email_invalid":
                 Assert.assertTrue(loginPage.isEmailInvalidMessageDisplayed(),
@@ -189,19 +195,20 @@ public class LoginTestDataDriven extends CommonTest {
                 break;
         }
 
-        System.out.println("[" + testData.getTestId() + "] ✓ PASSED");
+        logger.info("[{}] ✓ PASSED", testData.getTestId());
     }
 
     @Test(dataProvider = "loginCombinationTests",
             dataProviderClass = TestDataProviders.class,
             description = "Login combination testing")
+    @Story("Login - Combination Testing")
+    @Severity(SeverityLevel.NORMAL)
     public void testLoginCombinations(LoginTestData testData) {
-        System.out.println("\n[" + testData.getTestId() + "] " + testData.getCategory());
+        logger.info("\n[{}] {}", testData.getTestId(), testData.getCategory());
 
         loginPage = new HomePage().clickSignInButton();
         loginPage.loginExpectFailure(testData.getEmail(), testData.getPassword());
 
-        // Handle combination results
         switch (testData.getExpectedResult()) {
             case "email_invalid":
                 Assert.assertTrue(loginPage.isEmailInvalidMessageDisplayed());
@@ -217,19 +224,6 @@ public class LoginTestDataDriven extends CommonTest {
                 break;
         }
 
-        System.out.println("[" + testData.getTestId() + "] ✓ PASSED");
+        logger.info("[{}] ✓ PASSED", testData.getTestId());
     }
-
-    /*// ==================== MANUAL TESTS (Keep for specific scenarios) ====================
-
-    @Test(priority = 1, description = "LG.01 - Login successfully with valid credentials")
-    public void loginSuccessfully() {
-        loginPage = new HomePage().clickSignInButton();
-        homePage = loginPage.loginExpectSuccess("hpqn1510@gmail.com", "Kikiga18123@");
-
-        Assert.assertTrue(homePage.isLoggedIn(),
-                "User should be logged in after successful login");
-        Assert.assertFalse(homePage.isRegisterButtonDisplayed(),
-                "Register button should not be displayed when logged in");
-    }*/
 }

@@ -1,6 +1,8 @@
 package common;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.drivers.DriverManager;
 import org.example.keywords.MobileUI;
 import org.openqa.selenium.NoSuchElementException;
@@ -13,6 +15,8 @@ import org.testng.annotations.BeforeMethod;
 import page.*;
 
 public abstract class CommonTest extends BaseTest {
+    private static final Logger logger = LogManager.getLogger(CommonTest.class);
+
     protected HomePage homePage;
     protected AppFlowManager appFlowManager;
 
@@ -22,9 +26,8 @@ public abstract class CommonTest extends BaseTest {
     public void setUpClass() {
         appFlowManager = new AppFlowManager();
         appFlowManager.handleAppLaunch();
-        System.out.println("[" + getTestName() + "] ========== TEST SUITE STARTED ==========");
+        logger.info("[{}] ========== TEST SUITE STARTED ==========", getTestName());
 
-        // Perform login precondition nếu test class cần
         if (requiresLoginPrecondition()) {
             performLoginPrecondition();
         }
@@ -32,25 +35,25 @@ public abstract class CommonTest extends BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        System.out.println("\n[" + getTestName() + "] ========== TEST STARTED ==========");
+        logger.info("\n[{}] ========== TEST STARTED ==========", getTestName());
         homePage = new HomePage();
 
         String currentState = homePage.getCurrentState();
-        System.out.println("[" + getTestName() + "] Current state: " + currentState);
+        logger.info("[{}] Current state: {}", getTestName(), currentState);
 
         if (!homePage.isHomePageDisplayed()) {
-            System.out.println("[" + getTestName() + "] Not on HomePage (state: " + currentState + "), navigating back...");
+            logger.debug("[{}] Not on HomePage (state: {}), navigating back...", getTestName(), currentState);
             DriverManager.getDriver().navigate().back();
 
-            homePage.waitForHomePageToLoad(1);
+            homePage.waitForHomePageToLoad();  // ← SỬA: Loại bỏ parameter
 
             if (homePage.isHomePageDisplayed()) {
-                System.out.println("[" + getTestName() + "] Successfully navigated back to HomePage");
+                logger.info("[{}] Successfully navigated back to HomePage", getTestName());
             } else {
-                System.out.println("[" + getTestName() + "] WARNING: Still not on HomePage after navigation!");
+                logger.warn("[{}] WARNING: Still not on HomePage after navigation!", getTestName());
             }
         } else {
-            System.out.println("[" + getTestName() + "] Already on HomePage (state: " + currentState + ")");
+            logger.info("[{}] Already on HomePage (state: {})", getTestName(), currentState);
         }
     }
 
@@ -60,10 +63,10 @@ public abstract class CommonTest extends BaseTest {
 
     @AfterMethod
     public void tearDown(ITestResult result) {
-        System.out.println("\n[" + getTestName() + "] ========== CLEANUP STARTED ==========");
+        logger.info("\n[{}] ========== CLEANUP STARTED ==========", getTestName());
 
         boolean isTestPassed = (result.getStatus() == ITestResult.SUCCESS);
-        System.out.println("[" + getTestName() + "] Test Status: " + (isTestPassed ? "PASSED" : "FAILED"));
+        logger.info("[{}] Test Status: {}", getTestName(), (isTestPassed ? "PASSED" : "FAILED"));
 
         try {
             if (homePage == null) {
@@ -71,40 +74,35 @@ public abstract class CommonTest extends BaseTest {
             }
 
             if (isTestPassed) {
-                // AUTO NAVIGATE: Check nếu không ở HomePage thì tự động navigate về
                 if (!homePage.isHomePageDisplayed()) {
-                    System.out.println("[" + getTestName() + "] Not on HomePage, auto-navigating back...");
+                    logger.debug("[{}] Not on HomePage, auto-navigating back...", getTestName());
                     navigateBackToHomePageWithRetry();
                 }
 
-                // Test PASSED - Check nếu cần logout
                 if (homePage.isLoggedIn() && shouldLogoutAfterPassedTest()) {
-                    System.out.println("[" + getTestName() + "] Test PASSED & Logged in -> Performing logout");
+                    logger.info("[{}] Test PASSED & Logged in -> Performing logout", getTestName());
                     performLogout();
                 } else if (homePage.isLoggedIn() && !shouldLogoutAfterPassedTest()) {
-                    System.out.println("[" + getTestName() + "] Test PASSED & Logged in -> Keeping session (no logout needed)");
+                    logger.info("[{}] Test PASSED & Logged in -> Keeping session (no logout needed)", getTestName());
                 } else {
-                    System.out.println("[" + getTestName() + "] Test PASSED & Already on HomePage -> No cleanup needed");
+                    logger.info("[{}] Test PASSED & Already on HomePage -> No cleanup needed", getTestName());
                 }
             } else {
-                // Test FAILED - Không logout, chỉ clear data
-                System.out.println("[" + getTestName() + "] Test FAILED -> Clearing data only (no logout to save time)");
+                logger.info("[{}] Test FAILED -> Clearing data only (no logout to save time)", getTestName());
                 clearAppDataOnly();
             }
 
         } catch (NoSuchElementException e) {
-            System.out.println("[" + getTestName() + "] Element not found during cleanup: " + e.getMessage());
+            logger.error("[{}] Element not found during cleanup: {}", getTestName(), e.getMessage());
             navigateBackFallback();
         } catch (WebDriverException e) {
-            System.out.println("[" + getTestName() + "] WebDriver error during cleanup: " + e.getMessage());
-            e.printStackTrace();
+            logger.error("[{}] WebDriver error during cleanup: {}", getTestName(), e.getMessage());
             navigateBackFallback();
         } catch (Exception e) {
-            System.out.println("[" + getTestName() + "] Unexpected cleanup error: " + e.getClass().getName());
-            e.printStackTrace();
+            logger.error("[{}] Unexpected cleanup error: {}", getTestName(), e.getClass().getName());
             navigateBackFallback();
         }
-        System.out.println("[" + getTestName() + "] ========== CLEANUP COMPLETED ==========\n");
+        logger.info("[{}] ========== CLEANUP COMPLETED ==========\n", getTestName());
     }
 
     protected boolean shouldLogoutAfterPassedTest() {
@@ -118,48 +116,46 @@ public abstract class CommonTest extends BaseTest {
     protected String[] getLoginCredentials() {
         return null;
     }
+
     protected void performLogout() {
-    System.out.println("[" + getTestName() + "] Logging out...");
-    BasePage basePage = new BasePage();
-    AccountPage accountPage = basePage.clickAccountMenuItem();
-    accountPage.scrollAndLogout();
+        logger.info("[{}] Logging out...", getTestName());
+        BasePage basePage = new BasePage();
+        AccountPage accountPage = basePage.clickAccountMenuItem();
+        accountPage.scrollAndLogout();
 
-    homePage = new HomePage();
-    homePage.waitForHomePageToLoad(2);
+        homePage = new HomePage();
+        homePage.waitForHomePageToLoad();  // ← SỬA: Loại bỏ parameter
 
-    System.out.println("[" + getTestName() + "] Logged out successfully");
+        logger.info("[{}] Logged out successfully", getTestName());
     }
 
     protected void clearAppDataOnly() {
-        System.out.println("[" + getTestName() + "] Clearing app data (no logout)...");
+        logger.info("[{}] Clearing app data (no logout)...", getTestName());
         try {
             if (homePage == null) {
                 homePage = new HomePage();
             }
 
             if (!homePage.isHomePageDisplayed()) {
-                // Use the new retry method
-                System.out.println("[" + getTestName() + "] Not on HomePage, navigating back...");
+                logger.debug("[{}] Not on HomePage, navigating back...", getTestName());
                 navigateBackToHomePageWithRetry();
             } else {
-                System.out.println("[" + getTestName() + "] Already on HomePage");
+                logger.debug("[{}] Already on HomePage", getTestName());
             }
 
-            System.out.println("[" + getTestName() + "] App data cleared successfully");
+            logger.info("[{}] App data cleared successfully", getTestName());
         } catch (NoSuchElementException e) {
-            System.out.println("[" + getTestName() + "] Element not found during clear: " + e.getMessage());
+            logger.error("[{}] Element not found during clear: {}", getTestName(), e.getMessage());
         } catch (WebDriverException e) {
-            System.out.println("[" + getTestName() + "] WebDriver error during clear: " + e.getMessage());
+            logger.error("[{}] WebDriver error during clear: {}", getTestName(), e.getMessage());
         } catch (Exception e) {
-            System.out.println("[" + getTestName() + "] Clear data error: " + e.getClass().getName() + " - " + e.getMessage());
+            logger.error("[{}] Clear data error: {} - {}", getTestName(), e.getClass().getName(), e.getMessage());
         }
     }
 
-
     private void performLoginPrecondition() {
-        System.out.println("[" + getTestName() + "] ========== CHECKING LOGIN PRECONDITION ==========");
+        logger.info("[{}] ========== CHECKING LOGIN PRECONDITION ==========", getTestName());
 
-        // Reuse homePage instance if exists
         if (homePage == null) {
             homePage = new HomePage();
         }
@@ -168,11 +164,11 @@ public abstract class CommonTest extends BaseTest {
             String[] credentials = getLoginCredentials();
             if (credentials == null || credentials.length != 2) {
                 String errorMsg = "Login precondition required but credentials not provided in " + getTestName();
-                System.out.println("[" + getTestName() + "] ERROR: " + errorMsg);
+                logger.error("[{}] ERROR: {}", getTestName(), errorMsg);
                 throw new IllegalStateException(errorMsg);
             }
 
-            System.out.println("[" + getTestName() + "] User not logged in -> Logging in...");
+            logger.info("[{}] User not logged in -> Logging in...", getTestName());
 
             try {
                 LoginPage loginPage = homePage.clickSignInButton();
@@ -182,54 +178,49 @@ public abstract class CommonTest extends BaseTest {
                     throw new RuntimeException("Login succeeded but user state shows not logged in");
                 }
 
-                System.out.println("[" + getTestName() + "] Logged in successfully");
+                logger.info("[{}] Logged in successfully", getTestName());
 
             } catch (Exception e) {
                 String errorMsg = "Login precondition failed for " + getTestName();
-                System.out.println("[" + getTestName() + "] ERROR: " + errorMsg);
-                e.printStackTrace();
+                logger.error("[{}] ERROR: {}", getTestName(), errorMsg);
                 throw new RuntimeException(errorMsg, e);
             }
         } else {
-            System.out.println("[" + getTestName() + "] User already logged in - Skipping login");
+            logger.info("[{}] User already logged in - Skipping login", getTestName());
         }
 
-        System.out.println("[" + getTestName() + "] ========== LOGIN PRECONDITION COMPLETED ==========\n");
+        logger.info("[{}] ========== LOGIN PRECONDITION COMPLETED ==========\n", getTestName());
     }
 
     private void navigateBackToHomePageWithRetry() {
-        int maxAttempts = 5; // Enough for deepest nested page
+        int maxAttempts = 5;
 
         for (int i = 0; i < maxAttempts; i++) {
             try {
-                // Check if already on HomePage
                 homePage = new HomePage();
                 if (homePage.isHomePageDisplayed()) {
-                    System.out.println("[" + getTestName() + "] Successfully on HomePage (attempt " + (i+1) + ")");
-                    return; // Success
+                    logger.debug("[{}] Successfully on HomePage (attempt {})", getTestName(), (i+1));
+                    return;
                 }
 
-                // Not on HomePage, navigate back
-                System.out.println("[" + getTestName() + "] Navigate back attempt " + (i+1) + "/" + maxAttempts);
+                logger.debug("[{}] Navigate back attempt {}/{}", getTestName(), (i+1), maxAttempts);
                 DriverManager.getDriver().navigate().back();
 
-                // Wait for page to load
-                boolean loaded = homePage.waitForHomePageToLoad(2);
+                homePage.waitForHomePageToLoad();  // ← SỬA: Loại bỏ parameter và return value
 
-                if (loaded && homePage.isHomePageDisplayed()) {
-                    System.out.println("[" + getTestName() + "] Reached HomePage successfully");
-                    return; // Success
+                if (homePage.isHomePageDisplayed()) {
+                    logger.info("[{}] Reached HomePage successfully", getTestName());
+                    return;
                 }
 
             } catch (NoSuchElementException e) {
-                System.out.println("[" + getTestName() + "] Element not found on attempt " + (i+1) + ", continuing...");
+                logger.debug("[{}] Element not found on attempt {}, continuing...", getTestName(), (i+1));
             } catch (WebDriverException e) {
-                System.out.println("[" + getTestName() + "] WebDriver error on attempt " + (i+1) + ": " + e.getMessage());
+                logger.debug("[{}] WebDriver error on attempt {}: {}", getTestName(), (i+1), e.getMessage());
             } catch (Exception e) {
-                System.out.println("[" + getTestName() + "] Error on attempt " + (i+1) + ": " + e.getClass().getName());
+                logger.debug("[{}] Error on attempt {}: {}", getTestName(), (i+1), e.getClass().getName());
             }
 
-            // If not last attempt, small delay before retry
             if (i < maxAttempts - 1) {
                 try {
                     Thread.sleep(300);
@@ -239,27 +230,25 @@ public abstract class CommonTest extends BaseTest {
             }
         }
 
-        // After all attempts, check final state
         try {
             homePage = new HomePage();
             if (!homePage.isHomePageDisplayed()) {
-                System.out.println("[" + getTestName() + "] WARNING: Failed to reach HomePage after " + maxAttempts + " attempts");
-                System.out.println("[" + getTestName() + "] Current state: " + homePage.getCurrentState());
+                logger.warn("[{}] WARNING: Failed to reach HomePage after {} attempts", getTestName(), maxAttempts);
+                logger.warn("[{}] Current state: {}", getTestName(), homePage.getCurrentState());
             }
         } catch (Exception e) {
-            System.out.println("[" + getTestName() + "] WARNING: Cannot verify final state: " + e.getMessage());
+            logger.warn("[{}] WARNING: Cannot verify final state: {}", getTestName(), e.getMessage());
         }
     }
 
     private void navigateBackFallback() {
-    try {
-        System.out.println("[" + getTestName() + "] Attempting fallback navigation...");
-        DriverManager.getDriver().navigate().back();
-        MobileUI.sleep(0.3);
-        System.out.println("[" + getTestName() + "] Fallback navigation completed");
-    } catch (Exception ex) {
-        System.out.println("[" + getTestName() + "] Fallback navigation also failed: " + ex.getMessage());
-    }
+        try {
+            logger.debug("[{}] Attempting fallback navigation...", getTestName());
+            DriverManager.getDriver().navigate().back();
+            MobileUI.sleep(0.3);
+            logger.debug("[{}] Fallback navigation completed", getTestName());
+        } catch (Exception ex) {
+            logger.error("[{}] Fallback navigation also failed: {}", getTestName(), ex.getMessage());
+        }
     }
 }
-

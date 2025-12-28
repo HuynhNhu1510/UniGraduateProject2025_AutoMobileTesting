@@ -12,11 +12,15 @@ import org.example.drivers.DriverManager;
 import org.example.helpers.SystemHelpers;
 import org.testng.annotations.*;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
 public class BaseTest {
+    private static final Logger logger = LogManager.getLogger(BaseTest.class);
     private AppiumDriverLocalService service;
 
     @BeforeSuite
@@ -24,6 +28,8 @@ public class BaseTest {
         String host = ConfigData.APPIUM_HOST;
         String port = ConfigData.APPIUM_PORT;
         int timeoutService = Integer.parseInt(ConfigData.TIMEOUT_SERVICE);
+
+        logger.info("Starting Appium server on {}:{}", host, port);
 
         //Kill process on port
         SystemHelpers.killProcessOnPort(port);
@@ -35,14 +41,14 @@ public class BaseTest {
         builder.withArgument(GeneralServerFlag.LOG_LEVEL, ConfigData.LOG_LEVEL);
         builder.withTimeout(Duration.ofSeconds(timeoutService));
 
-        //Start the server with the builder
+        // Start the server with the builder
         service = AppiumDriverLocalService.buildService(builder);
         service.start();
 
         if (service.isRunning()) {
-            System.out.println("##### Appium server started on " + host + ":" + port);
+            logger.info("##### Appium server started on {}:{}", host, port);
         } else {
-            System.out.println("Failed to start Appium server.");
+            logger.error("Failed to start Appium server.");
         }
     }
 
@@ -69,15 +75,17 @@ public class BaseTest {
         try {
             driver = new AppiumDriver(new URL("http://" + host + ":" + port), options);
             DriverManager.setDriver(driver);
+            logger.info("Driver initialized with EXPLICIT WAIT strategy only");
         } catch (MalformedURLException e) {
+            logger.error("Failed to initialize driver", e);
             throw new RuntimeException(e);
         }
-        System.out.println("Driver initialized with EXPLICIT WAIT strategy only");
     }
 
     @AfterTest
     public void tearDownDriver() {
         if (DriverManager.getDriver() != null) {
+            logger.info("Quitting driver...");
             DriverManager.quitDriver();
         }
     }
@@ -86,7 +94,7 @@ public class BaseTest {
     public void stopAppiumServer() {
         if (service != null && service.isRunning()) {
             service.stop();
-            System.out.println("##### Appium server stopped.");
+            logger.info("##### Appium server stopped.");
         }
         DriverManager.cleanup();
     }
