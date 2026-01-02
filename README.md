@@ -200,13 +200,6 @@ mvn allure:serve
 
 https://www.linkedin.com/in/huynhnhu1510/
 
-## License
-
-MIT License
-```
-
----
-
 ## 3. LinkedIn Skills Section
 ```
 Technical Skills:
