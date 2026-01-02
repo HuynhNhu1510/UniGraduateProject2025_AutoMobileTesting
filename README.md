@@ -198,7 +198,7 @@ mvn allure:serve
 
 ## Author
 
-[Your Name]
+https://www.linkedin.com/in/huynhnhu1510/
 
 ## License
 
