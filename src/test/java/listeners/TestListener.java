@@ -1,5 +1,6 @@
 package listeners;
 
+import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.Attachment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,8 +11,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import java.io.ByteArrayInputStream;
 
 public class TestListener implements ITestListener {
     private static final Logger logger = LogManager.getLogger(TestListener.class);
@@ -43,26 +42,31 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         String testName = result.getMethod().getMethodName();
-        logger.info("✓ Test PASSED: {}", testName);
+        String testClass = result.getTestClass().getRealClass().getSimpleName();
+        logger.info("Test PASSED: {}", testName);
 
-        captureScreenshotOnSuccess(result);
-        ScreenshotUtils.takeScreenshot(testName + "_PASSED");
+        // Best practice: Include class name to avoid conflicts in parallel execution
+        String screenshotName = testClass + "." + testName + "_PASSED";
+
+        // Single screenshot call - combines both Allure and file system
+        captureAndSaveScreenshot(screenshotName);
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         String testName = result.getMethod().getMethodName();
-        logger.error("✗ Test FAILED: {}", testName);
+        String testClass = result.getTestClass().getRealClass().getSimpleName();
+        logger.error("Test FAILED: {}", testName);
 
-        // Capture screenshot - CHI 1 LAN
-        captureScreenshotOnFailure(testName);
+        // Best practice: Include class name to avoid conflicts in parallel execution
+        String screenshotName = testClass + "." + testName + "_FAILED";
+
+        // Single screenshot call - combines both Allure and file system
+        captureAndSaveScreenshot(screenshotName);
 
         // Attach error details
         attachErrorDetails(result);
         attachStackTrace(result);
-
-        // Save to file system
-        ScreenshotUtils.takeScreenshot(testName + "_FAILED");
     }
 
     @Override
@@ -81,38 +85,32 @@ public class TestListener implements ITestListener {
         logger.warn("Test failed but within success percentage: {}", testName);
     }
 
-    @Attachment(value = "Test Failed - {0}", type = "image/png")
-    private byte[] captureScreenshotOnFailure(String testName) {
+    @Attachment(value = "Screenshot: {0}", type = "image/png")
+    private byte[] captureAndSaveScreenshot(String screenshotName) {
         try {
-            logger.debug("Capturing screenshot for failed test: {}", testName);
+            // NULL CHECK - Best practice from Appium community
+            AppiumDriver driver = DriverManager.getDriver();
+            if (driver == null) {
+                logger.error("Driver is null, cannot take screenshot: {}", screenshotName);
+                return null;
+            }
 
-            TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
+            logger.debug("Capturing screenshot: {}", screenshotName);
+
+            // Take screenshot for Allure (byte array)
+            TakesScreenshot ts = (TakesScreenshot) driver;
             byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
 
-            logger.debug("Screenshot captured and attached to Allure Report");
+            // Also save to file system
+            ScreenshotUtils.takeScreenshot(screenshotName);
+
+            logger.debug("Screenshot captured and attached: {}", screenshotName);
             return screenshot;
 
         } catch (Exception e) {
-            logger.error("Failed to capture screenshot: {}", e.getMessage());
-            return new byte[0];
-        }
-    }
-
-    @Attachment(value = "Success Screenshot", type = "image/png")
-    private byte[] captureScreenshotOnSuccess(ITestResult result) {
-        try {
-            String testName = result.getMethod().getMethodName();
-            logger.debug("Capturing screenshot for passed test: {}", testName);
-
-            TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
-            byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-
-            logger.debug("Success screenshot captured");
-            return screenshot;
-
-        } catch (Exception e) {
-            logger.error("Failed to capture success screenshot: {}", e.getMessage());
-            return new byte[0];
+            logger.error("Failed to capture screenshot: {}", e.getMessage(), e);
+            // Return null instead of empty byte array - Best practice from Allure GitHub
+            return null;
         }
     }
 
@@ -129,7 +127,6 @@ public class TestListener implements ITestListener {
             errorDetails.append("\nError Message:\n");
             errorDetails.append(result.getThrowable().getMessage()).append("\n");
         }
-
         String details = errorDetails.toString();
         logger.debug("Error details attached to Allure");
         return details;

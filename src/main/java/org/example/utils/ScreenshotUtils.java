@@ -1,5 +1,6 @@
 package org.example.utils;
 
+import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -20,10 +21,21 @@ public class ScreenshotUtils {
 
     public static String takeScreenshot(String screenshotName) {
         try {
+            // NULL CHECK - Best practice from Appium community
+            AppiumDriver driver = DriverManager.getDriver();
+            if (driver == null) {
+                logger.error("Driver is null, cannot take screenshot");
+                return null;
+            }
+
             // Create screenshot directory if not exists
             File screenshotDir = new File(SCREENSHOT_PATH);
             if (!screenshotDir.exists()) {
-                screenshotDir.mkdirs();
+                boolean created = screenshotDir.mkdirs();
+                if (!created) {
+                    logger.error("Failed to create screenshot directory: {}", SCREENSHOT_PATH);
+                    return null;
+                }
             }
 
             // Generate timestamp
@@ -32,7 +44,7 @@ public class ScreenshotUtils {
             String fullPath = SCREENSHOT_PATH + File.separator + fileName;
 
             // Take screenshot
-            TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
+            TakesScreenshot ts = (TakesScreenshot) driver;
             File source = ts.getScreenshotAs(OutputType.FILE);
             File destination = new File(fullPath);
 
@@ -43,7 +55,10 @@ public class ScreenshotUtils {
             return fullPath;
 
         } catch (IOException e) {
-            logger.error("Failed to take screenshot: {}", e.getMessage());
+            logger.error("Failed to take screenshot (IO error): {}", e.getMessage());
+            return null;
+        } catch (Exception e) {
+            logger.error("Failed to take screenshot: {}", e.getMessage(), e);
             return null;
         }
     }
@@ -51,13 +66,21 @@ public class ScreenshotUtils {
     @Attachment(value = "{screenshotName}", type = "image/png")
     public static byte[] takeScreenshotForAllure(String screenshotName) {
         try {
-            TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
+            // NULL CHECK - Best practice from Appium community
+            AppiumDriver driver = DriverManager.getDriver();
+            if (driver == null) {
+                logger.error("Driver is null, cannot take screenshot for Allure");
+                return null;
+            }
+
+            TakesScreenshot ts = (TakesScreenshot) driver;
             byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
             logger.debug("Screenshot attached to Allure: {}", screenshotName);
             return screenshot;
         } catch (Exception e) {
-            logger.error("Failed to take screenshot for Allure: {}", e.getMessage());
-            return new byte[0];
+            logger.error("Failed to take screenshot for Allure: {}", e.getMessage(), e);
+            // Return null instead of empty byte array - Best practice from Allure GitHub
+            return null;
         }
     }
 

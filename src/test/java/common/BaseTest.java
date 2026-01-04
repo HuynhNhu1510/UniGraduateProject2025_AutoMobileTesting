@@ -9,12 +9,14 @@ import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
 import org.example.constants.ConfigData;
 import org.example.drivers.DriverManager;
+import org.example.helpers.PropertiesHelpers;
 import org.example.helpers.SystemHelpers;
 import org.testng.annotations.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
@@ -50,6 +52,7 @@ public class BaseTest {
         } else {
             logger.error("Failed to start Appium server.");
         }
+        createScreenshotDirectory();
     }
 
     @BeforeTest
@@ -97,5 +100,26 @@ public class BaseTest {
             logger.info("##### Appium server stopped.");
         }
         DriverManager.cleanup();
+    }
+
+    private void createScreenshotDirectory() {
+        try {
+            String screenshotPath = PropertiesHelpers.getValue("SCREENSHOT_PATH");
+            if (screenshotPath != null && !screenshotPath.trim().isEmpty()) {
+                File screenshotDir = new File(screenshotPath);
+                if (!screenshotDir.exists()) {
+                    boolean created = screenshotDir.mkdirs();
+                    if (created) {
+                        logger.info("Created screenshot directory: {}", screenshotPath);
+                    } else {
+                        logger.warn("Failed to create screenshot directory: {}", screenshotPath);
+                    }
+                } else {
+                    logger.debug("Screenshot directory already exists: {}", screenshotPath);
+                }
+            }
+        } catch (Exception e) {
+            logger.error("Error creating screenshot directory: {}", e.getMessage());
+        }
     }
 }

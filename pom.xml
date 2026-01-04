@@ -14,9 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Dependency Versions -->
-        <aspectj.version>1.9.21</aspectj.version>
+        <aspectj.version>1.9.22.1</aspectj.version>
         <log4j.version>2.25.3</log4j.version>
-        <allure.version>2.25.0</allure.version>
+        <allure.version>2.31.0</allure.version>
     </properties>
 
     <dependencies>
@@ -58,7 +58,7 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.15.1</version>
+            <version>2.18.0</version>
         </dependency>
 
         <!-- Allure TestNG for Reporting -->
@@ -118,6 +118,10 @@
                             <value>listeners.TestListener</value>
                         </property>
                     </properties>
+
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.basedir}/exports/reports/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
 
@@ -125,15 +129,35 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.12.0</version>
+                <version>2.15.0</version>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
                     <resultsDirectory>${project.basedir}/exports/reports/allure-results</resultsDirectory>
                     <reportDirectory>${project.basedir}/exports/reports/AllureReport</reportDirectory>
                 </configuration>
+            </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-maven</artifactId>
+                    <version>2.15.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>
