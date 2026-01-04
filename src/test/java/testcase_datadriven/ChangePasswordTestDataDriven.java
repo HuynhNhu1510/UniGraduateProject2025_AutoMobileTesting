@@ -60,9 +60,6 @@ public class ChangePasswordTestDataDriven extends CommonTest {
         logger.debug("Successfully navigated to Change Password page");
     }
 
-    /**
-     * Navigate back to HomePage manually using back button
-     */
     @Step("Navigate back to HomePage")
     private void navigateBackToHomePageManually() {
         logger.debug("Manually navigating back to HomePage...");
@@ -92,7 +89,7 @@ public class ChangePasswordTestDataDriven extends CommonTest {
 
     @Step("Restore password to original: {originalPassword}")
     private void restorePasswordToOriginal(String newPassword, String originalPassword) {
-        logger.info("⚠ CRITICAL: Restoring password from '{}' back to original...", newPassword);
+        logger.info("CRITICAL: Restoring password from '{}' back to original...", newPassword);
 
         // Navigate back to HomePage first
         navigateBackToHomePageManually();
@@ -109,7 +106,7 @@ public class ChangePasswordTestDataDriven extends CommonTest {
         logger.info("✓ Password successfully restored to original");
     }
 
-    @Test(dataProvider = "changePasswordValidData",
+    @Test(dataProvider = "changePasswordValid_EP",
             dataProviderClass = TestDataProviders.class,
             description = "Change password with valid data")
     @Story("Change Password - Valid Scenarios")
@@ -145,7 +142,7 @@ public class ChangePasswordTestDataDriven extends CommonTest {
         logger.info("[{}] ✓ TEST PASSED\n", testData.getTestId());
     }
 
-    @Test(dataProvider = "changePasswordInvalidCurrent",
+    @Test(dataProvider = "changePasswordInvalidCurrent_EP",
             dataProviderClass = TestDataProviders.class,
             description = "Change password with invalid current password")
     @Story("Change Password - Invalid Current Password")
@@ -177,7 +174,7 @@ public class ChangePasswordTestDataDriven extends CommonTest {
         logger.info("[{}] ✓ TEST PASSED\n", testData.getTestId());
     }
 
-    @Test(dataProvider = "changePasswordInvalidFormat",
+    @Test(dataProvider = "changePasswordInvalidNew_EP",
             dataProviderClass = TestDataProviders.class,
             description = "Change password with invalid password format")
     @Story("Change Password - Password Format Validation")
@@ -214,7 +211,7 @@ public class ChangePasswordTestDataDriven extends CommonTest {
         logger.info("[{}] ✓ TEST PASSED\n", testData.getTestId());
     }
 
-    @Test(dataProvider = "changePasswordEmptyFields",
+    @Test(dataProvider = "changePasswordEmptyFields_EP",
             dataProviderClass = TestDataProviders.class,
             description = "Change password with empty fields")
     @Story("Change Password - Empty Fields Validation")
@@ -252,7 +249,7 @@ public class ChangePasswordTestDataDriven extends CommonTest {
         logger.info("[{}] ✓ TEST PASSED\n", testData.getTestId());
     }
 
-    @Test(dataProvider = "changePasswordBoundary",
+    @Test(dataProvider = "changePasswordLength_BVA",
             dataProviderClass = TestDataProviders.class,
             description = "Change password boundary value tests")
     @Story("Change Password - Boundary Value Analysis")

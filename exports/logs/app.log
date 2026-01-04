@@ -1,109 +1,846 @@
-2025-12-29 00:03:35.435 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
-2025-12-29 00:03:36.228 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
-2025-12-29 00:03:36.240 [main] INFO  listeners.TestListener - ========================================
-2025-12-29 00:03:36.241 [main] INFO  listeners.TestListener - Test Suite Started: Login and Register Tests
-2025-12-29 00:03:36.241 [main] INFO  listeners.TestListener - ========================================
-2025-12-29 00:03:40.959 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
-2025-12-29 00:03:41.001 [main] INFO  common.AppFlowManager - 
+2026-01-04 09:33:12.051 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2026-01-04 09:33:12.872 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2026-01-04 09:33:12.879 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 09:33:12.879 [main] INFO  listeners.TestListener - Test Suite Started: Surefire test
+2026-01-04 09:33:12.879 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 09:33:24.820 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2026-01-04 09:33:24.884 [main] INFO  common.AppFlowManager - 
 [AppFlow] Handling app launch...
-2025-12-29 00:03:41.450 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
-2025-12-29 00:03:41.450 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
-2025-12-29 00:03:54.115 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
-2025-12-29 00:04:34.369 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: NOT_LOGGED_IN
-2025-12-29 00:04:34.373 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== TEST SUITE STARTED ==========
-2025-12-29 00:04:34.943 [main] INFO  common.CommonTest - 
+2026-01-04 09:33:25.461 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2026-01-04 09:33:25.461 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2026-01-04 09:33:38.139 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2026-01-04 09:34:18.435 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: NOT_LOGGED_IN
+2026-01-04 09:34:18.437 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== TEST SUITE STARTED ==========
+2026-01-04 09:34:19.007 [main] INFO  common.CommonTest - 
 [Login Test - Data Driven] ========== TEST STARTED ==========
-2025-12-29 00:05:15.088 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
-2025-12-29 00:05:55.218 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
-2025-12-29 00:05:55.374 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
-2025-12-29 00:05:55.432 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+2026-01-04 09:34:59.189 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 09:35:39.340 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 09:35:39.544 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2026-01-04 09:35:39.612 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
 [LG_COMBO1] Combination - Invalid Email + Invalid Password
-2025-12-29 00:05:55.432 [main] INFO  page.HomePage - Clicking Sign In button
-2025-12-29 00:07:26.818 [main] INFO  page.LoginPage - Attempting login expecting failure with email: invalidemail
-2025-12-29 00:07:26.820 [main] INFO  page.LoginPage - Filling login form for email: invalidemail
-2025-12-29 00:07:29.624 [main] INFO  page.LoginPage - Clicking Sign In button
-2025-12-29 00:07:31.193 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_COMBO1] ✓ PASSED
-2025-12-29 00:07:31.211 [main] INFO  listeners.TestListener - Test PASSED: testLoginCombinations
-2025-12-29 00:07:33.216 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginCombinations_PASSED_20251229_000732.png
-2025-12-29 00:07:33.235 [main] INFO  common.CommonTest - 
+2026-01-04 09:35:39.615 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 09:37:11.838 [main] INFO  page.LoginPage - Attempting login expecting failure with email: invalidemail
+2026-01-04 09:37:11.840 [main] INFO  page.LoginPage - Filling login form for email: invalidemail
+2026-01-04 09:37:15.197 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 09:37:17.158 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_COMBO1] ✓ PASSED
+2026-01-04 09:37:17.175 [main] INFO  common.CommonTest - 
 [Login Test - Data Driven] ========== CLEANUP STARTED ==========
-2025-12-29 00:07:33.235 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
-2025-12-29 00:07:39.887 [main] INFO  page.HomePage - Waiting for HomePage to load...
-2025-12-29 00:09:00.136 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
-2025-12-29 00:09:38.906 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
-2025-12-29 00:09:59.610 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
-2025-12-29 00:09:59.611 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+2026-01-04 09:37:17.175 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 09:37:23.895 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 09:38:44.151 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 09:39:24.293 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 09:39:44.449 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 09:39:44.450 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
 
-2025-12-29 00:09:59.621 [main] INFO  common.CommonTest - 
+2026-01-04 09:39:44.456 [main] INFO  common.CommonTest - 
 [Login Test - Data Driven] ========== TEST STARTED ==========
-2025-12-29 00:11:22.687 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
-2025-12-29 00:12:02.916 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
-2025-12-29 00:12:02.921 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
-2025-12-29 00:12:02.926 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+2026-01-04 09:40:24.583 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 09:41:04.734 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 09:41:04.739 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2026-01-04 09:41:04.743 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
 [LG_COMBO2] Combination - Valid Email + Empty Password
-2025-12-29 00:12:02.927 [main] INFO  page.HomePage - Clicking Sign In button
-2025-12-29 00:13:34.300 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@example.com
-2025-12-29 00:13:34.303 [main] INFO  page.LoginPage - Filling login form for email: test@example.com
-2025-12-29 00:13:36.895 [main] INFO  page.LoginPage - Clicking Sign In button
-2025-12-29 00:13:37.920 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_COMBO2] ✓ PASSED
-2025-12-29 00:13:37.925 [main] INFO  listeners.TestListener - Test PASSED: testLoginCombinations
-2025-12-29 00:13:39.408 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginCombinations_PASSED_20251229_001338.png
-2025-12-29 00:13:39.414 [main] INFO  common.CommonTest - 
+2026-01-04 09:41:04.746 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 09:42:36.090 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@example.com
+2026-01-04 09:42:36.091 [main] INFO  page.LoginPage - Filling login form for email: test@example.com
+2026-01-04 09:42:38.757 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 09:42:39.796 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_COMBO2] ✓ PASSED
+2026-01-04 09:42:39.800 [main] INFO  common.CommonTest - 
 [Login Test - Data Driven] ========== CLEANUP STARTED ==========
-2025-12-29 00:13:39.415 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
-2025-12-29 00:13:46.058 [main] INFO  page.HomePage - Waiting for HomePage to load...
-2025-12-29 00:15:06.437 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
-2025-12-29 00:20:36.392 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
-2025-12-29 00:20:37.758 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
-2025-12-29 00:20:37.771 [main] INFO  listeners.TestListener - ========================================
-2025-12-29 00:20:37.771 [main] INFO  listeners.TestListener - Test Suite Started: Surefire test
-2025-12-29 00:20:37.771 [main] INFO  listeners.TestListener - ========================================
-2025-12-29 00:20:48.028 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
-2025-12-29 00:20:48.068 [main] INFO  common.AppFlowManager - 
+2026-01-04 09:42:39.800 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 09:42:46.437 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 09:44:06.704 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 09:44:46.836 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 09:45:06.910 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 09:45:06.911 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 09:45:06.915 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 09:45:47.085 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 09:46:27.362 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 09:46:27.367 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2026-01-04 09:46:27.379 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_COMBO3] Combination - Empty Email + Valid Password
+2026-01-04 09:46:27.380 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 09:47:58.842 [main] INFO  page.LoginPage - Attempting login expecting failure with email: 
+2026-01-04 09:47:58.842 [main] INFO  page.LoginPage - Filling login form for email: 
+2026-01-04 09:48:01.244 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 09:48:02.752 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_COMBO3] ✓ PASSED
+2026-01-04 09:48:02.757 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 09:48:02.757 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 09:48:09.509 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 09:49:29.845 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 09:50:10.003 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 09:50:30.087 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 09:50:30.088 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 09:50:30.090 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 09:51:10.220 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 09:51:50.552 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 09:51:50.554 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2026-01-04 09:51:50.558 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_COMBO4] Combination - Valid Format, Wrong Credentials
+2026-01-04 09:51:50.560 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 09:53:21.933 [main] INFO  page.LoginPage - Attempting login expecting failure with email: nonexist@example.com
+2026-01-04 09:53:21.933 [main] INFO  page.LoginPage - Filling login form for email: nonexist@example.com
+2026-01-04 09:53:24.106 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 09:53:26.370 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_COMBO4] ✓ PASSED
+2026-01-04 09:53:26.374 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 09:53:26.375 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 09:53:33.309 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 09:54:53.538 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 09:55:33.653 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 09:55:53.757 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 09:55:53.757 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 09:55:53.765 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 09:56:33.922 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 09:57:14.050 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 09:57:14.053 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2026-01-04 09:57:14.058 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_BVA_EMAIL1] BVA - Shortest valid email (6 chars)
+2026-01-04 09:57:14.059 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 09:58:45.348 [main] INFO  page.LoginPage - Attempting login expecting failure with email: a@b.c
+2026-01-04 09:58:45.348 [main] INFO  page.LoginPage - Filling login form for email: a@b.c
+2026-01-04 09:58:47.896 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 09:58:51.017 [main] ERROR listeners.TestListener - Test FAILED: testLoginEmailLength_BVA
+2026-01-04 09:58:52.748 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginEmailLength_BVA_Thread1_FAILED_20260104_095852.png
+2026-01-04 09:58:52.761 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 09:58:52.762 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: FAILED
+2026-01-04 09:58:52.762 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test FAILED -> Clearing data only (no logout to save time)
+2026-01-04 09:58:52.762 [main] INFO  common.CommonTest - [Login Test - Data Driven] Clearing app data (no logout)...
+2026-01-04 09:58:59.306 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:00:19.567 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:00:59.706 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:00:59.707 [main] INFO  common.CommonTest - [Login Test - Data Driven] App data cleared successfully
+2026-01-04 10:00:59.707 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:00:59.711 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:01:39.927 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:02:20.050 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:02:20.052 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2026-01-04 10:02:20.056 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_BVA_EMAIL2] BVA - 5 chars email
+2026-01-04 10:02:20.057 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:03:51.348 [main] INFO  page.LoginPage - Attempting login expecting failure with email: a@bc
+2026-01-04 10:03:51.348 [main] INFO  page.LoginPage - Filling login form for email: a@bc
+2026-01-04 10:03:54.005 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:03:55.504 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_BVA_EMAIL2] ✓ PASSED
+2026-01-04 10:03:55.508 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:03:55.508 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 10:04:02.130 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:05:22.399 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:06:02.516 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:06:22.614 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 10:06:22.614 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:06:22.620 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:07:02.751 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:07:42.882 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:07:42.886 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2026-01-04 10:07:42.889 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_BVA_EMAIL3] BVA - 64 chars local part (Max)
+2026-01-04 10:07:42.891 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:09:14.196 [main] INFO  page.LoginPage - Attempting login expecting failure with email: abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz12@test.com
+2026-01-04 10:09:14.197 [main] INFO  page.LoginPage - Filling login form for email: abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz12@test.com
+2026-01-04 10:09:16.860 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:09:19.123 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_BVA_EMAIL3] ✓ PASSED
+2026-01-04 10:09:19.126 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:09:19.126 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 10:09:26.094 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:10:46.366 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:11:26.484 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:11:46.576 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 10:11:46.577 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:11:46.580 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:12:26.720 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:13:06.833 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:13:06.837 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2026-01-04 10:13:06.842 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_BVA_EMAIL4] BVA - 65 chars local part (Max+1)
+2026-01-04 10:13:06.843 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:14:38.147 [main] INFO  page.LoginPage - Attempting login expecting failure with email: abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz123@test.com
+2026-01-04 10:14:38.148 [main] INFO  page.LoginPage - Filling login form for email: abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz123@test.com
+2026-01-04 10:14:40.780 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:14:43.649 [main] ERROR listeners.TestListener - Test FAILED: testLoginEmailLength_BVA
+2026-01-04 10:14:45.069 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginEmailLength_BVA_Thread1_FAILED_20260104_101444.png
+2026-01-04 10:14:45.077 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:14:45.077 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: FAILED
+2026-01-04 10:14:45.078 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test FAILED -> Clearing data only (no logout to save time)
+2026-01-04 10:14:45.078 [main] INFO  common.CommonTest - [Login Test - Data Driven] Clearing app data (no logout)...
+2026-01-04 10:14:51.704 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:16:11.968 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:16:52.085 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:16:52.085 [main] INFO  common.CommonTest - [Login Test - Data Driven] App data cleared successfully
+2026-01-04 10:16:52.085 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:16:52.089 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:17:32.214 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:18:12.338 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:18:12.341 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2026-01-04 10:18:12.343 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_BVA_EMAIL5] BVA - 254 chars total (Max)
+2026-01-04 10:18:12.344 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:19:43.664 [main] INFO  page.LoginPage - Attempting login expecting failure with email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@example.com
+2026-01-04 10:19:43.664 [main] INFO  page.LoginPage - Filling login form for email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@example.com
+2026-01-04 10:19:46.324 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:19:48.611 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_BVA_EMAIL5] ✓ PASSED
+2026-01-04 10:19:48.613 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:19:48.613 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 10:19:55.636 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:21:15.883 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:21:55.999 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:22:16.072 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 10:22:16.073 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:22:16.075 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:22:56.202 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:23:36.360 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:23:36.362 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmailLength_BVA <<<
+2026-01-04 10:23:36.366 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_BVA_EMAIL6] BVA - 320 chars total (Exceeds)
+2026-01-04 10:23:36.367 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:25:07.677 [main] INFO  page.LoginPage - Attempting login expecting failure with email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@example.com
+2026-01-04 10:25:07.678 [main] INFO  page.LoginPage - Filling login form for email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@example.com
+2026-01-04 10:25:10.851 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:25:14.674 [main] ERROR listeners.TestListener - Test FAILED: testLoginEmailLength_BVA
+2026-01-04 10:25:16.081 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginEmailLength_BVA_Thread1_FAILED_20260104_102515.png
+2026-01-04 10:25:16.086 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:25:16.087 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: FAILED
+2026-01-04 10:25:16.087 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test FAILED -> Clearing data only (no logout to save time)
+2026-01-04 10:25:16.087 [main] INFO  common.CommonTest - [Login Test - Data Driven] Clearing app data (no logout)...
+2026-01-04 10:25:22.680 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:26:42.933 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:27:23.050 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:27:23.051 [main] INFO  common.CommonTest - [Login Test - Data Driven] App data cleared successfully
+2026-01-04 10:27:23.051 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:27:23.057 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:28:03.212 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:28:43.390 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:28:43.394 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2026-01-04 10:28:43.398 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.06_EP1] Both Fields Empty
+2026-01-04 10:28:43.399 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:30:14.716 [main] INFO  page.LoginPage - Attempting login expecting failure with email: 
+2026-01-04 10:30:14.718 [main] INFO  page.LoginPage - Filling login form for email: 
+2026-01-04 10:30:16.761 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:30:17.748 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.06_EP1] ✓ PASSED
+2026-01-04 10:30:17.750 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:30:17.750 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 10:30:24.305 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:31:44.570 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:32:24.697 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:32:44.759 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 10:32:44.759 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:32:44.772 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:33:24.886 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:34:05.022 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:34:05.025 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2026-01-04 10:34:05.028 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.07_EP2] Email Empty
+2026-01-04 10:34:05.029 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:35:36.380 [main] INFO  page.LoginPage - Attempting login expecting failure with email: 
+2026-01-04 10:35:36.380 [main] INFO  page.LoginPage - Filling login form for email: 
+2026-01-04 10:35:38.413 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:35:39.879 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.07_EP2] ✓ PASSED
+2026-01-04 10:35:39.882 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:35:39.882 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 10:35:46.484 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:37:06.731 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:37:46.852 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:38:06.946 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 10:38:06.947 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:38:06.949 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:38:47.127 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:39:27.248 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:39:27.251 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2026-01-04 10:39:27.255 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.08_EP3] Password Empty
+2026-01-04 10:39:27.262 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:40:58.579 [main] INFO  page.LoginPage - Attempting login expecting failure with email: validuser@gmail.com
+2026-01-04 10:40:58.581 [main] INFO  page.LoginPage - Filling login form for email: validuser@gmail.com
+2026-01-04 10:41:00.995 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:41:02.015 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.08_EP3] ✓ PASSED
+2026-01-04 10:41:02.018 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:41:02.018 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 10:41:08.591 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:42:28.852 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:43:08.987 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:43:29.075 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 10:43:29.075 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:43:29.077 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:44:09.201 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:44:49.321 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:44:49.324 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2026-01-04 10:44:49.327 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP_SPACE1] Email - Only Spaces
+2026-01-04 10:44:49.327 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:46:20.798 [main] INFO  page.LoginPage - Attempting login expecting failure with email:    
+2026-01-04 10:46:20.799 [main] INFO  page.LoginPage - Filling login form for email:    
+2026-01-04 10:46:23.172 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:46:26.225 [main] ERROR listeners.TestListener - Test FAILED: testLoginEmptyFields_EP
+2026-01-04 10:46:27.879 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginEmptyFields_EP_Thread1_FAILED_20260104_104627.png
+2026-01-04 10:46:27.885 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:46:27.885 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: FAILED
+2026-01-04 10:46:27.886 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test FAILED -> Clearing data only (no logout to save time)
+2026-01-04 10:46:27.886 [main] INFO  common.CommonTest - [Login Test - Data Driven] Clearing app data (no logout)...
+2026-01-04 10:46:34.480 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:47:54.799 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:48:34.927 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:48:34.928 [main] INFO  common.CommonTest - [Login Test - Data Driven] App data cleared successfully
+2026-01-04 10:48:34.928 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:48:34.930 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:49:15.081 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:49:55.200 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:49:55.202 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginEmptyFields_EP <<<
+2026-01-04 10:49:55.206 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP_SPACE2] Password - Only Spaces
+2026-01-04 10:49:55.207 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:51:26.512 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@example.com
+2026-01-04 10:51:26.514 [main] INFO  page.LoginPage - Filling login form for email: test@example.com
+2026-01-04 10:51:29.107 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:51:30.579 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP_SPACE2] ✓ PASSED
+2026-01-04 10:51:30.581 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:51:30.581 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 10:51:37.117 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:52:57.384 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:53:37.536 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:53:57.656 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 10:53:57.656 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:53:57.673 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 10:54:37.800 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 10:55:17.934 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 10:55:17.937 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 10:55:17.943 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.05_EP1] Invalid Email Format - Missing @
+2026-01-04 10:55:17.944 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 10:56:49.275 [main] INFO  page.LoginPage - Attempting login expecting failure with email: invalidemail
+2026-01-04 10:56:49.276 [main] INFO  page.LoginPage - Filling login form for email: invalidemail
+2026-01-04 10:56:51.791 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 10:56:53.317 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.05_EP1] ✓ PASSED
+2026-01-04 10:56:53.319 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 10:56:53.319 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 10:56:59.945 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 10:58:20.183 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 10:59:00.332 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 10:59:20.435 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 10:59:20.435 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 10:59:20.440 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:00:00.552 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:00:40.651 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:00:40.652 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:00:40.657 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.05_EP2] Invalid Email Format - Missing domain
+2026-01-04 11:00:40.658 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:02:11.999 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@
+2026-01-04 11:02:12.000 [main] INFO  page.LoginPage - Filling login form for email: test@
+2026-01-04 11:02:14.518 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:02:16.059 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.05_EP2] ✓ PASSED
+2026-01-04 11:02:16.061 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:02:16.061 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:02:22.601 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:03:42.853 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:04:22.992 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:04:43.110 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:04:43.110 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:04:43.114 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:05:23.232 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:06:03.366 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:06:03.368 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:06:03.371 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.05_EP3] Invalid Email Format - Double @
+2026-01-04 11:06:03.373 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:07:34.697 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@@example.com
+2026-01-04 11:07:34.698 [main] INFO  page.LoginPage - Filling login form for email: test@@example.com
+2026-01-04 11:07:37.189 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:07:38.735 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.05_EP3] ✓ PASSED
+2026-01-04 11:07:38.737 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:07:38.737 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:07:45.250 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:09:05.502 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:09:45.633 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:10:05.713 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:10:05.713 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:10:05.716 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:10:45.970 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:11:26.084 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:11:26.088 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:11:26.091 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP4] Invalid Email - Missing local part
+2026-01-04 11:11:26.093 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:12:57.449 [main] INFO  page.LoginPage - Attempting login expecting failure with email: @example.com
+2026-01-04 11:12:57.451 [main] INFO  page.LoginPage - Filling login form for email: @example.com
+2026-01-04 11:12:59.935 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:13:01.489 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP4] ✓ PASSED
+2026-01-04 11:13:01.492 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:13:01.493 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:13:08.071 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:14:28.302 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:15:08.432 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:15:28.540 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:15:28.540 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:15:28.543 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:16:08.698 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:16:48.833 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:16:48.844 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:16:48.846 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP5] Invalid Email - Dot at start
+2026-01-04 11:16:48.847 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:18:20.134 [main] INFO  page.LoginPage - Attempting login expecting failure with email: .test@example.com
+2026-01-04 11:18:20.135 [main] INFO  page.LoginPage - Filling login form for email: .test@example.com
+2026-01-04 11:18:22.633 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:18:24.204 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP5] ✓ PASSED
+2026-01-04 11:18:24.206 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:18:24.206 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:18:30.718 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:19:50.983 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:20:31.091 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:20:51.196 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:20:51.196 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:20:51.199 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:21:31.348 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:22:11.468 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:22:11.470 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:22:11.475 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP6] Invalid Email - Dot at end
+2026-01-04 11:22:11.475 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:23:42.856 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test.@example.com
+2026-01-04 11:23:42.856 [main] INFO  page.LoginPage - Filling login form for email: test.@example.com
+2026-01-04 11:23:45.463 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:23:46.991 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP6] ✓ PASSED
+2026-01-04 11:23:46.994 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:23:46.994 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:23:53.566 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:25:13.833 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:25:53.968 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:26:14.047 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:26:14.048 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:26:14.050 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:26:54.203 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:27:34.330 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:27:34.334 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:27:34.337 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP7] Invalid Email - Consecutive dots
+2026-01-04 11:27:34.338 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:29:05.681 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test..user@example.com
+2026-01-04 11:29:05.681 [main] INFO  page.LoginPage - Filling login form for email: test..user@example.com
+2026-01-04 11:29:08.175 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:29:09.713 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP7] ✓ PASSED
+2026-01-04 11:29:09.715 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:29:09.715 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:29:16.299 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:30:36.582 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:31:16.701 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:31:36.794 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:31:36.794 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:31:36.797 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:32:16.967 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:32:57.105 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:32:57.109 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:32:57.111 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP8] Invalid Email - Space in local
+2026-01-04 11:32:57.111 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:34:28.437 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test user@example.com
+2026-01-04 11:34:28.438 [main] INFO  page.LoginPage - Filling login form for email: test user@example.com
+2026-01-04 11:34:30.914 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:34:32.451 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP8] ✓ PASSED
+2026-01-04 11:34:32.454 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:34:32.454 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:34:38.964 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:35:59.215 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:36:39.336 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:36:59.426 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:36:59.426 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:36:59.429 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:37:39.580 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:38:19.721 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:38:19.724 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:38:19.727 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP9] Invalid Email - Missing TLD
+2026-01-04 11:38:19.727 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:39:51.065 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@example
+2026-01-04 11:39:51.066 [main] INFO  page.LoginPage - Filling login form for email: test@example
+2026-01-04 11:39:54.069 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:39:55.641 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP9] ✓ PASSED
+2026-01-04 11:39:55.642 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:39:55.642 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:40:02.178 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:41:22.416 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:42:02.534 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:42:22.618 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:42:22.618 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:42:22.621 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:43:02.731 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:43:42.846 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:43:42.848 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidEmailFormat_EP <<<
+2026-01-04 11:43:42.851 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP10] Invalid Email - Special chars in domain
+2026-01-04 11:43:42.853 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:45:14.190 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@exam$ple.com
+2026-01-04 11:45:14.190 [main] INFO  page.LoginPage - Filling login form for email: test@exam$ple.com
+2026-01-04 11:45:16.648 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:45:18.188 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP10] ✓ PASSED
+2026-01-04 11:45:18.201 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:45:18.201 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:45:24.751 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:46:45.015 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:47:25.116 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:47:45.213 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:47:45.213 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:47:45.220 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:48:25.349 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:49:05.471 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:49:05.474 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2026-01-04 11:49:05.477 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.12_EP1] Missing Uppercase
+2026-01-04 11:49:05.488 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:50:36.811 [main] INFO  page.LoginPage - Attempting login expecting failure with email: testuser@gmail.com
+2026-01-04 11:50:36.812 [main] INFO  page.LoginPage - Filling login form for email: testuser@gmail.com
+2026-01-04 11:50:39.222 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:50:41.615 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.12_EP1] ✓ PASSED
+2026-01-04 11:50:41.618 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:50:41.618 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:50:48.486 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:52:08.736 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:52:48.867 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:53:08.951 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:53:08.952 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:53:08.956 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:53:49.064 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:54:29.201 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:54:29.205 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2026-01-04 11:54:29.208 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.13_EP2] Missing Lowercase
+2026-01-04 11:54:29.209 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 11:56:00.596 [main] INFO  page.LoginPage - Attempting login expecting failure with email: testuser@gmail.com
+2026-01-04 11:56:00.597 [main] INFO  page.LoginPage - Filling login form for email: testuser@gmail.com
+2026-01-04 11:56:03.347 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 11:56:06.024 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.13_EP2] ✓ PASSED
+2026-01-04 11:56:06.027 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 11:56:06.027 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 11:56:13.452 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 11:57:33.766 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 11:58:14.190 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 11:58:34.580 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 11:58:34.581 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 11:58:34.593 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 11:59:14.785 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 11:59:54.916 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 11:59:54.918 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2026-01-04 11:59:54.926 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG.14_EP3] Missing Special Character
+2026-01-04 11:59:54.927 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 12:01:26.239 [main] INFO  page.LoginPage - Attempting login expecting failure with email: testuser@gmail.com
+2026-01-04 12:01:26.239 [main] INFO  page.LoginPage - Filling login form for email: testuser@gmail.com
+2026-01-04 12:01:28.708 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 12:01:31.031 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG.14_EP3] ✓ PASSED
+2026-01-04 12:01:31.033 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 12:01:31.033 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 12:01:37.870 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 12:02:58.117 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 12:03:38.250 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 12:03:58.351 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 12:03:58.352 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 12:03:58.359 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 12:04:38.502 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 12:05:18.632 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 12:05:18.635 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2026-01-04 12:05:18.639 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP4] Missing Number
+2026-01-04 12:05:18.640 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 12:06:49.981 [main] INFO  page.LoginPage - Attempting login expecting failure with email: testuser@gmail.com
+2026-01-04 12:06:49.981 [main] INFO  page.LoginPage - Filling login form for email: testuser@gmail.com
+2026-01-04 12:06:52.968 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 12:06:55.275 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP4] ✓ PASSED
+2026-01-04 12:06:55.278 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 12:06:55.278 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 12:07:02.118 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 12:08:22.409 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 12:09:02.536 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 12:09:22.646 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 12:09:22.647 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 12:09:22.650 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 12:10:02.772 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 12:10:42.882 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 12:10:42.885 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2026-01-04 12:10:42.891 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP5] Only Lowercase
+2026-01-04 12:10:42.893 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 12:11:57.854 [main] INFO  page.LoginPage - Attempting login expecting failure with email: testuser@gmail.com
+2026-01-04 12:11:57.854 [main] INFO  page.LoginPage - Filling login form for email: testuser@gmail.com
+2026-01-04 12:12:00.536 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 12:12:02.883 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_EP5] ✓ PASSED
+2026-01-04 12:12:02.886 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 12:12:02.886 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
+2026-01-04 12:12:10.031 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 12:13:30.349 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 12:14:10.486 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 12:14:30.595 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
+2026-01-04 12:14:30.596 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 12:14:30.599 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 12:15:10.740 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 12:15:50.846 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 12:15:50.848 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginInvalidPasswordFormat_EP <<<
+2026-01-04 12:15:50.852 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+[LG_EP6] Only Uppercase
+2026-01-04 12:15:50.852 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 12:17:22.198 [main] INFO  page.LoginPage - Attempting login expecting failure with email: testuser@gmail.com
+2026-01-04 12:17:22.198 [main] INFO  page.LoginPage - Filling login form for email: testuser@gmail.com
+2026-01-04 12:17:24.776 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 12:17:27.349 [main] ERROR listeners.TestListener - Test FAILED: testLoginInvalidPasswordFormat_EP
+2026-01-04 12:17:30.488 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginInvalidPasswordFormat_EP_Thread1_FAILED_20260104_121729.png
+2026-01-04 12:17:30.503 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== CLEANUP STARTED ==========
+2026-01-04 12:17:30.503 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: FAILED
+2026-01-04 12:17:30.503 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test FAILED -> Clearing data only (no logout to save time)
+2026-01-04 12:17:30.503 [main] INFO  common.CommonTest - [Login Test - Data Driven] Clearing app data (no logout)...
+2026-01-04 12:17:37.204 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 12:18:57.450 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
+2026-01-04 12:19:37.619 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
+2026-01-04 12:19:37.619 [main] INFO  common.CommonTest - [Login Test - Data Driven] App data cleared successfully
+2026-01-04 12:19:37.619 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+
+2026-01-04 12:19:37.623 [main] INFO  common.CommonTest - 
+[Login Test - Data Driven] ========== TEST STARTED ==========
+2026-01-04 12:20:17.786 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 12:20:58.281 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2026-01-04 12:20:58.946 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2026-01-04 12:20:58.951 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 12:20:58.951 [main] INFO  listeners.TestListener - Test Suite Started: Login and Register Tests
+2026-01-04 12:20:58.951 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 12:21:09.490 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2026-01-04 12:21:09.550 [main] INFO  common.AppFlowManager - 
 [AppFlow] Handling app launch...
-2025-12-29 00:20:48.606 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
-2025-12-29 00:20:48.606 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
-2025-12-29 00:21:02.726 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
-2025-12-29 00:21:42.972 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: NOT_LOGGED_IN
-2025-12-29 00:21:42.972 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== TEST SUITE STARTED ==========
-2025-12-29 00:21:43.530 [main] INFO  common.CommonTest - 
+2026-01-04 12:21:10.199 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2026-01-04 12:21:10.199 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2026-01-04 12:32:49.261 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2026-01-04 12:32:50.466 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2026-01-04 12:32:50.484 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 12:32:50.484 [main] INFO  listeners.TestListener - Test Suite Started: Login and Register Tests
+2026-01-04 12:32:50.484 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 12:33:03.293 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2026-01-04 12:33:03.365 [main] INFO  common.AppFlowManager - 
+[AppFlow] Handling app launch...
+2026-01-04 12:33:03.982 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2026-01-04 12:33:03.983 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2026-01-04 12:33:17.492 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2026-01-04 12:33:58.264 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: NOT_LOGGED_IN
+2026-01-04 12:33:58.265 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== TEST SUITE STARTED ==========
+2026-01-04 12:33:59.228 [main] INFO  common.CommonTest - 
 [Login Test - Data Driven] ========== TEST STARTED ==========
-2025-12-29 00:22:23.752 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
-2025-12-29 00:23:03.885 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
-2025-12-29 00:23:04.024 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
-2025-12-29 00:23:04.070 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
+2026-01-04 12:34:39.417 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
+2026-01-04 12:35:19.545 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
+2026-01-04 12:35:19.719 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
+2026-01-04 12:35:19.782 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
 [LG_COMBO1] Combination - Invalid Email + Invalid Password
-2025-12-29 00:23:04.072 [main] INFO  page.HomePage - Clicking Sign In button
-2025-12-29 00:24:35.478 [main] INFO  page.LoginPage - Attempting login expecting failure with email: invalidemail
-2025-12-29 00:24:35.480 [main] INFO  page.LoginPage - Filling login form for email: invalidemail
-2025-12-29 00:24:38.639 [main] INFO  page.LoginPage - Clicking Sign In button
-2025-12-29 00:24:40.150 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_COMBO1] ✓ PASSED
-2025-12-29 00:24:40.176 [main] INFO  listeners.TestListener - Test PASSED: testLoginCombinations
-2025-12-29 00:24:41.759 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginCombinations_PASSED_20251229_002441.png
-2025-12-29 00:24:41.770 [main] INFO  common.CommonTest - 
-[Login Test - Data Driven] ========== CLEANUP STARTED ==========
-2025-12-29 00:24:41.770 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
-2025-12-29 00:24:48.528 [main] INFO  page.HomePage - Waiting for HomePage to load...
-2025-12-29 00:26:08.909 [main] INFO  page.HomePage - HomePage loaded successfully - State: NOT_LOGGED_IN
-2025-12-29 00:26:49.040 [main] INFO  common.CommonTest - [Login Test - Data Driven] Reached HomePage successfully
-2025-12-29 00:27:09.122 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test PASSED & Already on HomePage -> No cleanup needed
-2025-12-29 00:27:09.123 [main] INFO  common.CommonTest - [Login Test - Data Driven] ========== CLEANUP COMPLETED ==========
+2026-01-04 12:35:19.784 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 12:36:27.445 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2026-01-04 12:36:28.124 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2026-01-04 12:36:39.795 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2026-01-04 12:36:39.833 [main] INFO  common.AppFlowManager - 
+[AppFlow] Handling app launch...
+2026-01-04 12:36:40.487 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2026-01-04 12:36:40.487 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2026-01-04 12:36:53.397 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2026-01-04 12:37:33.704 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: NOT_LOGGED_IN
+2026-01-04 12:37:33.706 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== TEST SUITE STARTED ==========
+2026-01-04 12:37:33.706 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== CHECKING LOGIN PRECONDITION ==========
+2026-01-04 12:37:43.746 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] User not logged in -> Logging in...
+2026-01-04 12:37:43.746 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 12:39:15.204 [main] INFO  page.LoginPage - Attempting login with email: khoadang1510@gmail.com
+2026-01-04 12:39:15.206 [main] INFO  page.LoginPage - Filling login form for email: khoadang1510@gmail.com
+2026-01-04 12:39:18.873 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 12:39:21.096 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 12:40:22.926 [main] INFO  page.HomePage - HomePage loaded successfully - State: LOGGED_IN
+2026-01-04 12:40:22.928 [main] INFO  page.LoginPage - Login successful - HomePage loaded
+2026-01-04 12:40:53.035 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] Logged in successfully
+2026-01-04 12:40:53.036 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== LOGIN PRECONDITION COMPLETED ==========
 
-2025-12-29 00:27:09.128 [main] INFO  common.CommonTest - 
-[Login Test - Data Driven] ========== TEST STARTED ==========
-2025-12-29 00:27:49.301 [main] INFO  common.CommonTest - [Login Test - Data Driven] Current state: NOT_LOGGED_IN
-2025-12-29 00:28:29.422 [main] INFO  common.CommonTest - [Login Test - Data Driven] Already on HomePage (state: NOT_LOGGED_IN)
-2025-12-29 00:28:29.428 [main] INFO  listeners.TestListener - >>> Starting Test: testLoginCombinations <<<
-2025-12-29 00:28:29.431 [main] INFO  testcase_datadriven.LoginTestDataDriven - 
-[LG_COMBO2] Combination - Valid Email + Empty Password
-2025-12-29 00:28:29.432 [main] INFO  page.HomePage - Clicking Sign In button
-2025-12-29 00:30:00.785 [main] INFO  page.LoginPage - Attempting login expecting failure with email: test@example.com
-2025-12-29 00:30:00.788 [main] INFO  page.LoginPage - Filling login form for email: test@example.com
-2025-12-29 00:30:03.742 [main] INFO  page.LoginPage - Clicking Sign In button
-2025-12-29 00:30:04.770 [main] INFO  testcase_datadriven.LoginTestDataDriven - [LG_COMBO2] ✓ PASSED
-2025-12-29 00:30:04.773 [main] INFO  listeners.TestListener - Test PASSED: testLoginCombinations
-2025-12-29 00:30:06.306 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\LoginTestDataDriven.testLoginCombinations_PASSED_20251229_003005.png
-2025-12-29 00:30:06.313 [main] INFO  common.CommonTest - 
-[Login Test - Data Driven] ========== CLEANUP STARTED ==========
-2025-12-29 00:30:06.314 [main] INFO  common.CommonTest - [Login Test - Data Driven] Test Status: PASSED
-2025-12-29 00:30:12.960 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 12:40:53.437 [main] INFO  common.BaseTest - Quitting driver...
+2026-01-04 12:40:54.692 [main] INFO  common.BaseTest - ##### Appium server stopped.
+2026-01-04 12:52:20.154 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2026-01-04 12:52:20.799 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2026-01-04 12:52:20.801 [main] INFO  common.BaseTest - Created Allure environment file: C:\Users\Archer\AndroidStudioProjects\LessonSourceCode\FinalProject2025\exports\reports\allure-results\environment.properties
+2026-01-04 12:52:20.808 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 12:52:20.809 [main] INFO  listeners.TestListener - Test Suite Started: Surefire test
+2026-01-04 12:52:20.809 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 12:52:26.628 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2026-01-04 12:52:26.651 [main] INFO  common.AppFlowManager - 
+[AppFlow] Handling app launch...
+2026-01-04 12:52:27.174 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2026-01-04 12:52:27.174 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2026-01-04 12:52:39.661 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2026-01-04 12:53:19.949 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: NOT_LOGGED_IN
+2026-01-04 12:53:19.951 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== TEST SUITE STARTED ==========
+2026-01-04 12:53:19.952 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== CHECKING LOGIN PRECONDITION ==========
+2026-01-04 12:53:30.001 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] User not logged in -> Logging in...
+2026-01-04 12:53:30.004 [main] INFO  page.HomePage - Clicking Sign In button
+2026-01-04 12:55:01.404 [main] INFO  page.LoginPage - Attempting login with email: khoadang1510@gmail.com
+2026-01-04 12:55:01.406 [main] INFO  page.LoginPage - Filling login form for email: khoadang1510@gmail.com
+2026-01-04 12:55:04.747 [main] INFO  page.LoginPage - Clicking Sign In button
+2026-01-04 12:55:07.006 [main] INFO  page.HomePage - Waiting for HomePage to load...
+2026-01-04 12:56:08.955 [main] INFO  page.HomePage - HomePage loaded successfully - State: LOGGED_IN
+2026-01-04 12:56:08.956 [main] INFO  page.LoginPage - Login successful - HomePage loaded
+2026-01-04 12:56:32.411 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] Logged in successfully
+2026-01-04 12:56:32.411 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== LOGIN PRECONDITION COMPLETED ==========
+
+2026-01-04 12:56:32.737 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordBoundary
+2026-01-04 12:56:36.363 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordBoundary_Thread1_FAILED_20260104_125635.png
+2026-01-04 12:56:36.395 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordEmptyFields
+2026-01-04 12:56:38.147 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordEmptyFields_Thread1_FAILED_20260104_125637.png
+2026-01-04 12:56:38.169 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordInvalidCurrent
+2026-01-04 12:56:39.921 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordInvalidCurrent_Thread1_FAILED_20260104_125639.png
+2026-01-04 12:56:39.937 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordInvalidFormat
+2026-01-04 12:56:41.587 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordInvalidFormat_Thread1_FAILED_20260104_125640.png
+2026-01-04 12:56:41.602 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordValid
+2026-01-04 12:56:43.293 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordValid_Thread1_FAILED_20260104_125642.png
+2026-01-04 12:56:43.309 [main] INFO  common.BaseTest - Quitting driver...
+2026-01-04 12:56:44.489 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 12:56:44.490 [main] INFO  listeners.TestListener - Test Suite Finished: Surefire test
+2026-01-04 12:56:44.490 [main] INFO  listeners.TestListener - Total Tests Run: 5
+2026-01-04 12:56:44.490 [main] INFO  listeners.TestListener - Passed: 0
+2026-01-04 12:56:44.490 [main] INFO  listeners.TestListener - Failed: 5
+2026-01-04 12:56:44.490 [main] INFO  listeners.TestListener - Skipped: 0
+2026-01-04 12:56:44.491 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 12:56:44.559 [main] INFO  common.BaseTest - ##### Appium server stopped.
+2026-01-04 13:05:19.394 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2026-01-04 13:05:20.084 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2026-01-04 13:05:20.087 [main] INFO  common.BaseTest - Created Allure environment file: C:\Users\Archer\AndroidStudioProjects\LessonSourceCode\FinalProject2025\exports\reports\allure-results\environment.properties
+2026-01-04 13:05:20.100 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 13:05:20.101 [main] INFO  listeners.TestListener - Test Suite Started: Surefire test
+2026-01-04 13:05:20.101 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 13:05:30.850 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2026-01-04 13:05:30.892 [main] INFO  common.AppFlowManager - 
+[AppFlow] Handling app launch...
+2026-01-04 13:05:31.425 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2026-01-04 13:05:31.425 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2026-01-04 13:05:43.898 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2026-01-04 13:06:14.085 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: LOGGED_IN
+2026-01-04 13:06:14.087 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== TEST SUITE STARTED ==========
+2026-01-04 13:06:14.087 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== CHECKING LOGIN PRECONDITION ==========
+2026-01-04 13:06:44.153 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] User already logged in - Skipping login
+2026-01-04 13:06:44.153 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== LOGIN PRECONDITION COMPLETED ==========
+
+2026-01-04 13:06:44.768 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordBoundary
+2026-01-04 13:06:45.779 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordBoundary_Thread1_FAILED_20260104_130645.png
+2026-01-04 13:06:45.802 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordEmptyFields
+2026-01-04 13:06:46.414 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordEmptyFields_Thread1_FAILED_20260104_130646.png
+2026-01-04 13:06:46.445 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordValid
+2026-01-04 13:06:47.002 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordValid_Thread1_FAILED_20260104_130646.png
+2026-01-04 13:06:47.007 [main] INFO  common.BaseTest - Quitting driver...
+2026-01-04 13:06:47.842 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 13:06:47.842 [main] INFO  listeners.TestListener - Test Suite Finished: Surefire test
+2026-01-04 13:06:47.842 [main] INFO  listeners.TestListener - Total Tests Run: 5
+2026-01-04 13:06:47.842 [main] INFO  listeners.TestListener - Passed: 0
+2026-01-04 13:06:47.843 [main] INFO  listeners.TestListener - Failed: 3
+2026-01-04 13:06:47.843 [main] INFO  listeners.TestListener - Skipped: 0
+2026-01-04 13:06:47.843 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 13:06:47.895 [main] INFO  common.BaseTest - ##### Appium server stopped.
+2026-01-04 13:10:41.384 [main] INFO  common.BaseTest - Starting Appium server on 127.0.0.1:4723
+2026-01-04 13:10:42.112 [main] INFO  common.BaseTest - ##### Appium server started on 127.0.0.1:4723
+2026-01-04 13:10:42.114 [main] INFO  common.BaseTest - Created Allure environment file: C:\Users\Archer\AndroidStudioProjects\LessonSourceCode\FinalProject2025\exports\reports\allure-results\environment.properties
+2026-01-04 13:10:42.122 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 13:10:42.123 [main] INFO  listeners.TestListener - Test Suite Started: Surefire test
+2026-01-04 13:10:42.123 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 13:10:51.059 [main] INFO  common.BaseTest - Driver initialized with EXPLICIT WAIT strategy only
+2026-01-04 13:10:51.094 [main] INFO  common.AppFlowManager - 
+[AppFlow] Handling app launch...
+2026-01-04 13:10:51.563 [main] INFO  common.AppFlowManager - [AppFlow] App activated successfully via ADB
+2026-01-04 13:10:51.563 [main] INFO  common.AppFlowManager - [AppFlow] Waiting for app to fully initialize...
+2026-01-04 13:11:04.019 [main] INFO  common.AppFlowManager - [AppFlow] Onboarding already completed or skipped
+2026-01-04 13:11:34.274 [main] INFO  common.AppFlowManager - [AppFlow] On Home Page - State: LOGGED_IN
+2026-01-04 13:11:34.274 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== TEST SUITE STARTED ==========
+2026-01-04 13:11:34.275 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== CHECKING LOGIN PRECONDITION ==========
+2026-01-04 13:12:04.367 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] User already logged in - Skipping login
+2026-01-04 13:12:04.370 [main] INFO  common.CommonTest - [Change Password Test - Data Driven] ========== LOGIN PRECONDITION COMPLETED ==========
+
+2026-01-04 13:12:05.444 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordBoundary
+2026-01-04 13:12:06.223 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordBoundary_Thread1_FAILED_20260104_131205.png
+2026-01-04 13:12:06.259 [main] ERROR listeners.TestListener - Test FAILED: testChangePasswordEmptyFields
+2026-01-04 13:12:06.956 [main] INFO  org.example.utils.ScreenshotUtils - Screenshot saved: exports/screenshots\ChangePasswordTestDataDriven.testChangePasswordEmptyFields_Thread1_FAILED_20260104_131206.png
+2026-01-04 13:12:06.981 [main] INFO  common.BaseTest - Quitting driver...
+2026-01-04 13:12:07.594 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 13:12:07.594 [main] INFO  listeners.TestListener - Test Suite Finished: Surefire test
+2026-01-04 13:12:07.595 [main] INFO  listeners.TestListener - Total Tests Run: 5
+2026-01-04 13:12:07.595 [main] INFO  listeners.TestListener - Passed: 0
+2026-01-04 13:12:07.596 [main] INFO  listeners.TestListener - Failed: 2
+2026-01-04 13:12:07.596 [main] INFO  listeners.TestListener - Skipped: 0
+2026-01-04 13:12:07.596 [main] INFO  listeners.TestListener - ========================================
+2026-01-04 13:12:07.694 [main] INFO  common.BaseTest - ##### Appium server stopped.

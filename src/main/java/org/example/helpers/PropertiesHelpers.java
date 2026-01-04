@@ -11,7 +11,6 @@ public class PropertiesHelpers {
 
     private static Properties properties;
     private static String linkFile;
-    private static FileInputStream file;
     private static final String DEFAULT_PROPERTIES_FILE = String.join(File.separator,
             "src", "main", "resources", "config", "config.properties");
 
@@ -70,7 +69,7 @@ public class PropertiesHelpers {
     public static String getValue(String key) {
         String value = null;
         try {
-            if (file == null) {  // ← Có thể xóa biến 'file' static field
+            if (properties == null) {  // ← Có thể xóa biến 'file' static field
                 properties = new Properties();
                 String fullPath = SystemHelpers.getCurrentDir() + DEFAULT_PROPERTIES_FILE;
 
@@ -98,7 +97,7 @@ public class PropertiesHelpers {
 
     public static void setValue(String key, String keyValue) {
         try {
-            if (file == null) {
+            if (properties == null || linkFile == null) {
                 properties = new Properties();
                 String fullPath = SystemHelpers.getCurrentDir() + DEFAULT_PROPERTIES_FILE;
 

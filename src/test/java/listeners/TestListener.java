@@ -1,6 +1,7 @@
 package listeners;
 
 import io.appium.java_client.AppiumDriver;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,6 +21,10 @@ public class TestListener implements ITestListener {
         logger.info("========================================");
         logger.info("Test Suite Started: {}", context.getName());
         logger.info("========================================");
+
+        // Add environment info to Allure
+        Allure.parameter("Suite Name", context.getName());
+        Allure.parameter("Suite Start", context.getStartDate().toString());
     }
 
     @Override
@@ -31,6 +36,19 @@ public class TestListener implements ITestListener {
         logger.info("Failed: {}", context.getFailedTests().size());
         logger.info("Skipped: {}", context.getSkippedTests().size());
         logger.info("========================================");
+
+        String summary = String.format(
+                "Total: %d | Passed: %d | Failed: %d | Skipped: %d | Success Rate: %.2f%%",
+                context.getAllTestMethods().length,
+                context.getPassedTests().size(),
+                context.getFailedTests().size(),
+                context.getSkippedTests().size(),
+                (context.getPassedTests().size() * 100.0) / context.getAllTestMethods().length
+        );
+
+        Allure.parameter("Suite Summary", summary);
+        Allure.parameter("Suite Duration",
+                (context.getEndDate().getTime() - context.getStartDate().getTime()) / 1000 + " seconds");
     }
 
     @Override
@@ -39,18 +57,20 @@ public class TestListener implements ITestListener {
         logger.info(">>> Starting Test: {} <<<", testName);
     }
 
+/*
     @Override
     public void onTestSuccess(ITestResult result) {
         String testName = result.getMethod().getMethodName();
         String testClass = result.getTestClass().getRealClass().getSimpleName();
         logger.info("Test PASSED: {}", testName);
 
-        // Best practice: Include class name to avoid conflicts in parallel execution
-        String screenshotName = testClass + "." + testName + "_PASSED";
+        String screenshotName = testClass + "." + testName +
+                "_Thread" + Thread.currentThread().getId() +
+                "_PASSED";
 
         // Single screenshot call - combines both Allure and file system
         captureAndSaveScreenshot(screenshotName);
-    }
+    }*/
 
     @Override
     public void onTestFailure(ITestResult result) {
@@ -59,9 +79,9 @@ public class TestListener implements ITestListener {
         logger.error("Test FAILED: {}", testName);
 
         // Best practice: Include class name to avoid conflicts in parallel execution
-        String screenshotName = testClass + "." + testName + "_FAILED";
-
-        // Single screenshot call - combines both Allure and file system
+        String screenshotName = testClass + "." + testName +
+                "_Thread" + Thread.currentThread().getId() +
+                "_FAILED";
         captureAndSaveScreenshot(screenshotName);
 
         // Attach error details

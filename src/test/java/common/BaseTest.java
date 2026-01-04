@@ -53,6 +53,7 @@ public class BaseTest {
             logger.error("Failed to start Appium server.");
         }
         createScreenshotDirectory();
+        createAllureEnvironmentFile();
     }
 
     @BeforeTest
@@ -82,6 +83,35 @@ public class BaseTest {
         } catch (MalformedURLException e) {
             logger.error("Failed to initialize driver", e);
             throw new RuntimeException(e);
+        }
+    }
+
+    private void createAllureEnvironmentFile() {
+        try {
+            String allureResultsPath = PropertiesHelpers.getValue("ALLURE_RESULTS_PATH",
+                    "exports/reports/allure-results");
+            File allureResultsDir = new File(allureResultsPath);
+            if (!allureResultsDir.exists()) {
+                allureResultsDir.mkdirs();
+            }
+
+            File envFile = new File(allureResultsDir, "environment.properties");
+            try (java.io.FileWriter writer = new java.io.FileWriter(envFile)) {
+                writer.write("Platform=" + ConfigData.PLATFORM_NAME + "\n");
+                writer.write("Platform.Version=" + ConfigData.PLATFORM_VERSION + "\n");
+                writer.write("Device.Name=" + ConfigData.DEVICE_NAME + "\n");
+                writer.write("Automation.Name=" + ConfigData.AUTOMATION_NAME + "\n");
+                writer.write("App.Package=" + ConfigData.APP_PACKAGE + "\n");
+                writer.write("Framework=Appium + TestNG + Java 21\n");
+                writer.write("Allure.Version=2.31.0\n");
+                writer.write("Execution.Date=" +
+                        java.time.LocalDateTime.now().format(
+                                java.time.format.DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + "\n");
+
+                logger.info("Created Allure environment file: {}", envFile.getAbsolutePath());
+            }
+        } catch (Exception e) {
+            logger.error("Error creating Allure environment file: {}", e.getMessage());
         }
     }
 
