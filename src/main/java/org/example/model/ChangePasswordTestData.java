@@ -3,6 +3,7 @@ package org.example.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ChangePasswordTestData {
+
     @JsonProperty("testId")
     private String testId;
 
@@ -20,6 +21,9 @@ public class ChangePasswordTestData {
 
     @JsonProperty("description")
     private String description;
+
+    @JsonProperty("category")
+    private String category;
 
     // Getters and Setters
     public String getTestId() { return testId; }
@@ -39,6 +43,9 @@ public class ChangePasswordTestData {
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
 
     @Override
     public String toString() {

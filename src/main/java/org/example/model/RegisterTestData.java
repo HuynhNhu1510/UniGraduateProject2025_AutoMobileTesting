@@ -2,6 +2,7 @@ package org.example.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RegisterTestData {
+
     @JsonProperty("testId")
     private String testId;
 

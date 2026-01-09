@@ -18,7 +18,7 @@ public class ChangePasswordTestDataDriven extends CommonTest {
     private static final Logger logger = LogManager.getLogger(ChangePasswordTestDataDriven.class);
 
     // CREDENTIALS - MUST MATCH test_data.json
-    private static final String TEST_EMAIL = "khoadang1510@gmail.com";
+    private static final String TEST_EMAIL = "khoadang@gmail.com";
     private static final String ORIGINAL_PASSWORD = "Kikiga18123@";
 
     private ChangePasswordPage changePasswordPage;

@@ -4,7 +4,7 @@
       {
         "testId": "LG.01",
         "category": "Valid Partition",
-        "email": "khoadang1510@gmail.com",
+        "email": "khoadang@gmail.com",
         "password": "Kikiga18123@",
         "expectedResult": "success",
         "description": "Valid email and password"
